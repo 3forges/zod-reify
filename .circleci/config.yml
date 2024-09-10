@@ -1,0 +1,321 @@
+
+version: "2.1"
+# ---
+#  https://circleci.com/docs/circleci-images/
+#  https://circleci.com/docs/circleci-images/#nodejs
+#  https://hub.docker.com/r/circleci/node/tags?ordering=last_updated
+#  docker pull circleci/node:lts-bullseye
+parameters:
+  publish_me:
+    type: boolean
+    default: true
+  runner_image_tag:
+    type: string
+    default: "21.7.1" # "lts-bullseye"
+  pnpm_version:
+    type: string
+    default: "8.14.1"
+  npm_publish_auth_secret_user:
+    type: string
+    default: "xxxx"
+  npm_publish_auth_secret_token:
+    type: string
+    default: $PESTO_ZOD_NPM_TOKEN
+
+jobs-commons: &jobs-commons
+  working_directory: ~/repo
+  docker:
+    # - image: circleci/node:<< pipeline.parameters.runner_image_tag >>
+    - image: cimg/node:<< pipeline.parameters.runner_image_tag >>
+  # resource_class: pesto/podman-small1 # that's for privately hosted runners
+#steps-commons: &steps-commons
+# aliases:
+#   - &bidule
+#     attach_workspace:
+#       at: /home/circleci
+
+
+jobs:
+  run_unit_tests:
+    <<: *jobs-commons
+    environment:
+      BASH_ENV: /home/circleci/.profile
+      # PNPM_VERSION: << pipeline.parameters.pnpm_version >>
+    steps:
+      - run:
+          name: "System setup"
+          command: |
+              sudo apt-get update -y && sudo apt-get install -y curl jq
+      - run:
+          name: "env setup"
+          command: |
+              touch "$BASH_ENV"
+              echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
+              echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
+              echo 'export SHELL="/bin/bash"' >> "$BASH_ENV"
+      - checkout
+      - run:
+          name: "Install pnpm"
+          command: |
+              chmod +x ./.ci/shell/install_pnpm.sh
+              ./.ci/shell/install_pnpm.sh
+      - run:
+          name: "env checkup"
+          command: |
+              echo "PNPM version:"
+              pnpm --version
+              echo "NodeJS version:"
+              node -v
+              echo " BASH_ENV=[${BASH_ENV}]"
+              echo " PNPM_VERSION=[${PNPM_VERSION}]"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: "Resolve Dependencies"
+          command: |
+              # --- 
+              # Il faudra revenir à [pnpm i --frozen-lockfile]: mais cela forcera à avoir une version spécifique de nodejs et de pnpm.
+              pnpm i --frozen-lockfile
+      - run:
+          name: "Run Unit Tests"
+          command: | 
+              echo "BASH_ENV=[${BASH_ENV}]"
+              pwd
+              echo "# Run Package Unit Tests!"
+              # WARNING! As soon as [https://github.com/3forges/pesto-zod/pull/6] PR is merged, YOU MUST remove the [--passWithNoTests] option
+              pnpm test 
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  build_npm_package:
+    <<: *jobs-commons
+    environment:
+      BASH_ENV: /home/circleci/.profile
+    steps:
+      - run:
+          name: "System setup"
+          command: |
+              sudo apt-get update -y && sudo apt-get install -y curl jq
+      - run:
+          name: "env setup"
+          command: |
+              touch "$BASH_ENV"
+              echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
+              echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
+              echo 'export SHELL="/bin/bash"' >> "$BASH_ENV"
+      - checkout
+      - run:
+          name: "Install pnpm"
+          command: |
+              chmod +x ./.ci/shell/install_pnpm.sh
+              ./.ci/shell/install_pnpm.sh
+      - run:
+          name: "env checkup"
+          command: |
+              echo "PNPM version:"
+              pnpm --version
+              echo "NodeJS version:"
+              node -v
+              echo " BASH_ENV=[${BASH_ENV}]"
+              echo " PNPM_VERSION=[${PNPM_VERSION}]"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: "Resolve Dependencies"
+          command: |
+              pnpm i --frozen-lockfile
+      - run:
+          name: "Run The Package build"
+          command: | 
+              echo "BASH_ENV=[${BASH_ENV}]"
+              pwd
+              echo "# Run Package Unit Tests!"
+              pnpm run build
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  run_e2e_tests:
+    <<: *jobs-commons
+    environment:
+      BASH_ENV: /home/circleci/.profile
+    steps:
+      - run:
+          name: "System setup"
+          command: |
+              sudo apt-get update -y && sudo apt-get install -y curl jq
+      - run:
+          name: "env setup"
+          command: |
+              touch "$BASH_ENV"
+              echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
+              echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
+              echo 'export SHELL="/bin/bash"' >> "$BASH_ENV"
+      - checkout
+      - run:
+          name: "Install pnpm"
+          command: |
+              chmod +x ./.ci/shell/install_pnpm.sh
+              ./.ci/shell/install_pnpm.sh
+      - run:
+          name: "env checkup"
+          command: |
+              echo "PNPM version:"
+              pnpm --version
+              echo "NodeJS version:"
+              node -v
+              echo " BASH_ENV=[${BASH_ENV}]"
+              echo " PNPM_VERSION=[${PNPM_VERSION}]"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: "Resolve Dependencies"
+          command: |
+              pnpm i --frozen-lockfile
+      - run:
+          name: "Run The Package build"
+          command: | 
+              echo "BASH_ENV=[${BASH_ENV}]"
+              pwd
+              echo "# Run Package Unit Tests!"
+              pnpm run test:e2e
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  # ---
+  # Publish to npm registry
+  publish_to_npm_registry:
+    <<: *jobs-commons
+    environment:
+      BASH_ENV: /home/circleci/.profile
+      # PESTO_ZOD_NPM_TOKEN: << pipeline.parameters.npm_publish_auth_secret_token >>
+      PKG_COMMIT_HASH: << pipeline.git.base_revision >>
+    steps:
+      - run:
+          name: "System setup"
+          command: |
+              sudo apt-get update -y && sudo apt-get install -y curl jq
+      - run:
+          name: "env setup"
+          command: |
+              touch "$BASH_ENV"
+              echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
+              echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
+              echo 'export SHELL="/bin/bash"' >> "$BASH_ENV"
+      - checkout
+      - run:
+          name: "Install pnpm"
+          command: |
+              chmod +x ./.ci/shell/install_pnpm.sh
+              ./.ci/shell/install_pnpm.sh
+              git checkout ./.ci/shell/install_pnpm.sh
+      - run:
+          name: "env checkup"
+          command: |
+              echo "PNPM version:"
+              pnpm --version
+              echo "NodeJS version:"
+              node -v
+              echo " BASH_ENV=[${BASH_ENV}]"
+              echo " PNPM_VERSION=[${PNPM_VERSION}]"
+      # - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Prepare Publishing package
+          command: |
+              mkdir -p ~/publish.ops/
+      - run:
+          name: Authenticate with registry
+          # command: echo "//registry.npmjs.org/:_authToken=$PESTO_ZOD_NPM_TOKEN" > ~/publish.ops/.npmrc
+          command: |
+              echo "//registry.npmjs.org/:_authToken=$PESTO_ZOD_NPM_TOKEN" > ~/.npmrc
+              whoami
+              ls -alh ~/.npmrc
+              ls -alh /home/circleci/.npmrc
+              cat -n /home/circleci/.npmrc
+      - run:
+          name: Check NPM Registry auth
+          command: |
+              pnpm whoami
+      - run:
+          name: Bump package version
+          command: |
+              git status
+              git checkout .
+              git config --global user.email "bot@pesto.io"
+              git config --global user.name "Tryphon Tournesol"
+              pnpm version 0.0.1-alpha-commit-$PKG_COMMIT_HASH
+      - run:
+          name: Publish package
+          command: |
+              git status
+              git checkout .
+              pnpm publish --access public --publish-branch "$CIRCLE_BRANCH" --force --tag dev-$PKG_COMMIT_HASH
+
+workflows:
+  merge_requests_flow:
+    when: << pipeline.parameters.publish_me >>
+    jobs:
+      - run_unit_tests:
+          context: pesto-zod
+      - build_npm_package:
+          context: pesto-zod
+          requires:
+            - run_unit_tests
+      - run_e2e_tests:
+          context: pesto-zod
+          requires:
+            - build_npm_package
+      - approve_publish_to_npm_registry: # <<< A job that will require manual approval in the CircleCI web application.
+          type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
+          requires:
+            - run_e2e_tests
+      - publish_to_npm_registry:
+          context: pesto-zod
+          requires:
+            - approve_publish_to_npm_registry
+
+  merge_requests_flow_no_publish:
+    when: 
+      not: << pipeline.parameters.publish_me >>
+    jobs:
+      - run_unit_tests
+      - build_npm_package:
+          requires:
+            - run_unit_tests
+      - run_e2e_tests:
+          requires:
+            - build_npm_package
+      # - docker_push:
+      #     oci_gun_registry: docker.io
+      #     oci_gun_org: pesto.io
+      #     oci_gun_project: go-hello-pokus
+      #     oci_gun_tag: 0.0.1
+      #     requires:
+      #       - approve_docker_push

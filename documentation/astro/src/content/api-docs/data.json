@@ -1,0 +1,1484 @@
+{
+	"id": 0,
+	"name": "@pesto-io/pesto-zod",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "parser",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A package where you will find <code>@pesto-io</code> parser: ZodSchemaParser, etc..."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "ZodSchemaParser",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@ZodSchemaParser",
+								"text": ""
+							},
+							{
+								"kind": "text",
+								"text": " class will parse a string assumed to be a zod schema source code, and will instantiate the Zod Schema."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 210,
+									"character": 4
+								}
+							],
+							"signatures": [
+								{
+									"id": 4,
+									"name": "new ZodSchemaParser",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Example values of <pre>zodSchemaAsString</pre> :\r\n---\r\n\r\nExample 1:\r\n----------\r\n\r\n<code>\r\nz.object({\r\n  title: z.string(),\r\n  subtitle: z.string(),\r\n  summary: z.string(),\r\n  category: z.array(z.string()),\r\n  image: z.string(),\r\n  tags: z.array(z.string()),\r\n})\r\n</code>\r\n\r\nExample 2:\r\n----------\r\n\r\n<code>\r\nz.object({\r\n  title: z.string(),\r\n  hereAnother: z.object({\r\n    reseau: z.object({\r\n      cesar: z.array(z.string()),\r\n    }),\r\n    imLackingIdea: z.boolean().optional(),\r\n    itsForATest: z.boolean(),\r\n  }),\r\n  tags: z.array(z.string( )  ),\r\n  another: z.boolean().nullish(),\r\n  exampleCategory: z.array(z.array(z.string().nullable())).optional(),\r\n  example2Category: z.nullable(z.array(z.boolean())).optional(),\r\n  example3Category: z.optional(z.number()).array(),\r\n  example4Category: z.array(z.number()).optional(),\r\n  image: z.string().optional(),\r\n  somethingElseNested: z.object({\r\n    firstname: z.string().array(),\r\n    lastname: z.string(),\r\n    color: z.string(),\r\n    two: z.boolean().optional(),\r\n    three: z.number().array().optional(),\r\n    four: z.array(z.number()).optional(),\r\n  }),\r\n  department: z.object({\r\n    divisionName: z.string(),\r\n    secrecyTags: z.array(z.string()).optional(),\r\n  }),\r\n})\r\n</code>"
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 210,
+											"character": 4
+										}
+									],
+									"parameters": [
+										{
+											"id": 5,
+											"name": "zodSchemaAsString",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the text of the zod schema, without any variable declaration, just the zod schema alone. see above example."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 6,
+											"name": "p_tsConfigRootdir",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the path to the folder used to set the <pre>rootDir</pre> TypeScript compiler configuration property value. (typically found in any <pre>tsconfig.json</pre> file)"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 2,
+										"name": "ZodSchemaParser",
+										"package": "@pesto-io/pesto-zod"
+									}
+								}
+							]
+						},
+						{
+							"id": 10,
+							"name": "filename",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The filename of the file in which the source\r\ncode to process will be saved to."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 58,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 15,
+							"name": "nameOfTheZodImport",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The name of the zod import.\r\n\r\nE.g.:\r\n\r\n<code>\r\n// the name of the zod import is 'z'\r\nimport { z } from \"zod\";\r\n</code>\r\n\r\n<code>\r\n// the name of the zod import is 'myZod'\r\nimport { z as myZod } from \"zod\";\r\n</code>\r\n\r\nThe "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " will always use 'z' as\r\nthe name of the zod import, since it is not\r\nprovided by the user of the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " class.\r\n\r\nWhy? because we don't care what is\r\nthe name of the zod import, we \r\ncare about instiating the Zod Schema."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 144,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 8,
+							"name": "project",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph API Project instance which\r\nwill used to compile/parse the typescript code which is a zodSchema"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 51,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "Project"
+								},
+								"name": "Project",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 11,
+							"name": "sourceFile",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The source file obeject used by the TS compiler API"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 62,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "SourceFile"
+								},
+								"name": "SourceFile",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 9,
+							"name": "tsConfigRootdir",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 53,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 13,
+							"name": "typeChecker",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph / TypeScript Compiler API type checker"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 101,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "TypeChecker"
+								},
+								"name": "TypeChecker",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 7,
+							"name": "unique_id",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The unique ID of\r\nthis "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " instance.\r\n\r\nThis uuid is used to generate a unique\r\nname for the sourceFile"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 46,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 14,
+							"name": "zodImport",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Represents the full statement importing zod:\r\n\r\n<code>\r\n// the zodImport is the full below line.\r\nimport { z } from \"zod\";\r\n</code>\r\n\r\nThe "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " will always use \r\n'import { z } from \"zod\";' as the zod import,\r\nsince it is not provided by the user of the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " class.\r\n\r\nWhy? because we don't care what is\r\nthe zod import, as long as the zod is imported, we\r\ncare about instiating the Zod Schema."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 119,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "ImportDeclarationStructure"
+								},
+								"name": "ImportDeclarationStructure",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 16,
+							"name": "zodObjectLiteral",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This property represents \r\nThis property is initialized by \r\nthe "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaParser",
+										"text": "[initZodObjectLiteral(): void]"
+									},
+									{
+										"kind": "text",
+										"text": "\r\nmethod."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 151,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "ObjectLiteralExpression"
+								},
+								"name": "ObjectLiteralExpression",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 17,
+							"name": "zodSchemaAsString",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isProtected": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "the text of the zod schema, without any variable declaration, just the zod schema alone. see above example."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 210,
+									"character": 26
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 12,
+							"name": "zodSchemaVarDeclaration",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph / TypeScript Compiler API \r\nVariable Declaration of the Zod Schema, in the \r\nbuilt ts-morph Project\r\n\r\nRepresents a variable Declaration Statement\r\nwhich is assigned as value, a zodSchema.\r\n\r\nE.g.:\r\n\r\n<code>\r\nimport { z } from \"zod\";\r\n\r\n////\r\n// Below that's the variable declaration represented:\r\n////\r\nconst weDontCare = z.object({\r\n  // ...\r\n})\r\n</code>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 96,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "OptionalKind"
+								},
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": {
+											"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+											"qualifiedName": "VariableDeclarationStructure"
+										},
+										"name": "VariableDeclarationStructure",
+										"package": "ts-morph"
+									}
+								],
+								"name": "OptionalKind",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 29,
+							"name": "demoDFStraversal",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 577,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 30,
+									"name": "demoDFStraversal",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method parses the source code to intantiate the Zod Schema"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the Zod object, instantiated by parsing <code>this.zodSchemaVarDeclaration}</code>"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 577,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"sourceFileName": "node_modules/.pnpm/zod@3.22.4/node_modules/zod/lib/types.d.ts",
+											"qualifiedName": "AnyZodObject"
+										},
+										"name": "AnyZodObject",
+										"package": "zod"
+									}
+								}
+							]
+						},
+						{
+							"id": 18,
+							"name": "experiment",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 267,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 19,
+									"name": "experiment",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 267,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 20,
+							"name": "initZodObjectLiteral",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 408,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 21,
+									"name": "initZodObjectLiteral",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method assumes that the provided Zod Schema is of the following form:\r\n\r\n<code>\r\nz.object({\r\n // and here some JSON properties, like usual for a zod schema.\r\n})\r\n</code>\r\n\r\nBut the provided zod schema could be of the following forms:\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.object({first: z.array(z.string())}),\r\n  z.object({second: z.array(z.string())}),\r\n  z.object({third: z.array(z.string())}),\r\n])\r\n</code>\r\n\r\n\r\n<code>\r\nz.array(z.string()).optional()\r\n</code>\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.array(z.string()),\r\n  z.boolean().optional(),\r\n  z.tuple([\r\n   z.object({something: z.array(z.string())}),\r\n   z.object({somethingElse: z.array(z.string())}),\r\n  ]),\r\n])\r\n</code>\r\n\r\nSo, what I need to do here, to generalize to \r\nany zod schema declaration, is a \r\nfunction, able to determine what is the \r\nfirst top zod function called, and from there, I \r\nwill have 3 cases:\r\n\r\n- [[CASE-1]] The top zod function call is the \"object\" zod function.\r\n- [[CASE-2]] The top zod function call is the \"tuple\" zod function.\r\n- [[CASE-3]] The top zod function call is any other zod function.\r\n\r\nThose 3 cases will be processed as the first recurrent call in the {@ZodSchemaParser#parse()} method.\r\n\r\nFor those 3 cases, we will then have 3 cases for the parameter provided to the top zod function call:\r\n\r\n- [[CASE-1]] A zod Object Literal of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@ObjectLiteralExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": ": that case I already worked on it, with my 2 reccurrent functions.\r\n- [[CASE-2]] An Array Literal of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@ArrayLiteralExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n- [[CASE-3]] A Function Literal, of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@FunctionExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n\r\nSo what makes sense as a property here is\r\nnot <pre>this.zodObjectLiteral</pre>, of \r\ntype "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@ObjectLiteralExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": ", but instead\r\n<pre>this.topZodFunctionCall</pre>\r\nof type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@FunctionExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n\r\nAnd we are going to init \r\nthat <pre>this.topZodFunctionCall</pre> "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@FunctionExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n\r\nAnd we will have method like:\r\n\r\nisZodTopFunctionCallObject()\r\nisZodTopFunctionCallTuple()\r\nisZodTopFunctionCallNeitherTupleNorObject()\r\n---------------------------------------------\r\nAlgorithm to catch the top zod function call:\r\n- to begin with, we test if the first traversed node, for which <pre>node.print()</pre> is equal to the initializer of the <pre>this.zodSchemaVarDeclaration</pre>, ends with <pre>()</pre>. If yes, then we pass the entire node to be processed by our recurrent function, and we have to get rid of the whole chain of the whole chain of function calls...: Here note that the zod framework fgives us a rule that simplifies a lot the work. That rule is : if in a chain of zod function calls, there is one fuction which has a parameter passed to, then we know that this function with parameter is the first function call (on the left), anyone can try to give me any zod chained function calls, that does not comply with that rule, that anyone will fail to im my opinion, yet, we wiil see if it happens, i will just assume this rule as axiomatic.\r\n>>> OHHHH I know, I know, I know :\r\n    if the first traversed node, ends with \"()\"\r\n    then this means that the top function call is \r\n    the last on the right.\r\n    since it has no parameter, then we \r\n    recurently call the algorithm on \r\n    the caller of that function:\r\n     > Until we have only one function call left, and \r\n       the caller is the zod named import\r\n     > that only one function call left then either has parameters of not\r\n     > if it does not have parameters, then we have all \r\n       the informations we need to instantiate the zod schema\r\n     > if it does have parameter(s), then we have our 3 cases for which we have to launch the reccurence:\r\n\r\n       - [[CASE-1]] A zod Object Literal of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@ObjectLiteralExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": ": that case I already worked on it, with my 2 reccurrent functions.\r\n       - [[CASE-2]] An Array Literal of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@ArrayLiteralExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n       - [[CASE-3]] A Function Literal, of 'ts-morph' type "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@FunctionExpression",
+												"text": ""
+											},
+											{
+												"kind": "text",
+												"text": "\r\n\r\nSo, in the case of the zod schema to be a chain of zod function calls \"right at the start\", well then  we have to reduce it  \r\n\r\nOk, our initialized \"topZodFunction\" is acutally:\r\nthe top zod function call which has parameter(s), because in a zod expression, in a chain of call, there can only be one function which takes parameter(s) in.\r\nOk, we have a definition..\r\n\r\nIts there a funny operation on a tree, in graph theory: it i sa bit like \"pull a tree by its hair, to chnge the root of the tree\"...\r\nThis funny operation is simpe, yet very ineresting: \r\n- choose any node, that we will call \"the pulled node\" (but its more interesting if you chosse a node which has a good number of descendants)\r\n- you then \"invert\" all paths from that node, to any of its ascendants:\r\n- that way, the pulled node suddenly endsup being the root node of the tree\r\n- that operation at least makes sense on a graph that is a tree: it has only single root node.\r\nI dot know I think there are useful mathematical results we could get out of considering pulling tree nodes that are neighbors, like that.\r\n\r\n- to begin with, we ignore the first traversed node, for which <pre>node.print()</pre> is equal to the initializer of the <pre>this.zodSchemaVarDeclaration</pre>\r\n- then we will ignodre the second traversed node, which will the the zod named import\r\n- after that,"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the Zod object, instantiated by parsing <pre>this.zodSchemaVarDeclaration</pre>"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 408,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 38,
+							"name": "instantiateFunctionCalledWithParamsFrom",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 1534,
+									"character": 12
+								}
+							],
+							"signatures": [
+								{
+									"id": 39,
+									"name": "instantiateFunctionCalledWithParamsFrom",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method returns <pre>z.calledFunction(<instantiated descendantCalledFunctionParam>)</pre>"
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 1534,
+											"character": 12
+										}
+									],
+									"parameters": [
+										{
+											"id": 40,
+											"name": "calledFunction",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the name of a zod function, which is assumed to be called directly by the named zod import <pre>this.nameOfTheZodImport</pre>"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 41,
+											"name": "calledFunctionParam",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the single parameter passed to the zod function call"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 34,
+							"name": "instantiateLeafFunctionCallFrom",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 824,
+									"character": 12
+								}
+							],
+							"signatures": [
+								{
+									"id": 35,
+									"name": "instantiateLeafFunctionCallFrom",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": []
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 824,
+											"character": 12
+										}
+									],
+									"parameters": [
+										{
+											"id": 36,
+											"name": "caller",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the caller of the function"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 37,
+											"name": "calledFunction",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "a function call that does not take any parameter"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 26,
+							"name": "instantiateZodJsonConfig",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 510,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 27,
+									"name": "instantiateZodJsonConfig",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method instantiates a JSON Object which will be used to create a zod schema <pre>z.object(theJSONObject)</pre>\r\nThis method uses recurrence"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the JSON Object which will be used to create a zod schema <pre>z.object(theJSONObject)</pre>"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 510,
+											"character": 11
+										}
+									],
+									"parameters": [
+										{
+											"id": 28,
+											"name": "objectLiteralNode",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"target": {
+													"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+													"qualifiedName": "ObjectLiteralExpression"
+												},
+												"name": "ObjectLiteralExpression",
+												"package": "ts-morph"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 24,
+							"name": "parse",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 497,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 25,
+									"name": "parse",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method parses the source code to intantiate the Zod Schema"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the Zod object, instantiated by parsing <code>this.zodSchemaVarDeclaration}</code>"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 497,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"sourceFileName": "node_modules/.pnpm/zod@3.22.4/node_modules/zod/lib/types.d.ts",
+											"qualifiedName": "AnyZodObject"
+										},
+										"name": "AnyZodObject",
+										"package": "zod"
+									}
+								}
+							]
+						},
+						{
+							"id": 31,
+							"name": "testInstantiateFrom",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 755,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 32,
+									"name": "testInstantiateFrom",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The method which evaluates a tree of zod funtion calls\r\nthe tree is provided as a simple string, using the two methods:\r\n\r\n<pre>this.instantiateLeafFunctionCallFrom</pre>\r\n<pre>this.instantiateFunctionCalledWithParamsFrom</pre>"
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 755,
+											"character": 11
+										}
+									],
+									"parameters": [
+										{
+											"id": 33,
+											"name": "treeOfZodFunctionCalls",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 22,
+							"name": "validate",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "parser/ZodSchemaParser.ts",
+									"line": 454,
+									"character": 12
+								}
+							],
+							"signatures": [
+								{
+									"id": 23,
+									"name": "validate",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method validates that the\r\nsource code in the source file built\r\nbased on the constructor-provided\r\nstring <pre>zodSchemaAsString</pre>,\r\nassumed to be a zod schema, sucessfully\r\ncompiles with the TypeScript Compiler.\r\n-\r\nhttps://ts-morph.com/setup/diagnostics"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@throws",
+												"content": [
+													{
+														"kind": "text",
+														"text": "an Error if the source code does not compile as TypeScript source code"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "parser/ZodSchemaParser.ts",
+											"line": 454,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								3
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								10,
+								15,
+								8,
+								11,
+								9,
+								13,
+								7,
+								14,
+								16,
+								17,
+								12
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								29,
+								18,
+								20,
+								38,
+								34,
+								26,
+								24,
+								31,
+								22
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "parser/ZodSchemaParser.ts",
+							"line": 36,
+							"character": 15
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "parser/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Namespaces",
+			"children": [
+				1
+			]
+		}
+	],
+	"packageName": "@pesto-io/pesto-zod",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "![Pesto](https://raw.githubusercontent.com/3forges/pesto-zod/feature/init-src/n/ci/documentation/images/pesto-icons/32x32.png)\r\n--\r\n\r\n![npm bundle size](https://img.shields.io/bundlephobia/min/%403forges%2Fpesto-zod?style=for-the-badge&logoColor=%23dc34eb&label=bundle%20size&labelColor=%2334eb3d&color=%23dc34eb)\r\n\r\n![CircleCI (branch)](https://img.shields.io/circleci/build/github/3forges/pesto-zod/feature%252Finit-src%252Fn%252Fci?style=for-the-badge&labelColor=%2334ebd3&color=%23eb34eb)\r\n\r\n# Pesto Zod\r\n\r\nThe "
+		},
+		{
+			"kind": "code",
+			"text": "`pesto-zod`"
+		},
+		{
+			"kind": "text",
+			"text": " npm package contains "
+		},
+		{
+			"kind": "code",
+			"text": "`zod`"
+		},
+		{
+			"kind": "text",
+			"text": " related utilities that the pesto app uses.\r\n\r\nOne of the most important, is the "
+		},
+		{
+			"kind": "code",
+			"text": "`ZodSchemaParser`"
+		},
+		{
+			"kind": "text",
+			"text": ", which is able to read some source code providd as a simple string, and to instantiate a zod schema.\r\n\r\n## How to Use\r\n\r\n* first, install the package:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\nnpm i @pesto-io/pesto-zod\r\n# pnpm add @pesto-io/pesto-zod\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n* Then, in your code, you can:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```TypeScript\r\nimport { ZodSchemaParser } from \"@pesto-io/pesto-zod\"\r\n\r\n\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n## Contribute\r\n\r\nGit clone the source, and:\r\n\r\n* Install dependencies:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm i\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n### Generate the docs\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm run gen:api-docs\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n#### The Astro docs (WIP)\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm run build:docs:astro\r\n# pnpm run dev:docs:astro\r\n\r\n```"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/parser/index.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser"
+		},
+		"3": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.__constructor"
+		},
+		"4": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser"
+		},
+		"5": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "zodSchemaAsString"
+		},
+		"6": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "p_tsConfigRootdir"
+		},
+		"7": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.unique_id"
+		},
+		"8": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.project"
+		},
+		"9": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.tsConfigRootdir"
+		},
+		"10": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.filename"
+		},
+		"11": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.sourceFile"
+		},
+		"12": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.zodSchemaVarDeclaration"
+		},
+		"13": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.typeChecker"
+		},
+		"14": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.zodImport"
+		},
+		"15": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.nameOfTheZodImport"
+		},
+		"16": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.zodObjectLiteral"
+		},
+		"17": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.zodSchemaAsString"
+		},
+		"18": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.experiment"
+		},
+		"19": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.experiment"
+		},
+		"20": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.initZodObjectLiteral"
+		},
+		"21": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.initZodObjectLiteral"
+		},
+		"22": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.validate"
+		},
+		"23": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.validate"
+		},
+		"24": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.parse"
+		},
+		"25": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.parse"
+		},
+		"26": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateZodJsonConfig"
+		},
+		"27": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateZodJsonConfig"
+		},
+		"28": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "objectLiteralNode"
+		},
+		"29": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.demoDFStraversal"
+		},
+		"30": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.demoDFStraversal"
+		},
+		"31": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.testInstantiateFrom"
+		},
+		"32": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.testInstantiateFrom"
+		},
+		"33": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "treeOfZodFunctionCalls"
+		},
+		"34": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateLeafFunctionCallFrom"
+		},
+		"35": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateLeafFunctionCallFrom"
+		},
+		"36": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "caller"
+		},
+		"37": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "calledFunction"
+		},
+		"38": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateFunctionCalledWithParamsFrom"
+		},
+		"39": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "ZodSchemaParser.instantiateFunctionCalledWithParamsFrom"
+		},
+		"40": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "calledFunction"
+		},
+		"41": {
+			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"qualifiedName": "calledFunctionParam"
+		}
+	}
+}

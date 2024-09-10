@@ -1,0 +1,44 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "gen:zod:str": "pnpm dlx exec ./.npm.scripts/generate.stringified.zod.schema.ts",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/preact": "^3.1.1",
+    "@preact/signals": "^1.2.1",
+    "astro": "^4.5.12",
+    "autoprefixer": "^10.4.19",
+    "flowbite": "^2.3.0",
+    "immutable": "5.0.0-beta.5",
+    "postcss": "^8.4.38",
+    "preact": "^10.19.2",
+    "react-arborist": "^3.4.0",
+    "react-json-tree": "^0.18.0",
+    "react-medium-image-zoom": "^5.2.0",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "@preact/compat": "^17.1.2",
+    "astro-robots-txt": "^1.0.0",
+    "react": "npm:@preact/compat@^17.1.2",
+    "react-dom": "npm:@preact/compat@^17.1.2",
+    "sharp": "^0.33.3",
+    "tailwindcss": "^3.4.3"
+  },
+  "overrides": {
+    "@types/react": "^16 || ^17"
+  },
+  "resolutions": {
+    "@types/react": "^16 || ^17"
+  }
+}
