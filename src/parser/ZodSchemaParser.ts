@@ -249,7 +249,7 @@ import {
         ],
       });
   
-      this.sourceFile.save();
+      // this.sourceFile.save();
       this.validate();
       this.typeChecker = this.project.getTypeChecker();
       /**
