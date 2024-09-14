@@ -234,6 +234,18 @@ const zodSchemaAsText7 = `z.tuple([
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
     ]).nullable().optional()`
+
+/**
+ * 
+ */
+const zodSchema8 = z.boolean().nullable().optional()
+const zodSchemaAsText8 = `z.boolean().nullable().optional()`
+
+/**
+ * 
+ */
+const zodSchema9 = z.array(z.boolean().nullish()).nullable().optional()
+const zodSchemaAsText9 = `z.array(z.boolean().nullish()).nullable().optional()`
 /**
  * ------------------------------------
  * ------------------------------------
@@ -470,6 +482,65 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      //expect(experimentResult.print() === `nullable`).toBe(true);
     });
-
   });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText8 : [${zodSchemaAsText8}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText8);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+  });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText9 : [${zodSchemaAsText9}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText9);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+  });
+
+
 });
