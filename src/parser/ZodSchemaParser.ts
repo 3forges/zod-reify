@@ -18,6 +18,9 @@ import {
     ArrayLiteralExpression,
     FunctionExpression,
     ForEachDescendantTraversalControl,
+    ts,
+    Structure,
+    CallSignatureDeclarationStructure,
     // CallExpression,
     // ts,
     // type ObjectLiteralElementLike,
@@ -263,14 +266,26 @@ import {
         );
       }
     }
-  
-    public experiment() {
+    public reify(node: Node<ts.Node>): any {
+      
+    }
+    public experiment(): {
+      noArgsFunctionCallsStack: string[]
+      topZodFunctionCallWithArgs: Node<ts.Node>[]
+    } {
       // const theSrcCodeToParse = this.zodSchemaAsString;
       const zodSchemaVarDeclaration =
         this.sourceFile.getVariableDeclarationOrThrow(
           this.zodSchemaVarDeclaration.name
         );
-  
+      let toReturn: {
+        noArgsFunctionCallsStack: string[]
+        topZodFunctionCallWithArgs: Node<ts.Node>[]
+      } = {
+        noArgsFunctionCallsStack: [],
+        topZodFunctionCallWithArgs: []
+      } //: Node = zodSchemaVarDeclaration;
+      let noArgsFunctionCallsStack: string[] = []
       zodSchemaVarDeclaration.forEachDescendant((node: Node, traversal: ForEachDescendantTraversalControl) => {
         // traversal.skip()
         // traversal.up()
@@ -280,21 +295,61 @@ import {
           //const isLiteralExpression = Node.isLiteralExpression(node)
           //const isExpressionStatement = Node.isExpressionStatement(node)
           console.log(
-            `[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -----------------------------------------`
+            `[@ZodSchemaParser].[experiment()] - zodSchemaVarDeclaration.forEachDescendant() -----------------------------------------`
           );
           // here im looking for a method to confirm whether
           //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isYieldExpression? :[${isYieldExpression}]`)
           //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isLiteralExpression? :[${isLiteralExpression}]`)
           //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isExpressionStatement? :[${isExpressionStatement}]`)
           console.log(
-            `[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
+            `[@ZodSchemaParser].[experiment()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
           );
-          if (Node.isObjectLiteralExpression(node)) {
-            this.zodObjectLiteral = node;
-            traversal.stop();
+          // if (Node.isFunctionExpression(node)) {
+          if (Node.isCallExpression(node)) {
+            console.log(
+              `[@ZodSchemaParser].[experiment()] - zodSchemaVarDeclaration.forEachDescendant() -  selected CallExpression node [KindName=${node.getKindName()}] is :[${node.print()}]`
+            );
+            // StructureKind.CallSignature
+            /*
+            const machin: CallSignatureDeclarationStructure = {
+              kind: StructureKind.CallSignature,
+              parameters: [
+                {
+                  name: `bidule`,
+                }
+              ]
+            }
+            */
+            const childrenArray: Node<ts.Node>[] = node.forEachChildAsArray()
+            const descendantsArray: Node<ts.Node>[] = node.forEachDescendantAsArray()
+
+            console.log(
+              `[@ZodSchemaParser].[experiment()] - zodSchemaVarDeclaration.forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+            );
+            if (childrenArray.length > 1) {// ie: if the function call has parameters
+              toReturn.noArgsFunctionCallsStack = noArgsFunctionCallsStack
+              toReturn.topZodFunctionCallWithArgs = childrenArray
+              
+              traversal.stop()
+            } else if (childrenArray.length == 1) {
+              let lastIndexOfDot =
+              childrenArray[0].print().lastIndexOf(`.`);
+              let calledFunctionName = childrenArray[0].print().substring(
+                lastIndexOfDot + 1 // + 1 : to exclude the dot character
+              );
+              console.log(
+                `[@ZodSchemaParser].[experiment()] - zodSchemaVarDeclaration.forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+              );
+              // noArgsFunctionCallsStack.push(calledFunctionName)
+              noArgsFunctionCallsStack = [
+                calledFunctionName,
+                ...noArgsFunctionCallsStack
+              ]
+            }
           }
         }
       });
+      return toReturn;
     }
     /**
      * This method assumes that the provided Zod Schema is of the following form:
@@ -536,7 +591,8 @@ import {
               `[@ZodSchemaParser].[parse()] - propertyOfTheObjLiteral - propStructure.initializer = [${propStructure.initializer}]`
             );
             if (
-              `${propStructure.initializer}`.includes(
+              // `${propStructure.initializer}`.includes(`${this.nameOfTheZodImport}.object`
+              `${propStructure.initializer}`.startsWith(
                 `${this.nameOfTheZodImport}.object`
               )
             ) {
@@ -603,7 +659,8 @@ import {
               `[@ZodSchemaParser].[demoDFStraversal()] - propertyOfTheObjLiteral - propStructure.initializer = [${propStructure.initializer}]`
             );
             if (
-              `${propStructure.initializer}`.includes(
+              // `${propStructure.initializer}`.includes(`${this.nameOfTheZodImport}.object`
+              `${propStructure.initializer}`.startsWith(
                 `${this.nameOfTheZodImport}.object`
               )
             ) {

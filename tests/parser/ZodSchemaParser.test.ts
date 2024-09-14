@@ -3,6 +3,7 @@ import { z } from "zod";
 import * as grayMatter from "gray-matter"; // pnpm add --save gray-matter
 
 import * as parser from "../../src/parser";
+import { FunctionExpression, Node, ts } from "ts-morph";
 
 /**
  * ------------------------------------
@@ -206,17 +207,46 @@ const zodSchemaAsText5 = `z
     }),
   })`;
 
+
+/**
+ * 
+ */
+const zodSchema6 = z.tuple([
+  z.object({first: z.array(z.string())}),
+  z.object({second: z.array(z.string())}),
+  z.object({third: z.array(z.string())}),
+])
+const zodSchemaAsText6 = `z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])`
+/**
+ * 
+ */
+const zodSchema7 = z.tuple([
+  z.object({first: z.array(z.string())}),
+  z.object({second: z.array(z.string())}),
+  z.object({third: z.array(z.string())}),
+]).nullable().optional()
+const zodSchemaAsText7 = `z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ]).nullable().optional()`
 /**
  * ------------------------------------
  * ------------------------------------
  * ------------------------------------
- *          First Tests Suite
+ *          First Tests Suite:
+ *             Testing the
+ *  {@ZodSchemaParser } parse() method
  * ------------------------------------
  * ------------------------------------
  * ------------------------------------
  */
 
-describe("Testing - ZodSchemaParser", () => {
+describe("Testing - ZodSchemaParser parse() method", () => {
   afterAll(() => {
     //jest.restoreAllMocks();
     // nothing to do
@@ -298,6 +328,147 @@ describe("Testing - ZodSchemaParser", () => {
         ` >>>>>>> resultOfZodParse :[${JSON.stringify(resultOfZodParse, null, 2)}]`
       );
       expect(resultOfZodParse.success).toBe(true);
+    });
+
+  });
+});
+
+
+/**
+ * ------------------------------------
+ * ------------------------------------
+ * ------------------------------------
+ *          First Tests Suite:
+ *             Testing the
+ *  {@ZodSchemaParser } experiment() method
+ * ------------------------------------
+ * ------------------------------------
+ * ------------------------------------
+ */
+
+describe("Testing - ZodSchemaParser experiment() method", () => {
+  afterAll(() => {
+    //jest.restoreAllMocks();
+    // nothing to do
+  });
+
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText3 : [${zodSchemaAsText3}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText3);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+
+  });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+
+  });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText6 : [${zodSchemaAsText6}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText6);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+
+  });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText7 : [${zodSchemaAsText7}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText7);
+
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+     
+     //expect(experimentResult.print() === `nullable`).toBe(true);
     });
 
   });
