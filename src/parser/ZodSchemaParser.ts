@@ -21,6 +21,7 @@ import {
     ts,
     Structure,
     CallSignatureDeclarationStructure,
+    PropertyAccessExpression,
     // CallExpression,
     // ts,
     // type ObjectLiteralElementLike,
@@ -312,9 +313,67 @@ import {
           }
         });
     }
+    /**
+     * Okay, now here I can call the reccurrence : 
+     * - step 1./ I call a function which will instantiate/reify the {toReturn.topZodFunctionCallWithArgs} function call.
+     * - step 2./ and on the object rturned by the above function call:
+     *   - I loop over each of the [toReturn.noArgsFunctionCallsStack] functions,
+     *   - to call all of the function
+     * 
+     * - About [step 1./]: this is where I will distinguish 3 cases : 
+     *   + [[CASE 1]]: the called zod function is the {z.object} function
+     *   + [[CASE 2]]: the called zod function is the {z.tuple} function 
+     *   + [[CASE 3]]: the called zod function is any other zod function,
+     * 
+     * 
+     * By the way, there is one important thing to consider:
+     * there might just as well be absolutelyno zodfunction call with args:
+     * 
+     * z.array().number().optional();
+     * 
+     * And in that case the {@toReturn.topZodFunctionCallWithArgs } array is an empty, zero-length array []
+     * 
+     */
+    public reifyZodFunctionCallWithArgs(calledFunction: PropertyAccessExpression/*Node<ts.Node>*/, providedArgs: Node<ts.Node>): any {
+      //throw new Error(`Not Implemented yet Exception`)
+      /**
+       * Okay so here:
+       * + I will have to be able to determine if the called function is either object, tuple, or any other
+       * + And then I already have one of those 
+       *   3 cases that is implemented, the case 
+       *   of the object zod function call:
+       *       
+       *       let toReturn: AnyZodObject = z.object({
+       *         ...this.instantiateZodJsonConfig(providedArgs) //this.zodObjectLiteral
+       *       });
+       *       return toReturn; 
+       */
+      if (calledFunction.print() === `${this.nameOfTheZodImport}.object`) {
+        if (Node.isObjectLiteralExpression(providedArgs)) {
+          return z.object({
+            /**
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             * WARNING: the [this.instantiateZodJsonConfig]
+             * method will need to be redesign to 
+             * take in account the case where we have 
+             * JSON properties using he tuple function.
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             * /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+             */
+            ...this.instantiateZodJsonConfig(providedArgs)
+          })
+        } else {
+          throw new Error(`[@ZodSchemaParser].[reifyZodFunctionCallWithArgs] - the provided [calledFunction] is the object zod function : [${calledFunction.print()}], but its provided arguùent is not an object literal: providedArgs.getKindName() = [${providedArgs.getKindName()}]`)
+        }
+      } else if (calledFunction.print() === `${this.nameOfTheZodImport}.tuple`) {
+        throw new Error(`[@ZodSchemaParser].[reifyZodFunctionCallWithArgs] - method implementation not completed for case [calledFunction] is the tuple zod function`)
+      } else {
+        throw new Error(`[@ZodSchemaParser].[reifyZodFunctionCallWithArgs] - method implementation not completed for case [calledFunction] is neither the object or the tuple zod function`)
+      }
 
-    public reify(node: Node<ts.Node>): any {
-      
     }
 
     public experiment(): {
@@ -421,8 +480,127 @@ import {
        *   + [[CASE 1]]: the called zod function is the {z.object} function
        *   + [[CASE 2]]: the called zod function is the {z.tuple} function 
        *   + [[CASE 3]]: the called zod function is any other zod function,
+       * 
+       * 
+       * By the way, there is one important thing to consider:
+       * there might just as well be absolutelyno zodfunction call with args:
+       * 
+       * z.array().number().optional();
+       * 
+       * And in that case 
+       * - the {@toReturn.topZodFunctionCallWithArgs } array is an empty, zero-length array []
+       * - and instead of calling 
+       * 
+       * 
        */
+      if (toReturn.topZodFunctionCallWithArgs.length == 0) {
+        /**
+         * there, we don't need to call {this.reifyZodFunctionCallWithArgs}
+         * intead, we will directly call on the named zod import, all the no args function in 
+         */
+        this.reifyNoArgsZodFunctionCallsChain(z, toReturn.noArgsFunctionCallsStack)
+        
+
+      } else if (toReturn.topZodFunctionCallWithArgs.length == 2) {
+        if (Node.isPropertyAccessExpression(toReturn.topZodFunctionCallWithArgs[0])) {
+          this.reifyNoArgsZodFunctionCallsChain(this.reifyZodFunctionCallWithArgs(toReturn.topZodFunctionCallWithArgs[0], toReturn.topZodFunctionCallWithArgs[1]), toReturn.noArgsFunctionCallsStack)
+        } else {
+          throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs[0]] is expected to be a Property AccessExpression, but is not, its kind is : [${toReturn.topZodFunctionCallWithArgs[0].getKindName()}]`)  
+        }
+      } else {
+        throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs.length] must equal either zero or 2, but [toReturn.topZodFunctionCallWithArgs.length=[${toReturn.topZodFunctionCallWithArgs.length}]]`)
+      }
       return toReturn;
+    }
+
+    private reifyNoArgsZodFunctionCallsChain(rootCaller: any, noArgsFunctionCallsStack: string[]): any {
+      let toReturn = rootCaller;
+      if (noArgsFunctionCallsStack.length == 0) {
+        return toReturn
+      } else {
+        console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - length of the [noArgsFunctionCallsStack] array before [pop()] = [${noArgsFunctionCallsStack.length}]`)
+        const zodFunctionName = noArgsFunctionCallsStack.pop()// noArgsFunctionCallsStack[0]
+        console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - length of the [noArgsFunctionCallsStack] array after [pop()] = [${noArgsFunctionCallsStack.length}]`)
+        switch (zodFunctionName) { // reifyNoArgsZodFunctionCallsChain
+          case "string": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [string]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.string(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "boolean": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [boolean]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.boolean(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "number": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [number]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.number(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "any": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [any]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.any(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "bigint": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [bigint]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.bigint(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "date": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [date]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.date(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "function": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [function]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.function(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "nan": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [nan]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.nan(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "never": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [never]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.never(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "null": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [null]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.null(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "oboolean": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [oboolean]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.oboolean(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "unknown": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [unknown]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.unknown(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "ostring": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [ostring]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.ostring(), noArgsFunctionCallsStack);
+            // break;
+          }
+          case "void": {
+            console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [void]`);
+            return this.reifyNoArgsZodFunctionCallsChain(rootCaller.void(), noArgsFunctionCallsStack);
+            // break;
+          }
+  
+          default:
+            throw new Error(
+              `[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain(): any] - ERROR, could not determine the zod function which matches [zodFunctionName=${zodFunctionName}]`
+            );
+            break;
+        }
+        
+      }
     }
     /**
      * This method assumes that the provided Zod Schema is of the following form:
@@ -957,7 +1135,7 @@ import {
     ): any {
       console.log(`[@ZodSchemaParser].[instantiateLeafFunctionCallFrom()] - START with params caller=[${caller}] calledFunction=[${calledFunction}]`);
       if (caller == this.nameOfTheZodImport) {
-        switch (calledFunction) {
+        switch (calledFunction) { 
           case "string": {
             console.log(`[@ZodSchemaParser].[instantiateLeafFunctionCallFrom()] - caller is the zod named import - Ok this calledFunction is an [string]`);
             return z.string();
