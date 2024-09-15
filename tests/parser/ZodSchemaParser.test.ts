@@ -1,5 +1,5 @@
 import { parse } from "zod-matter";
-import { z } from "zod";
+import { AnyZodObject, z } from "zod";
 import * as grayMatter from "gray-matter"; // pnpm add --save gray-matter
 
 import * as parser from "../../src/parser";
@@ -176,6 +176,96 @@ const zodSchemaInstance5 = z
     }),
   });
 
+/**
+ * Below all methods support for AnyZodObject
+ * meaning for schema of the 
+ * 
+ * z.object({
+ *   //...
+ * })
+ * 
+ * form.
+ * 
+ * https://zod.dev/?id=objects
+ * 
+ * the non supported methods are not supported because
+ * they do take 
+ */
+
+// Not supported:
+zodSchemaInstance5.extend
+zodSchemaInstance5.merge
+zodSchemaInstance5.pick
+zodSchemaInstance5.omit
+zodSchemaInstance5.partial
+zodSchemaInstance5.deepPartial
+zodSchemaInstance5.catch
+zodSchemaInstance5.catchall
+
+// Supported:
+zodSchemaInstance5.required
+zodSchemaInstance5.passthrough
+zodSchemaInstance5.strict
+zodSchemaInstance5.strip
+
+/**
+ * Below all methods support for general zod schemas
+ * meaning any zod schema no matter how it was generated
+ * https://zod.dev/?id=schema-methods
+ */
+
+.parse
+.parseAsync
+.safeParse
+.safeParseAsync
+.refine
+.superRefine
+.transform
+.brand
+.pipe
+// instead of [or] & [and] schema function, use intersection and union
+.or
+.and
+
+// support for default and catch method also is prohibited
+.catch
+// yet, the lack of support for the
+// default function is problematic in
+// the context of astro projects...: So definitely, I 
+// will have, to generalize where
+// multiple function calls with
+// args are present in a chain.
+// 
+.default
+
+/**
+ * 
+ */
+.describe
+.optional
+.nullable
+.nullish
+.array
+.promise
+.readonly
+
+
+/**
+ * Below all methods support for zod schemas
+ * generated with the array function
+ * https://zod.dev/?id=arrays
+ * (all supported)
+ */
+zodSchemaInstance5.array().min
+zodSchemaInstance5.array().max
+zodSchemaInstance5.array().length
+zodSchemaInstance5.array().nonempty
+
+
+
+/**
+ * -----------------------
+ */
 const zodSchemaAsText5 = `z
   .object({
     title: z.string(),
@@ -221,6 +311,8 @@ const zodSchemaAsText6 = `z.tuple([
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
     ])`
+    //z.keyOf(zodSchema6)
+
 /**
  * 
  */
