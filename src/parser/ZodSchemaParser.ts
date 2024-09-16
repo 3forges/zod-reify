@@ -528,6 +528,142 @@ import {
 
     }
 
+    /**
+     * This method will be a full reccurence:
+     * 
+     * @param aZodExpressionNode ts-morph / TypeScript Compiler API
+     * @returns the reified typescript object, returned by the zod expression
+     */
+    public experiment2(aZodExpressionNode?: Node<ts.Node>): any {
+      
+      /**
+       * The Object to return:
+       * Instead of that object, the experiment method will return the instantiated zod object
+       * so experiment is the prototype for the 
+       * generalized algorithm() which will replace parse()
+       */
+      let toReturn: any = null
+
+      /**
+       * We either:
+       * - gather (into {toReturn.noArgsFunctionCallsStack}) the top zod function called without argument, and proceed traversing the descendants,
+       * - or gather (into {toReturn.topZodFunctionCallWithArgs}) the top zod function called WITH argument(s): we then know that it is the zod function call "on the extreme left", meaning that the object calling that function is the zod named import. So we return, we do not need to proceed traversing the descendants.
+       */
+      const processedNode = aZodExpressionNode||this.zodExpressionNode
+      if (Node.isCallExpression(processedNode)) {
+        console.log(
+          `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
+        );
+        const childrenArray: Node<ts.Node>[] = processedNode.forEachChildAsArray()
+        
+        console.log(
+          `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+        );
+        if (childrenArray.length > 1) {// i.e.: if the function call has parameters
+          toReturn.topZodFunctionCallWithArgs = childrenArray
+          // return toReturn
+        } else if (childrenArray.length == 1) { // i.e.: if function is called without parameters
+          let lastIndexOfDot =
+          childrenArray[0].print().lastIndexOf(`.`);
+          let calledFunctionName = childrenArray[0].print().substring(
+            lastIndexOfDot + 1 // + 1 : to exclude the dot character
+          );
+          console.log(
+            `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          );
+          // noArgsFunctionCallsStack.push(calledFunctionName)
+          toReturn.noArgsFunctionCallsStack = [
+            calledFunctionName,
+            ...toReturn.noArgsFunctionCallsStack
+          ]
+
+          /////////////////////////////////////////////
+          ///// TRAVERSE DESCENDANTS
+          /////////////////////////////////////////////
+          /**
+           * 
+           */
+          processedNode.forEachDescendant((node: Node, traversal: ForEachDescendantTraversalControl) => {
+            console.log(
+              `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -----------------------------------------`
+            );
+            console.log(
+              `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
+            );
+            if (Node.isCallExpression(node)) {
+              console.log(
+                `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  selected CallExpression node [KindName=${node.getKindName()}] is :[${node.print()}]`
+              );
+              const childrenArray: Node<ts.Node>[] = node.forEachChildAsArray()
+              // const descendantsArray: Node<ts.Node>[] = node.forEachDescendantAsArray()
+              console.log(
+                `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+              );
+              if (childrenArray.length > 1) {// ie: if the function call has parameters
+                toReturn.topZodFunctionCallWithArgs = childrenArray
+                traversal.stop()
+              } else if (childrenArray.length == 1) {
+                let lastIndexOfDot =
+                childrenArray[0].print().lastIndexOf(`.`);
+                let calledFunctionName = childrenArray[0].print().substring(
+                  lastIndexOfDot + 1 // + 1 : to exclude the dot character
+                );
+                console.log(
+                  `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+                );
+                // noArgsFunctionCallsStack.push(calledFunctionName)
+                toReturn.noArgsFunctionCallsStack = [
+                  calledFunctionName,
+                  ...toReturn.noArgsFunctionCallsStack
+                ]
+              }
+            }
+          });
+
+        }
+      }
+      /**
+       * Okay, now here I can call the reccurrence : 
+       * - step 1./ I call a function which will instantiate/reify the {toReturn.topZodFunctionCallWithArgs} function call.
+       * - step 2./ and on the object rturned by the above function call:
+       *   - I loop over each of the [toReturn.noArgsFunctionCallsStack] functions,
+       *   - to call all of the function
+       * 
+       * - About [step 1./]: this is where I will distinguish 3 cases : 
+       *   + [[CASE 1]]: the called zod function is the {z.object} function
+       *   + [[CASE 2]]: the called zod function is the {z.tuple} function 
+       *   + [[CASE 3]]: the called zod function is any other zod function,
+       * 
+       * 
+       * By the way, there is one important thing to consider:
+       * there might just as well be absolutelyno zodfunction call with args:
+       * 
+       * z.array().number().optional();
+       * 
+       * And in that case 
+       * - the {@toReturn.topZodFunctionCallWithArgs } array is an empty, zero-length array []
+       * - and instead of calling 
+       * 
+       * 
+       */
+      if (toReturn.topZodFunctionCallWithArgs.length == 0) {
+        /**
+         * There, we don't need to call {this.reifyZodFunctionCallWithArgs}
+         * instead, we will directly call on the named zod import, all the no args function in 
+         */
+        toReturn.reifiedZodExpression = this.reifyNoArgsZodFunctionCallsChain(z, toReturn.noArgsFunctionCallsStack)
+      } else if (toReturn.topZodFunctionCallWithArgs.length == 2) {
+        if (Node.isPropertyAccessExpression(toReturn.topZodFunctionCallWithArgs[0])) {
+          toReturn.reifiedZodExpression = this.reifyNoArgsZodFunctionCallsChain(this.reifyZodFunctionCallWithArgs(toReturn.topZodFunctionCallWithArgs[0], toReturn.topZodFunctionCallWithArgs[1]), toReturn.noArgsFunctionCallsStack)
+        } else {
+          throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs[0]] is expected to be a Property AccessExpression, but is not, its kind is : [${toReturn.topZodFunctionCallWithArgs[0].getKindName()}]`)  
+        }
+      } else {
+        throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs.length] must equal either zero or 2, but [toReturn.topZodFunctionCallWithArgs.length=[${toReturn.topZodFunctionCallWithArgs.length}]]`)
+      }
+      return toReturn;
+    }
+
     public experiment(aZodExpressionNode?: Node<ts.Node>): {
       noArgsFunctionCallsStack: string[]
       topZodFunctionCallWithArgs: Node<ts.Node>[]
@@ -555,14 +691,15 @@ import {
        * - gather (into {toReturn.noArgsFunctionCallsStack}) the top zod function called without argument, and proceed traversing the descendants,
        * - or gather (into {toReturn.topZodFunctionCallWithArgs}) the top zod function called WITH argument(s): we then know that it is the zod function call "on the extreme left", meaning that the object calling that function is the zod named import. So we return, we do not need to proceed traversing the descendants.
        */
-      if (Node.isCallExpression(aZodExpressionNode||this.zodExpressionNode)) {
+      const processedNode = aZodExpressionNode||this.zodExpressionNode
+      if (Node.isCallExpression(processedNode)) {
         console.log(
-          `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${this.zodExpressionNode.getKindName()}] is :[${this.zodExpressionNode.print()}]`
+          `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
         );
-        const childrenArray: Node<ts.Node>[] = this.zodExpressionNode.forEachChildAsArray()
+        const childrenArray: Node<ts.Node>[] = processedNode.forEachChildAsArray()
         
         console.log(
-          `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+          `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
         );
         if (childrenArray.length > 1) {// ie: if the function call has parameters
           toReturn.topZodFunctionCallWithArgs = childrenArray
@@ -574,7 +711,7 @@ import {
             lastIndexOfDot + 1 // + 1 : to exclude the dot character
           );
           console.log(
-            `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+            `[@ZodSchemaParser].[experiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
           );
           // noArgsFunctionCallsStack.push(calledFunctionName)
           toReturn.noArgsFunctionCallsStack = [
@@ -588,21 +725,21 @@ import {
           /**
            * 
            */
-          this.zodExpressionNode.forEachDescendant((node: Node, traversal: ForEachDescendantTraversalControl) => {
+          processedNode.forEachDescendant((node: Node, traversal: ForEachDescendantTraversalControl) => {
             console.log(
-              `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -----------------------------------------`
+              `[@ZodSchemaParser].[experiment()] - processedNode.forEachDescendant() -----------------------------------------`
             );
             console.log(
-              `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
+              `[@ZodSchemaParser].[experiment()] - processedNode.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
             );
             if (Node.isCallExpression(node)) {
               console.log(
-                `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  selected CallExpression node [KindName=${node.getKindName()}] is :[${node.print()}]`
+                `[@ZodSchemaParser].[experiment()] - processedNode.forEachDescendant() -  selected CallExpression node [KindName=${node.getKindName()}] is :[${node.print()}]`
               );
               const childrenArray: Node<ts.Node>[] = node.forEachChildAsArray()
               // const descendantsArray: Node<ts.Node>[] = node.forEachDescendantAsArray()
               console.log(
-                `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+                `[@ZodSchemaParser].[experiment()] - processedNode.forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
               );
               if (childrenArray.length > 1) {// ie: if the function call has parameters
                 toReturn.topZodFunctionCallWithArgs = childrenArray
@@ -614,7 +751,7 @@ import {
                   lastIndexOfDot + 1 // + 1 : to exclude the dot character
                 );
                 console.log(
-                  `[@ZodSchemaParser].[experiment()] - this.zodExpressionNode.forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+                  `[@ZodSchemaParser].[experiment()] - processedNode.forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
                 );
                 // noArgsFunctionCallsStack.push(calledFunctionName)
                 toReturn.noArgsFunctionCallsStack = [
