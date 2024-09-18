@@ -656,6 +656,10 @@ import {
         } else if (childrenArray.length > 2) {
           throw new Error(`reifying a zod function call which has more than 2 passed arguments is not supported yet.`)
         }
+      } else if (Node.isObjectLiteralExpression(processedNode)) {
+        // that for the object function case
+      } else if (Node.isArrayLiteralExpression(processedNode)) {
+        // that's for the tuple function case 
       }
       /**
        * Okay, now here I can call the reccurrence : 
