@@ -595,9 +595,32 @@ import {
         );
         */
         
-        if (childrenArray.length > 1) {// i.e.: if the function call has parameters
-          toReturn.topZodFunctionCallWithArgs = childrenArray
-          // return toReturn
+        if (childrenArray.length == 2) {// i.e.: if the function call has parameters
+          
+          let lastIndexOfDot = childrenArray[0].print().lastIndexOf(`.`)
+          let calledFunctionName = childrenArray[0].print().substring(
+            lastIndexOfDot + 1 // + 1 : to exclude the dot character
+          );
+
+          const passedArgument = childrenArray[1]
+          console.log(
+            `[@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          );
+          const printedChildrenOfChildrensArray = childrenOfChildrensArray.map((node:Node<ts.Node>) => {
+            return node.print()
+          })
+          console.log(
+            `[@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify({
+              printedChildrenOfChildrensArray: printedChildrenOfChildrensArray
+            }, null, 2)}]`
+          );
+          const caller = childrenOfChildrensArray[0]
+          console.log(
+            `[@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[${caller.print()}]`
+          );
+          this.reifyZodFunctionCallWithOneArg(this.betterExperiment(caller), calledFunctionName, this.betterExperiment(passedArgument))
+          
+
         } else if (childrenArray.length == 1) { // i.e.: if function is called without parameters
           let lastIndexOfDot =
           childrenArray[0].print().lastIndexOf(`.`);
@@ -630,6 +653,8 @@ import {
           /**
            * 
            */
+        } else if (childrenArray.length > 2) {
+          throw new Error(`reifying a zod function call which has more than 2 passed arguments is not supported yet.`)
         }
       }
       /**
@@ -656,22 +681,11 @@ import {
        * 
        * 
        */
-      if (toReturn.topZodFunctionCallWithArgs.length == 0) {
-        /**
-         * There, we don't need to call {this.reifyZodFunctionCallWithArgs}
-         * instead, we will directly call on the named zod import, all the no args function in 
-         */
-        toReturn.reifiedZodExpression = this.reifyNoArgsZodFunctionCallsChain(z, toReturn.noArgsFunctionCallsStack)
-      } else if (toReturn.topZodFunctionCallWithArgs.length == 2) {
-        if (Node.isPropertyAccessExpression(toReturn.topZodFunctionCallWithArgs[0])) {
-          toReturn.reifiedZodExpression = this.reifyNoArgsZodFunctionCallsChain(this.reifyZodFunctionCallWithArgs(toReturn.topZodFunctionCallWithArgs[0], toReturn.topZodFunctionCallWithArgs[1]), toReturn.noArgsFunctionCallsStack)
-        } else {
-          throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs[0]] is expected to be a Property AccessExpression, but is not, its kind is : [${toReturn.topZodFunctionCallWithArgs[0].getKindName()}]`)  
-        }
-      } else {
-        throw new Error(`[@ZodSchemaParser].[experiment()] - [toReturn.topZodFunctionCallWithArgs.length] must equal either zero or 2, but [toReturn.topZodFunctionCallWithArgs.length=[${toReturn.topZodFunctionCallWithArgs.length}]]`)
-      }
+      
       return toReturn;
+    }
+    private reifyZodFunctionCallWithOneArg(caller: any, calledFunctionName: string, passedArgument: any /* Node<ts.Node> */): any {
+      throw new Error("Method not implemented.");
     }
 
     /**
