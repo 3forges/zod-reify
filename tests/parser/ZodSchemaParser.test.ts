@@ -549,5 +549,72 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
     });
   });
 
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText2 : [${zodSchemaAsText2}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText2);
+
+     const betterExperimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     
+    /**
+     * 
+     */
+
+      /*
+      console.log(
+        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${betterExperimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.length :[${betterExperimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      betterExperimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+      */
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+  });
+
+  /**
+   * 
+   */
+  describe("Test the experiment() method properly find the top function call in the zod schema", () => {
+    it(`shall return the top function call `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
+
+     const betterExperimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     
+    /**
+     * 
+     */
+      /*
+      console.log(
+        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${betterExperimentResult.noArgsFunctionCallsStack}]`
+      );
+      console.log(
+        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.length :[${betterExperimentResult.topZodFunctionCallWithArgs.length}]`
+      );
+      betterExperimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
+        console.log(
+          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
+        );
+      })
+      */
+     //expect(experimentResult.print() === `nullable`).toBe(true);
+    });
+  });
+
+  
+
 
 });
