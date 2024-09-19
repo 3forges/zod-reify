@@ -31,6 +31,8 @@ const zodSchemaAsText1 = `z
     voila: z.string(),
   })
   .optional()`;
+
+const testTsObjectToParse1 = null
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Test 2
@@ -49,7 +51,13 @@ const zodSchemaAsText2 = `z
   })
   .array()
   .optional()`;
-/**
+const testTsObjectToParse2 = [{
+  voila: `ça marche`
+},{
+  voila: `vraiment super bien!`
+}]
+
+  /**
  * ++++++++++++++++++++++++++++++++++++
  *          Test 3
  * ++++++++++++++++++++++++++++++++++++
@@ -301,6 +309,170 @@ const zodSchemaAsText5 = `z
     }),
   })`;
 
+const testMarkDown5 = `---\n
+  title: HiDeoo\n
+  hereAnother: \n
+    reseau: \n
+      cesar: \n
+        - marc\n
+        - aurèle\n
+        - auguste\n
+    imLackingIdea: true\n
+    itsForATest: false\n
+  tags: \n
+    - william\n
+    - the\n
+    - conquerer\n
+  another: true\n
+  exampleCategory:\n
+    - - joe\n
+      - alfred\n
+      - alvin\n
+    - - thirteen\n
+      - hundred\n
+      - books\n
+    - - going\n
+      - overseas\n
+      - together\n
+  example2Category: \n
+    - false\n
+    - true\n
+    - false\n
+  example3Category: \n
+    - 7684464125145\n
+    - 26454943684684\n
+    - 1516546884648\n
+  example4Category: \n
+    - 7684464125145\n
+    - 26454943684684\n
+    - 1516546884648\n
+  image: "./images/paysages/puydedome.png"\n
+  somethingElseNested:\n
+    firstname: \n
+      - Jean-Baptiste\n
+      - Marie\n
+      - Éric\n
+    lastname: Lasselle\n
+    color: yellow\n
+    two: false\n
+    three: \n
+      - 56\n
+      - 789\n
+      - 159\n
+    four: \n
+      - 15\n
+      - 46\n
+      - 739\n
+    example1Categories: \n
+      - design\n
+      - terraform\n
+      - plugin\n
+    example2Categories: \n
+      first:\n
+        - joe\n
+        - alfred\n
+        - alvin\n
+      second:\n
+        - thirteen\n
+        - hundred\n
+        - books\n
+      third:\n
+        - going\n
+        - overseas\n
+        - together\n
+  department: \n
+    divisionName: CCOE\n
+    secrecyTags: 
+      - LEVEL3\n 
+      - NOCOPY\n
+---\n
+# Hello Pesto ZodSchemaParser!
+`
+
+const testTsObjectToParse5 = {
+  title: `HiDeoo`,
+  hereAnother: {
+    reseau: {
+      cesar: [
+        "marc",
+        "aurèle",
+        "auguste"
+      ]}
+  },
+  tags: [
+    "william",
+    "the",
+    "conquerer"
+  ],
+  another: true,
+  exampleCategory: [
+    [ 
+      "joe",
+      "alfred",
+      "alvin",
+    ],
+    [ 
+      "thirteen",
+      "hundred",
+      "books",
+    ],
+    [ 
+      "going",
+      "overseas",
+      "together",
+    ]
+  ],
+  example2Category: [
+    false,
+    true,
+    false
+  ],
+  example3Category: [
+    7684464125145,
+    26454943684684,
+    1516546884648
+  ],
+  example4Category: [
+    7684464125145,
+    26454943684684,
+    1516546884648
+  ],
+  image: `https://fastly.picsum.photos/id/6/200/200.jpg?hmac=g4Q9Vcu5Ohm8Rwap3b6HSIxUfIALZ6BasESHhw7VjLE`,
+  somethingElseNested: {
+    firstname: [
+      `Jean-Baptiste`,
+      `Marie`,
+      `Éric`
+    ],
+    lastname: `Lasselle`,
+    color: `yellow`,
+    two: false,
+    three: [
+      56,
+      789,
+      159
+    ],
+    four: [
+      15,
+      46,
+      739
+    ]
+  },
+  department: {
+    divisionName: `CCOE`,
+    secrecyTags: [
+      `LEVEL3`, 
+      `NOCOPY`
+    ]
+  },
+}
+
+
+
+
+
+
+
 
 /**
  * 
@@ -316,7 +488,26 @@ const zodSchemaAsText6 = `z.tuple([
       z.object({third: z.array(z.string())}),
     ])`
     //z.keyOf(zodSchema6)
-
+const testTsObjectToParse6 = [
+  { 
+    first: [
+      "I am in the [first]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  },
+  { 
+    second: [
+      "I am in the [second]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  },
+  { 
+    third: [
+      "I am in the [third]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  }
+]
 /**
  * 
  */
@@ -330,18 +521,43 @@ const zodSchemaAsText7 = `z.tuple([
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
     ]).nullable().optional()`
+const testTsObjectToParse7 = [
+  { 
+    first: [
+      "I am in the [first]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  },
+  { 
+    second: [
+      "I am in the [second]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  },
+  { 
+    third: [
+      "I am in the [third]",
+      "I am an example of a tuple as defined by zod"
+    ]
+  }
+]
 
 /**
  * 
  */
 const zodSchema8 = z.boolean().nullable().optional()
 const zodSchemaAsText8 = `z.boolean().nullable().optional()`
-
+const testTsObjectToParse8 = false
 /**
  * 
  */
 const zodSchema9 = z.array(z.boolean().nullish()).nullable().optional()
 const zodSchemaAsText9 = `z.array(z.boolean().nullish()).nullable().optional()`
+const testTsObjectToParse9 = [
+  true,
+  false,
+  true
+]
 /**
  * ------------------------------------
  * ------------------------------------
@@ -502,23 +718,33 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchemaInstance5 = zodSchemaParser.betterExperiment()
+     
+     
      
       /*
      */
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse5) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse5), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance5)}`)
+      expect(zodSchemaInstance5.safeParse(testTsObjectToParse5).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse5).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
+      */
+      
     });
 
   });
@@ -533,23 +759,27 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText6);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchema6 = zodSchemaParser.betterExperiment()
+     
+     
      
       /*
      */
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse6) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse6), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchema6)}`)
+      expect(zodSchema6.safeParse(testTsObjectToParse6).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse6).success).toBe(true);
+
+      // const { data } = zodMatterParse(testMarkDown, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      
     });
 
   });
@@ -563,24 +793,32 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
          ` >>>>>>> zodSchemaAsText7 : [${zodSchemaAsText7}]`
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText7);
-
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchema7 = zodSchemaParser.betterExperiment()
+     
+     
      
       /*
      */
       console.log(
-        ` >>>>>>> [zodSchemaAsText7] experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> [zodSchemaAsText7] experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> [zodSchemaAsText7] experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse7) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse7), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse7)}`)
+      expect(zodSchema7.safeParse(testTsObjectToParse7).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse7).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
+      */
     });
   });
 
@@ -594,22 +832,32 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText8);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchema8 = zodSchemaParser.betterExperiment()
+     
+     
      
       /*
      */
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse8) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse8), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse8)}`)
+      expect(zodSchema8.safeParse(testTsObjectToParse8).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse8).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
+      */
     });
   });
 
@@ -623,23 +871,32 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText9);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchema9 = zodSchemaParser.betterExperiment()
      
-    /**
-     * 
+     
+     
+      /*
      */
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse9) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse9), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse9)}`)
+      expect(zodSchema9.safeParse(testTsObjectToParse9).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse9).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
+      */
     });
   });
 
@@ -653,26 +910,32 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText2);
 
-     const betterExperimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const reifiedZodSchema: typeof zodSchemaInstance2 = zodSchemaParser.betterExperiment()
      
-    /**
-     * 
-     */
-
+     
+     
       /*
+     */
       console.log(
-        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${betterExperimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.length :[${betterExperimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      betterExperimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse2) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse2), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse2)}`)
+      expect(zodSchemaInstance2.safeParse(testTsObjectToParse2).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse2).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
       */
-     //expect(experimentResult.print() === `nullable`).toBe(true);
     });
   });
 
@@ -682,29 +945,35 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
   describe("Test the experiment() method properly find the top function call in the zod schema", () => {
     it(`shall return the top function call `, async () => {
      console.log(
-         ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
+         ` >>>>>>> zodSchemaAsText1 : [${zodSchemaAsText1}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
-
-     const betterExperimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText1);
+     const reifiedZodSchema: typeof zodSchemaInstance1 = zodSchemaParser.betterExperiment()
      
-    /**
-     * 
-     */
+     
+     
       /*
+     */
       console.log(
-        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${betterExperimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> betterExperimentResult.topZodFunctionCallWithArgs.length :[${betterExperimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      betterExperimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse1) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse1), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse1)}`)
+      expect(zodSchemaInstance2.safeParse(testTsObjectToParse1).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse1).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      /*
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      expect(data).toEqual(testTsObjectToParse5);
       */
-     //expect(experimentResult.print() === `nullable`).toBe(true);
     });
   });
 

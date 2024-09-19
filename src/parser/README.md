@@ -129,7 +129,6 @@ zodSchemaInstance5.strip
 .promise
 .readonly
 
-
 /**
  * Below all methods support for zod schemas
  * generated with the array function
@@ -140,6 +139,13 @@ zodSchemaInstance5.array().min
 zodSchemaInstance5.array().max
 zodSchemaInstance5.array().length
 zodSchemaInstance5.array().nonempty
+/**
+ * Below all methods support for zod schemas
+ * generated with the tuple function
+ * https://zod.dev/?id=tuples
+ * (all supported)
+ */
+.rest
 
 
 ```

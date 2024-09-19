@@ -911,7 +911,41 @@ import {
           return caller.required(passedArgument);
           // break;
         }
-
+        case "passthrough": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [passthrough]`);
+          return caller.passthrough(passedArgument);
+          // break;
+        }
+        case "strict": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [strict]`);
+          return caller.strict(passedArgument);
+          // break;
+        }
+        case "strip": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [strip]`);
+          return caller.strip(passedArgument);
+          // break;
+        }
+        case "default": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [default]`);
+          return caller.default(passedArgument);
+          // break;
+        }
+        case "describe": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [describe]`);
+          return caller.describe(passedArgument);
+          // break;
+        }
+        case "promise": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [promise]`);
+          return caller.promise(passedArgument);
+          // break;
+        }
+        case "readonly": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [readonly]`);
+          return caller.readonly(passedArgument);
+          // break;
+        }
         default:
           throw new Error(
             `[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
@@ -1036,6 +1070,41 @@ import {
         case "required": {
           console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [required]`);
           return caller.required();
+          // break;
+        }
+        case "passthrough": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [passthrough]`);
+          return caller.passthrough();
+          // break;
+        }
+        case "strict": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [strict]`);
+          return caller.strict();
+          // break;
+        }
+        case "strip": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [strip]`);
+          return caller.strip();
+          // break;
+        }
+        case "default": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [default]`);
+          return caller.default();
+          // break;
+        }
+        case "describe": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [describe]`);
+          return caller.describe();
+          // break;
+        }
+        case "promise": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [promise]`);
+          return caller.promise();
+          // break;
+        }
+        case "readonly": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [readonly]`);
+          return caller.readonly();
           // break;
         }
 
