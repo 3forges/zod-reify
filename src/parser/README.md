@@ -18,6 +18,11 @@ export class ZodSchemaParser {
 
 ## Zod Support
 
+The package will soon and easily support all of the [`zod`](https://zod.dev) Functions, but:
+* The `infer` TypeScript operator won't be supported.
+* There must not be external dependencies except the zod library, in the zod expression provided as string to the constructor.
+* zodify, zod-reify
+
 ```TypeScript
 
 /**
@@ -149,3 +154,7 @@ zodSchemaInstance5.array().nonempty
 
 
 ```
+
+## References
+
+* About the `infer` `TypeSript` operator.
