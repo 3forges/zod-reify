@@ -738,6 +738,11 @@ import {
       return reifiedArrayLiteralExpression;
     }
 
+    /**
+     * Ok i could determine it is this function which has a bug, especially when a property is itself an object literal
+     * @param processedNode 
+     * @returns 
+     */
     private reifyObjectLiteralExpression(processedNode: ObjectLiteralExpression): any {
       let reifiedJsonObjectLiteralExpression: any = {};
   
