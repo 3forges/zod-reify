@@ -1,4 +1,4 @@
-import { parse } from "zod-matter";
+import { parse as zodMatterParse } from "zod-matter";
 import { AnyZodObject, z } from "zod";
 import * as grayMatter from "gray-matter"; // pnpm add --save gray-matter
 
@@ -68,6 +68,17 @@ const zodSchemaAsText3 = `z
   .array()
   .optional()
   .nullable()`;
+const testMarkDown3 = `---\n
+- voila: oh que oui
+- voila: ça marche vraiment!
+---\n
+# Hello Pesto ZodSchemaParser!
+`
+const testTsObjectToParse3 = [{
+  voila: `ça marche`
+},{
+  voila: `super bien!`
+}]
 
 /**
  * ++++++++++++++++++++++++++++++++++++
@@ -139,6 +150,85 @@ const zodSchemaAsText4 = `z
   .optional()`;
 
 
+const testMarkDown4 = `---\n
+  title: HiDeoo\n
+  hereAnother: \n
+    reseau: \n
+      cesar: \n
+        - marc\n
+        - aurèle\n
+        - auguste\n
+    imLackingIdea: true\n
+    itsForATest: false\n
+  tags: \n
+    - william\n
+    - the\n
+    - conquerer\n
+  another: true\n
+  exampleCategory:\n
+    - - joe\n
+      - alfred\n
+      - alvin\n
+    - - thirteen\n
+      - hundred\n
+      - books\n
+    - - going\n
+      - overseas\n
+      - together\n
+  example2Category: \n
+    - false\n
+    - true\n
+    - false\n
+  example3Category: \n
+    - 7684464125145\n
+    - 26454943684684\n
+    - 1516546884648\n
+  example4Category: \n
+    - 7684464125145\n
+    - 26454943684684\n
+    - 1516546884648\n
+  image: "./images/paysages/puydedome.png"\n
+  somethingElseNested:\n
+    firstname: \n
+      - Jean-Baptiste\n
+      - Marie\n
+      - Éric\n
+    lastname: Lasselle\n
+    color: yellow\n
+    two: false\n
+    three: \n
+      - 56\n
+      - 789\n
+      - 159\n
+    four: \n
+      - 15\n
+      - 46\n
+      - 739\n
+    example1Categories: \n
+      - design\n
+      - terraform\n
+      - plugin\n
+    example2Categories: \n
+      first:\n
+        - joe\n
+        - alfred\n
+        - alvin\n
+      second:\n
+        - thirteen\n
+        - hundred\n
+        - books\n
+      third:\n
+        - going\n
+        - overseas\n
+        - together\n
+  department: \n
+    divisionName: CCOE\n
+    secrecyTags: 
+      - LEVEL3\n 
+      - NOCOPY\n
+---\n
+# Hello Pesto ZodSchemaParser!
+`
 
 /**
  * ++++++++++++++++++++++++++++++++++++
@@ -277,7 +367,7 @@ describe("Testing - ZodSchemaParser parse() method", () => {
       );
       const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
 
-      const resultingInstantiatedSchema = zodSchemaParser.parse()
+      const resultingInstantiatedSchema = zodSchemaParser.betterExperiment()
 
       const resultOfZodParse = resultingInstantiatedSchema.safeParse({
         title: `Exemple5`,
@@ -377,23 +467,27 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText3);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const reifiedZodSchema: typeof zodSchemaInstance3 = zodSchemaParser.betterExperiment()
+     
+     
      
       /*
      */
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.noArgsFunctionCallsStack :[${experimentResult.noArgsFunctionCallsStack}]`
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> experimentResult.topZodFunctionCallWithArgs.length :[${experimentResult.topZodFunctionCallWithArgs.length}]`
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
       );
-      experimentResult.topZodFunctionCallWithArgs.forEach((node: Node<ts.Node>) => {
-        console.log(
-          ` >>>>>>> experimentResult.topZodFunctionCallWithArgs :[${node.print()}]`
-        );
-      })
-     
-     //expect(experimentResult.print() === `nullable`).toBe(true);
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse3) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse3), null, 2)}]`
+      );
+      expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance3)}`)
+      expect(zodSchemaInstance3.parse(testTsObjectToParse3)).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse3).success).toBe(true);
+
+      // const { data } = zodMatterParse(testMarkDown3, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      
     });
 
   });
@@ -408,7 +502,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
      
       /*
      */
@@ -439,7 +533,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText6);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
      
       /*
      */
@@ -470,7 +564,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText7);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
      
       /*
      */
@@ -500,7 +594,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText8);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
      
       /*
      */
@@ -529,7 +623,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      );
      const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText9);
 
-     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.experiment()
+     const experimentResult: {noArgsFunctionCallsStack: string[]; topZodFunctionCallWithArgs: Node<ts.Node>[]; } = zodSchemaParser.betterExperiment()
      
     /**
      * 

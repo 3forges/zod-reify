@@ -33,6 +33,7 @@
     "dev:docs:html": "pnpm run gen:api-docs && serve docs/",
     "dev:docs": "pnpm run gen:api-docs && pnpm exec serve docs/",
     "test": "jest --silent=false",
+    "test:logs": "bash -c 'pnpm run test >>./betterExperiment.logs 2>&1'",
     "test:e2e": "echo 'Run e2e Tests'",
     "build": "pnpm exec tsc",
     "clean": "rm -Rf rawData && rm -Rf transformedData && rm -fr dist/"

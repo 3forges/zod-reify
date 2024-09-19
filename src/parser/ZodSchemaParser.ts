@@ -256,16 +256,6 @@ import {
       // this.sourceFile.save();
       this.validate();
       this.typeChecker = this.project.getTypeChecker();
-      /**
-       * This method will initialize the value of
-       * <pre>this.zodObjectLiteral</pre>
-       */
-      this.initZodObjectLiteral();
-      if (!Node.isObjectLiteralExpression(this.zodObjectLiteral)) {
-        throw new Error(
-          `[@ZodSchemaParser].[parse()] - this.zodObjectLiteral should be an [ObjectLiteralExpression], but it is not.`
-        );
-      }
 
       this.initZodExpressionNode()
       console.info(
@@ -618,7 +608,7 @@ import {
           console.log(
             `[@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[${caller.print()}]`
           );
-          this.reifyZodFunctionCallWithOneArg(this.betterExperiment(caller), calledFunctionName, this.betterExperiment(passedArgument))
+          return this.reifyZodFunctionCallWithOneArg(this.betterExperiment(caller), calledFunctionName, this.betterExperiment(passedArgument))
           
 
         } else if (childrenArray.length == 1) { // i.e.: if function is called without parameters
@@ -642,7 +632,7 @@ import {
           console.log(
             `[@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[${caller.print()}]`
           );
-          this.reifyNoArgsZodFunctionCall(this.betterExperiment(caller), calledFunctionName)
+          return this.reifyNoArgsZodFunctionCall(this.betterExperiment(caller), calledFunctionName)
           
           // noArgsFunctionCallsStack.push(calledFunctionName)
           
@@ -658,8 +648,12 @@ import {
         }
       } else if (Node.isObjectLiteralExpression(processedNode)) {
         // that for the object function case
+        return this.reifyObjectLiteralExpression(processedNode)
       } else if (Node.isArrayLiteralExpression(processedNode)) {
         // that's for the tuple function case 
+        return this.reifyArrayLiteralExpression(processedNode)
+      } else if (processedNode.print() == `${this.nameOfTheZodImport}`) {
+        return z
       }
       /**
        * Okay, now here I can call the reccurrence : 
@@ -688,8 +682,243 @@ import {
       
       return toReturn;
     }
+    private reifyArrayLiteralExpression(processedNode: ArrayLiteralExpression): any {
+      let reifiedArrayLiteralExpression: any[] = [];
+  
+      if (Node.isArrayLiteralExpression(processedNode)) {
+        /*
+          const stuff: ObjectLiteralExpressionPropertyStructures = {
+            name: `manchot`,
+            initializer: `"d'une certaine façon"`,
+            kind: StructureKind.PropertyAssignment,
+          }
+          this.zodObjectLiteral.addProperty(stuff)
+          */
+        const elementsofTheArray = processedNode.getElements()
+        for (let k = 0; k < elementsofTheArray.length; k++) {
+          const elementOfTheArray = elementsofTheArray[k];
+          console.log(
+            `[@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [${elementOfTheArray.print()}]`
+          );
+
+
+          const childrenArray: Node<ts.Node>[] = processedNode.forEachChildAsArray()
+          const childrenOfChildrensArray: Node<ts.Node>[] = childrenArray[0].forEachChildAsArray()
+          
+          const printedChildrenArray = childrenArray.map((node:Node<ts.Node>) => {
+            return node.print()
+          })
+          const printedChildrenOfChildrensArray = childrenOfChildrensArray.map((node:Node<ts.Node>) => {
+            return node.print()
+          })
+          console.log(
+            `[@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[${JSON.stringify({
+              printedChildrenArray: printedChildrenArray
+            }, null, 2)}]`
+          );
+          console.log(
+            `[@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify({
+              printedChildrenOfChildrensArray: printedChildrenOfChildrensArray
+            }, null, 2)}]`
+          );
+          reifiedArrayLiteralExpression.push(this.betterExperiment(elementOfTheArray))
+          console.log(
+            `[@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[${JSON.stringify({
+              reifiedArrayLiteralExpression: reifiedArrayLiteralExpression.map((node) => {return node.toString()/*.print()*/})
+            }, null, 2)}]`
+          );
+        } // end of for loop over Array literal elements 
+      } else {
+        throw new Error(
+          `[@ZodSchemaParser].[reifyArrayLiteralExpression()] - provided processedNode should be an [ArrayLiteralExpression], but it is not.`
+        );
+      }
+      return reifiedArrayLiteralExpression;
+    }
+
+    private reifyObjectLiteralExpression(processedNode: ObjectLiteralExpression): any {
+      let reifiedJsonObjectLiteralExpression: any = {};
+  
+      if (Node.isObjectLiteralExpression(processedNode)) {
+        /*
+          const stuff: ObjectLiteralExpressionPropertyStructures = {
+            name: `manchot`,
+            initializer: `"d'une certaine façon"`,
+            kind: StructureKind.PropertyAssignment,
+          }
+          this.zodObjectLiteral.addProperty(stuff)
+          */
+        const propertiesOfTheObjLiteral = processedNode.getProperties();
+        for (let k = 0; k < propertiesOfTheObjLiteral.length; k++) {
+          const propertyOfTheObjLiteral = propertiesOfTheObjLiteral[k];
+          console.log(
+            `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [${propertyOfTheObjLiteral.print()}]`
+          );
+
+
+          const childrenArray: Node<ts.Node>[] = processedNode.forEachChildAsArray()
+          const childrenOfChildrensArray: Node<ts.Node>[] = childrenArray[0].forEachChildAsArray()
+          
+          const printedChildrenArray = childrenArray.map((node:Node<ts.Node>) => {
+            return node.print()
+          })
+          const printedChildrenOfChildrensArray = childrenOfChildrensArray.map((node:Node<ts.Node>) => {
+            return node.print()
+          })
+          console.log(
+            `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[${JSON.stringify({
+              printedChildrenArray: printedChildrenArray
+            }, null, 2)}]`
+          );
+          console.log(
+            `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify({
+              printedChildrenOfChildrensArray: printedChildrenOfChildrensArray
+            }, null, 2)}]`
+          );
+          const propStructure = propertyOfTheObjLiteral.getStructure();
+          if (propStructure.kind == StructureKind.PropertyAssignment) {
+            console.log(
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [${propStructure.name}]`
+            );
+            console.log(
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [${propStructure.initializer}]`
+            );
+            
+            console.log(
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[${propStructure.name}] = this.betterExperiment(${childrenOfChildrensArray[1].print()})`
+            );
+            reifiedJsonObjectLiteralExpression[`${propStructure.name}`] = this.betterExperiment(childrenOfChildrensArray[1])
+          } else {
+            console.log(
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is NOT a PropertyAssignement so I don't kknow yet how to reify it: printedChildrenOfChildrensArray is :[${JSON.stringify({
+                printedChildrenOfChildrensArray: printedChildrenOfChildrensArray
+              }, null, 2)}]`
+            );
+          }
+        } // end of for loop over Object literal properties 
+      } else {
+        throw new Error(
+          `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - provided objectLiteralNode should be an [ObjectLiteralExpression], but it is not.`
+        );
+      }
+      return reifiedJsonObjectLiteralExpression;
+    }
     private reifyZodFunctionCallWithOneArg(caller: any, calledFunctionName: string, passedArgument: any /* Node<ts.Node> */): any {
-      throw new Error("Method not implemented.");
+      let toReturn = caller;
+      switch (calledFunctionName) { // reifyNoArgsZodFunctionCallsChain
+        case "string": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [string]`);
+          return caller.string(passedArgument);
+          // break;
+        }
+        case "boolean": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [boolean]`);
+          return caller.boolean(passedArgument);
+          // break;
+        }
+        case "number": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [number]`);
+          return caller.number(passedArgument);
+          // break;
+        }
+        case "any": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [any]`);
+          return caller.any(passedArgument);
+          // break;
+        }
+        case "bigint": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [bigint]`);
+          return caller.bigint(passedArgument);
+          // break;
+        }
+        case "date": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [date]`);
+          return caller.date(passedArgument);
+          // break;
+        }
+        case "function": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [function]`);
+          return caller.function(passedArgument);
+          // break;
+        }
+        case "nan": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [nan]`);
+          return caller.nan(passedArgument);
+          // break;
+        }
+        case "never": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [never]`);
+          return caller.never(passedArgument);
+          // break;
+        }
+        case "null": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [null]`);
+          return caller.null(passedArgument);
+          // break;
+        }
+        case "oboolean": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [oboolean]`);
+          return caller.oboolean(passedArgument);
+          // break;
+        }
+        case "unknown": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [unknown]`);
+          return caller.unknown(passedArgument);
+          // break;
+        }
+        case "ostring": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [ostring]`);
+          return caller.ostring(passedArgument);
+          // break;
+        }
+        case "void": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [void]`);
+          return caller.void(passedArgument);
+          // break;
+        }
+        case "nullable": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [nullable]`);
+          return caller.nullable(passedArgument);
+          // break;
+        }
+        case "nullish": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [nullish]`);
+          return caller.nullish(passedArgument);
+          // break;
+        }
+        case "object": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]`);
+          return caller.object(passedArgument);
+          // break;
+        }
+        case "tuple": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [tuple]`);
+          return caller.tuple(passedArgument);
+          // break;
+        }
+        case "array": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]`);
+          return caller.array(passedArgument);
+          // break;
+        }
+        case "optional": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [optional]`);
+          return caller.optional(passedArgument);
+          // break;
+        }
+        case "required": {
+          console.log(`[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [required]`);
+          return caller.required(passedArgument);
+          // break;
+        }
+
+        default:
+          throw new Error(
+            `[@ZodSchemaParser].[reifyZodFunctionCallWithOneArg(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
+          );
+          break;
+      }
+      throw new Error("Method implementation not completed yet.");
     }
 
     /**
@@ -703,81 +932,116 @@ import {
      */
     private reifyNoArgsZodFunctionCall(caller: any/*Node<ts.Node>*/, calledFunctionName: string): any {
       let toReturn = caller;
-      switch (calledFunctionName) { // reifyNoArgsZodFunctionCallsChain
+      switch (calledFunctionName) { // 
         case "string": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [string]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [${caller}]`);
           return caller.string();
           // break;
         }
         case "boolean": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [boolean]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [boolean]`);
           return caller.boolean();
           // break;
         }
         case "number": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [number]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [number]`);
           return caller.number();
           // break;
         }
         case "any": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [any]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [any]`);
           return caller.any();
           // break;
         }
         case "bigint": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [bigint]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [bigint]`);
           return caller.bigint();
           // break;
         }
         case "date": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [date]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [date]`);
           return caller.date();
           // break;
         }
         case "function": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [function]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [function]`);
           return caller.function();
           // break;
         }
         case "nan": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [nan]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nan]`);
           return caller.nan();
           // break;
         }
         case "never": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [never]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [never]`);
           return caller.never();
           // break;
         }
         case "null": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [null]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [null]`);
           return caller.null();
           // break;
         }
         case "oboolean": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [oboolean]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [oboolean]`);
           return caller.oboolean();
           // break;
         }
         case "unknown": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [unknown]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [unknown]`);
           return caller.unknown();
           // break;
         }
         case "ostring": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [ostring]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [ostring]`);
           return caller.ostring();
           // break;
         }
         case "void": {
-          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain()] - Ok zod functionName is [void]`);
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [void]`);
           return caller.void();
+          // break;
+        }
+        case "nullable": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullable]`);
+          return caller.nullable();
+          // break;
+        }
+        case "nullish": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullish]`);
+          return caller.nullish();
+          // break;
+        }
+        case "object": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [object]`);
+          return caller.object();
+          // break;
+        }
+        case "tuple": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [tuple]`);
+          return caller.tuple();
+          // break;
+        }
+        case "array": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [array]`);
+          return caller.array();
+          // break;
+        }
+        case "optional": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]`);
+          return caller.optional();
+          // break;
+        }
+        case "required": {
+          console.log(`[@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [required]`);
+          return caller.required();
           // break;
         }
 
         default:
           throw new Error(
-            `[@ZodSchemaParser].[reifyNoArgsZodFunctionCallsChain(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
+            `[@ZodSchemaParser].[reifyNoArgsZodFunctionCall(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
           );
           break;
       }
@@ -1014,150 +1278,7 @@ import {
         
       }
     }
-    /**
-     * This method assumes that the provided Zod Schema is of the following form:
-     * 
-     * <code>
-     * z.object({
-     *  // and here some JSON properties, like usual for a zod schema.
-     * })
-     * </code>
-     * 
-     * But the provided zod schema could be of the following forms:
-     * 
-     * 
-     * <code>
-     * z.tuple([
-     *   z.object({first: z.array(z.string())}),
-     *   z.object({second: z.array(z.string())}),
-     *   z.object({third: z.array(z.string())}),
-     * ])
-     * </code>
-     * 
-     * 
-     * <code>
-     * z.array(z.string()).optional()
-     * </code>
-     * 
-     * 
-     * <code>
-     * z.tuple([
-     *   z.array(z.string()),
-     *   z.boolean().optional(),
-     *   z.tuple([
-     *    z.object({something: z.array(z.string())}),
-     *    z.object({somethingElse: z.array(z.string())}),
-     *   ]),
-     * ])
-     * </code>
-     * 
-     * So, what I need to do here, to generalize to 
-     * any zod schema declaration, is a 
-     * function, able to determine what is the 
-     * first top zod function called, and from there, I 
-     * will have 3 cases:
-     * 
-     * - [[CASE-1]] The top zod function call is the "object" zod function.
-     * - [[CASE-2]] The top zod function call is the "tuple" zod function.
-     * - [[CASE-3]] The top zod function call is any other zod function.
-     * 
-     * Those 3 cases will be processed as the first recurrent call in the {@ZodSchemaParser#parse()} method.
-     * 
-     * For those 3 cases, we will then have 3 cases for the parameter provided to the top zod function call:
-     * 
-     * - [[CASE-1]] A zod Object Literal of 'ts-morph' type {@ObjectLiteralExpression }: that case I already worked on it, with my 2 reccurrent functions.
-     * - [[CASE-2]] An Array Literal of 'ts-morph' type {@ArrayLiteralExpression }
-     * - [[CASE-3]] A Function Literal, of 'ts-morph' type {@FunctionExpression }
-     * 
-     * So what makes sense as a property here is
-     * not <pre>this.zodObjectLiteral</pre>, of 
-     * type {@ObjectLiteralExpression }, but instead
-     * <pre>this.topZodFunctionCall</pre>
-     * of type {@FunctionExpression }
-     * 
-     * And we are going to init 
-     * that <pre>this.topZodFunctionCall</pre> {@FunctionExpression }
-     * 
-     * And we will have method like:
-     * 
-     * isZodTopFunctionCallObject()
-     * isZodTopFunctionCallTuple()
-     * isZodTopFunctionCallNeitherTupleNorObject()
-     * ---------------------------------------------
-     * Algorithm to catch the top zod function call:
-     * - to begin with, we test if the first traversed node, for which <pre>node.print()</pre> is equal to the initializer of the <pre>this.zodSchemaVarDeclaration</pre>, ends with <pre>()</pre>. If yes, then we pass the entire node to be processed by our recurrent function, and we have to get rid of the whole chain of the whole chain of function calls...: Here note that the zod framework fgives us a rule that simplifies a lot the work. That rule is : if in a chain of zod function calls, there is one fuction which has a parameter passed to, then we know that this function with parameter is the first function call (on the left), anyone can try to give me any zod chained function calls, that does not comply with that rule, that anyone will fail to im my opinion, yet, we wiil see if it happens, i will just assume this rule as axiomatic.
-     * >>> OHHHH I know, I know, I know :
-     *     if the first traversed node, ends with "()"
-     *     then this means that the top function call is 
-     *     the last on the right.
-     *     since it has no parameter, then we 
-     *     recurently call the algorithm on 
-     *     the caller of that function:
-     *      > Until we have only one function call left, and 
-     *        the caller is the zod named import
-     *      > that only one function call left then either has parameters of not
-     *      > if it does not have parameters, then we have all 
-     *        the informations we need to instantiate the zod schema
-     *      > if it does have parameter(s), then we have our 3 cases for which we have to launch the reccurence:
-     * 
-     *        - [[CASE-1]] A zod Object Literal of 'ts-morph' type {@ObjectLiteralExpression }: that case I already worked on it, with my 2 reccurrent functions.
-     *        - [[CASE-2]] An Array Literal of 'ts-morph' type {@ArrayLiteralExpression }
-     *        - [[CASE-3]] A Function Literal, of 'ts-morph' type {@FunctionExpression }
-     * 
-     * So, in the case of the zod schema to be a chain of zod function calls "right at the start", well then  we have to reduce it  
-     * 
-     * Ok, our initialized "topZodFunction" is acutally:
-     * the top zod function call which has parameter(s), because in a zod expression, in a chain of call, there can only be one function which takes parameter(s) in.
-     * Ok, we have a definition..
-     * 
-     * Its there a funny operation on a tree, in graph theory: it i sa bit like "pull a tree by its hair, to chnge the root of the tree"...
-     * This funny operation is simpe, yet very ineresting: 
-     * - choose any node, that we will call "the pulled node" (but its more interesting if you chosse a node which has a good number of descendants)
-     * - you then "invert" all paths from that node, to any of its ascendants:
-     * - that way, the pulled node suddenly endsup being the root node of the tree
-     * - that operation at least makes sense on a graph that is a tree: it has only single root node.
-     * I dot know I think there are useful mathematical results we could get out of considering pulling tree nodes that are neighbors, like that.
-     * 
-     * - to begin with, we ignore the first traversed node, for which <pre>node.print()</pre> is equal to the initializer of the <pre>this.zodSchemaVarDeclaration</pre>
-     * - then we will ignodre the second traversed node, which will the the zod named import
-     * - after that, 
-     * @returns the Zod object, instantiated by parsing <pre>this.zodSchemaVarDeclaration</pre>
-     */
-    public initZodObjectLiteral(): void /* Node */ /* ObjectLiteralExpression */ {
-      let toReturn: Node;
-  
-      // const theSrcCodeToParse = this.zodSchemaAsString;
-      const zodSchemaVarDeclaration =
-        this.sourceFile.getVariableDeclarationOrThrow(
-          this.zodSchemaVarDeclaration.name
-        );
-  
-      zodSchemaVarDeclaration.forEachDescendant((node: Node, traversal: ForEachDescendantTraversalControl) => {
-        // traversal.skip()
-        // traversal.up()
-        // traversal.stop()
-        if (node.print() != this.zodSchemaVarDeclaration.name) {
-          // const isYieldExpression = Node.isYieldExpression(node)
-          //const isLiteralExpression = Node.isLiteralExpression(node)
-          //const isExpressionStatement = Node.isExpressionStatement(node)
-          console.log(
-            `[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -----------------------------------------`
-          );
-          // here im looking for a method to confirm whether
-          //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isYieldExpression? :[${isYieldExpression}]`)
-          //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isLiteralExpression? :[${isLiteralExpression}]`)
-          //console.log(`[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node isExpressionStatement? :[${isExpressionStatement}]`)
-          console.log(
-            `[@ZodSchemaParser].[initZodObjectLiteral()] - zodSchemaVarDeclaration.forEachDescendant() -  curent node [KindName=${node.getKindName()}] is :[${node.print()}]`
-          );
-          if (Node.isObjectLiteralExpression(node)) {
-            this.zodObjectLiteral = node;
-            traversal.stop();
-          }
-        }
-      });
-    }
-    
+        
     /**
      * This method validates that the
      * source code in the source file built
@@ -1230,7 +1351,7 @@ import {
     public instantiateZodJsonConfig(
       objectLiteralNode: ObjectLiteralExpression
     ): any {
-      let zodObjectJSON: any = {};
+      let reifiedJsonObjectLiteralExpression: any = {};
   
       if (Node.isObjectLiteralExpression(objectLiteralNode)) {
         /*
@@ -1271,14 +1392,14 @@ import {
               propertyOfTheObjLiteral.forEachDescendant((node4: any, traversal4: { stop: () => void; }) => {
                 if (Node.isObjectLiteralExpression(node4)) {
                   descendantObjectLiteral = node4;
-                  zodObjectJSON[`${propStructure.name}`] = z.object({
+                  reifiedJsonObjectLiteralExpression[`${propStructure.name}`] = z.object({
                     ...this.instantiateZodJsonConfig(descendantObjectLiteral),
                   });
                   traversal4.stop();
                 }
               });
             } else {
-              zodObjectJSON[`${propStructure.name}`] = this.testInstantiateFrom(
+              reifiedJsonObjectLiteralExpression[`${propStructure.name}`] = this.testInstantiateFrom(
                 `${propStructure.initializer}`
               );
             }
@@ -1289,7 +1410,7 @@ import {
           `[@ZodSchemaParser].[parse()] - provided objectLiteralNode should be an [ObjectLiteralExpression], but it is not.`
         );
       }
-      return zodObjectJSON;
+      return reifiedJsonObjectLiteralExpression;
     }
     /**
      * This method parses the source code to intantiate the Zod Schema
@@ -1297,7 +1418,7 @@ import {
      */
     public demoDFStraversal(): AnyZodObject {
       let toReturn: AnyZodObject = z.object({});
-      let zodObjectJSON: any = {};
+      let reifiedJsonObjectLiteralExpression: any = {};
   
   
       if (Node.isObjectLiteralExpression(this.zodObjectLiteral)) {
