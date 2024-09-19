@@ -644,7 +644,7 @@ import {
            * 
            */
         } else if (childrenArray.length > 2) {
-          throw new Error(`reifying a zod function call which has more than 2 passed arguments is not supported yet.`)
+          throw new Error(`[@ZodSchemaParser].[betterExperiment()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.`)
         }
       } else if (Node.isObjectLiteralExpression(processedNode)) {
         // that for the object function case
@@ -654,6 +654,8 @@ import {
         return this.reifyArrayLiteralExpression(processedNode)
       } else if (processedNode.print() == `${this.nameOfTheZodImport}`) {
         return z
+      } else {
+        throw new Error(`[@ZodSchemaParser].[betterExperiment()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression`)
       }
       /**
        * Okay, now here I can call the reccurrence : 

@@ -3,1310 +3,6 @@
 > jest --silent=false
 
   console.log
-     >>>>>>> zodSchemaAsText5 : [z
-      .object({
-        title: z.string(),
-        hereAnother: z.object({
-          reseau: z.object({
-            cesar: z.array(z.string()),
-          }),
-          imLackingIdea: z.boolean().optional(),
-          itsForATest: z.boolean(),
-        }),
-        tags: z.array(z.string()),
-        another: z.boolean().nullish(),
-        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
-        example2Category: z.nullable(z.array(z.boolean())).optional(),
-        example3Category: z.optional(z.number()).array(),
-        example4Category: z.array(z.number()).optional(),
-        image: z.string().optional(),
-        somethingElseNested: z.object({
-          firstname: z.string().array(),
-          lastname: z.string(),
-          color: z.string(),
-          two: z.boolean().optional(),
-          three: z.number().array().optional(),
-          four: z.array(z.number()).optional(),
-        }),
-        department: z.object({
-          divisionName: z.string(),
-          secrecyTags: z.array(z.string()).optional(),
-        }),
-      })]
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:581:15)
-
-  console.info
-    [@ZodSchemaParser].[constructor] zod schema provided to constructor: z
-      .object({
-        title: z.string(),
-        hereAnother: z.object({
-          reseau: z.object({
-            cesar: z.array(z.string()),
-          }),
-          imLackingIdea: z.boolean().optional(),
-          itsForATest: z.boolean(),
-        }),
-        tags: z.array(z.string()),
-        another: z.boolean().nullish(),
-        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
-        example2Category: z.nullable(z.array(z.boolean())).optional(),
-        example3Category: z.optional(z.number()).array(),
-        example4Category: z.array(z.number()).optional(),
-        image: z.string().optional(),
-        somethingElseNested: z.object({
-          firstname: z.string().array(),
-          lastname: z.string(),
-          color: z.string(),
-          two: z.boolean().optional(),
-          three: z.number().array().optional(),
-          four: z.array(z.number()).optional(),
-        }),
-        department: z.object({
-          divisionName: z.string(),
-          secrecyTags: z.array(z.string()).optional(),
-        }),
-      })
-
-      at new ZodSchemaParser (src/parser/ZodSchemaParser.ts:224:15)
-
-  console.log
-    [@ZodSchemaParser].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
-
-      at src/parser/ZodSchemaParser.ts:291:19
-
-  console.log
-    [@ZodSchemaParser].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })]
-
-      at src/parser/ZodSchemaParser.ts:291:19
-
-  console.info
-    [@ZodSchemaParser].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })
-
-      at new ZodSchemaParser (src/parser/ZodSchemaParser.ts:261:15)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[2]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[228]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.object",
-        "{ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), }"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[object]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:596:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "object"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:602:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:608:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [title: z.string()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [title]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[title] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [hereAnother]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({reseau:z.object({cesar:z.array(z.string()),}),imLackingIdea:z.boolean().optional(),itsForATest:z.boolean(),})]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[hereAnother] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [tags: z.array(z.string())]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [tags]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[tags] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [another: z.boolean().nullish()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [another]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.boolean().nullish()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[another] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [exampleCategory: z.array(z.array(z.string().nullable())).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [exampleCategory]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.array(z.string().nullable())).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[exampleCategory] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example2Category: z.nullable(z.array(z.boolean())).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example2Category]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.nullable(z.array(z.boolean())).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example2Category] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example3Category: z.optional(z.number()).array()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example3Category]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.optional(z.number()).array()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example3Category] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example4Category: z.array(z.number()).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example4Category]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.number()).optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example4Category] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [image: z.string().optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [image]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string().optional()]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[image] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [somethingElseNested]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({firstname:z.string().array(),lastname:z.string(),color:z.string(),two:z.boolean().optional(),three:z.number().array().optional(),four:z.array(z.number()).optional(),})]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[somethingElseNested] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "title: z.string()",
-        "hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })",
-        "tags: z.array(z.string())",
-        "another: z.boolean().nullish()",
-        "exampleCategory: z.array(z.array(z.string().nullable())).optional()",
-        "example2Category: z.nullable(z.array(z.boolean())).optional()",
-        "example3Category: z.optional(z.number()).array()",
-        "example4Category: z.array(z.number()).optional()",
-        "image: z.string().optional()",
-        "somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })",
-        "department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "title",
-        "z.string()"
-      ]
-    }]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [department]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({divisionName:z.string(),secrecyTags:z.array(z.string()).optional(),})]
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
-
-  console.log
-    [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[department] = this.betterExperiment(z.string())
-
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:544:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[1]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:551:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[3]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:554:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenArray is :[{
-      "printedChildrenArray": [
-        "z.string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:573:17)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[string]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:620:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[{
-      "printedChildrenOfChildrensArray": [
-        "z",
-        "string"
-      ]
-    }]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:626:19)
-
-  console.log
-    [@ZodSchemaParser].[betterExperiment()] - processedNode caller is :[z]
-
-      at ZodSchemaParser.betterExperiment (src/parser/ZodSchemaParser.ts:632:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
-
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
-
-  console.log
-    [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
-
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
-
-  console.log
-     >>>>>>> resultOfZodParse :[{
-      "success": false,
-      "error": {
-        "issues": [
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "object",
-            "path": [
-              "hereAnother"
-            ],
-            "message": "Expected string, received object"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "array",
-            "path": [
-              "tags"
-            ],
-            "message": "Expected string, received array"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "undefined",
-            "path": [
-              "another"
-            ],
-            "message": "Required"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "array",
-            "path": [
-              "exampleCategory"
-            ],
-            "message": "Expected string, received array"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "array",
-            "path": [
-              "example2Category"
-            ],
-            "message": "Expected string, received array"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "array",
-            "path": [
-              "example3Category"
-            ],
-            "message": "Expected string, received array"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "array",
-            "path": [
-              "example4Category"
-            ],
-            "message": "Expected string, received array"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "object",
-            "path": [
-              "somethingElseNested"
-            ],
-            "message": "Expected string, received object"
-          },
-          {
-            "code": "invalid_type",
-            "expected": "string",
-            "received": "object",
-            "path": [
-              "department"
-            ],
-            "message": "Expected string, received object"
-          }
-        ],
-        "name": "ZodError"
-      }
-    }]
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:651:15)
-
-  console.log
      >>>>>>> zodSchemaAsText3 : [z
       .object({
         voila: z.string(),
@@ -1315,7 +11,7 @@
       .optional()
       .nullable()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:681:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:586:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z
@@ -1523,7 +219,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [voila: z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -1532,7 +228,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -1542,22 +238,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [voila]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[voila] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -1606,37 +302,37 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1061:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1063:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullable]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1041:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1043:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:692:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:597:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:695:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:600:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse3) is :[{
@@ -1651,7 +347,7 @@
       ]
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:698:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:603:15)
 
   console.log
      >>>>>>> zodSchemaAsText5 : [z
@@ -1685,7 +381,7 @@
         }),
       })]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:716:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:621:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z
@@ -1784,7 +480,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [title: z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -1803,7 +499,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -1813,22 +509,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [title]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[title] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -1877,12 +573,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), })]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -1901,7 +597,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -1911,22 +607,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [hereAnother]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({reseau:z.object({cesar:z.array(z.string()),}),imLackingIdea:z.boolean().optional(),itsForATest:z.boolean(),})]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[hereAnother] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -1975,12 +671,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [tags: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -1999,7 +695,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2009,22 +705,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [tags]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[tags] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2073,12 +769,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [another: z.boolean().nullish()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2097,7 +793,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2107,22 +803,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [another]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.boolean().nullish()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[another] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2171,12 +867,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [exampleCategory: z.array(z.array(z.string().nullable())).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2195,7 +891,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2205,22 +901,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [exampleCategory]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.array(z.string().nullable())).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[exampleCategory] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2269,12 +965,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example2Category: z.nullable(z.array(z.boolean())).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2293,7 +989,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2303,22 +999,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example2Category]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.nullable(z.array(z.boolean())).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example2Category] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2367,12 +1063,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example3Category: z.optional(z.number()).array()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2391,7 +1087,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2401,22 +1097,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example3Category]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.optional(z.number()).array()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example3Category] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2465,12 +1161,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [example4Category: z.array(z.number()).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2489,7 +1185,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2499,22 +1195,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [example4Category]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.number()).optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[example4Category] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2563,12 +1259,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [image: z.string().optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2587,7 +1283,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2597,22 +1293,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [image]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string().optional()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[image] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2661,12 +1357,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), })]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2685,7 +1381,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2695,22 +1391,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [somethingElseNested]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({firstname:z.string().array(),lastname:z.string(),color:z.string(),two:z.boolean().optional(),three:z.number().array().optional(),four:z.array(z.number()).optional(),})]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[somethingElseNested] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2759,12 +1455,12 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), })]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -2783,7 +1479,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -2793,22 +1489,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [department]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.object({divisionName:z.string(),secrecyTags:z.array(z.string()).optional(),})]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[department] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -2857,22 +1553,22 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:727:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:632:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:730:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:635:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse5) is :[{
@@ -2965,7 +1661,7 @@
       }
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:733:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:638:15)
 
   console.log
      >>>>>>> zodSchemaAsText6 : [z.tuple([
@@ -2974,7 +1670,7 @@
           z.object({third: z.array(z.string())}),
         ])]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:757:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:662:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z.tuple([
@@ -3048,7 +1744,7 @@
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ first: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3059,7 +1755,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3069,7 +1765,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ first: z.array(z.string()) })]
@@ -3119,7 +1815,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [first: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3128,7 +1824,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3138,22 +1834,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [first]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[first] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -3247,17 +1943,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -3266,12 +1962,12 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ second: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3282,7 +1978,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3292,7 +1988,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ second: z.array(z.string()) })]
@@ -3342,7 +2038,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [second: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3351,7 +2047,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3361,22 +2057,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [second]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[second] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -3470,17 +2166,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -3490,12 +2186,12 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ third: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3506,7 +2202,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3516,7 +2212,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ third: z.array(z.string()) })]
@@ -3566,7 +2262,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [third: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3575,7 +2271,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3585,22 +2281,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [third]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[third] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -3694,17 +2390,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -3715,22 +2411,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [tuple]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:895:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:897:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:768:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:673:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:771:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:676:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse6) is :[{
@@ -3757,7 +2453,7 @@
       ]
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:774:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:679:15)
 
   console.log
      >>>>>>> zodSchemaAsText7 : [z.tuple([
@@ -3766,7 +2462,7 @@
           z.object({third: z.array(z.string())}),
         ]).nullable().optional()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:792:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:697:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z.tuple([
@@ -3928,7 +2624,7 @@
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ first: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -3939,7 +2635,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -3949,7 +2645,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ first: z.array(z.string()) })]
@@ -3999,7 +2695,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [first: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -4008,7 +2704,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -4018,22 +2714,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [first]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[first] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -4127,17 +2823,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -4146,12 +2842,12 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ second: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -4162,7 +2858,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -4172,7 +2868,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ second: z.array(z.string()) })]
@@ -4222,7 +2918,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [second: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -4231,7 +2927,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -4241,22 +2937,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [second]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[second] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -4350,17 +3046,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -4370,12 +3066,12 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - elementOfTheArray = [z.object({ third: z.array(z.string()) })]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:700:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:702:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -4386,7 +3082,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:714:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:716:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -4396,7 +3092,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:719:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:721:19)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.object({ third: z.array(z.string()) })]
@@ -4446,7 +3142,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [third: z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -4455,7 +3151,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -4465,22 +3161,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [third]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.array(z.string())]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[third] = this.betterExperiment(z.array(z.string()))
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.array(z.string())]
@@ -4574,17 +3270,17 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[{
@@ -4595,32 +3291,32 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:725:19)
+      at ZodSchemaParser.reifyArrayLiteralExpression (src/parser/ZodSchemaParser.ts:727:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [tuple]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:895:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:897:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullable]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1041:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1043:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:802:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:707:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:805:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:710:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse7) is :[{
@@ -4647,12 +3343,12 @@
       ]
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:808:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:713:15)
 
   console.log
      >>>>>>> zodSchemaAsText8 : [z.boolean().nullable().optional()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:830:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:735:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z.boolean().nullable().optional()
@@ -4809,27 +3505,27 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [boolean]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:976:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:978:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullable]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1041:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1043:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:841:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:746:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:844:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:749:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse8) is :[{
@@ -4837,12 +3533,12 @@
       "data": false
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:847:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:752:15)
 
   console.log
      >>>>>>> zodSchemaAsText9 : [z.array(z.boolean().nullish()).nullable().optional()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:869:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:774:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z.array(z.boolean().nullish()).nullable().optional()
@@ -5088,37 +3784,37 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [boolean]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:976:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:978:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullish]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1046:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1048:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:900:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:902:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nullable]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1041:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1043:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:880:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:785:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:883:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:788:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse9) is :[{
@@ -5130,7 +3826,7 @@
       ]
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:886:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:791:15)
 
   console.log
      >>>>>>> zodSchemaAsText2 : [z
@@ -5140,7 +3836,7 @@
       .array()
       .optional()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:908:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:813:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z
@@ -5303,7 +3999,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [voila: z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -5312,7 +4008,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -5322,22 +4018,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [voila]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[voila] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -5386,32 +4082,32 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [array]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1061:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1063:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:919:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:824:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:922:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:827:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse2) is :[{
@@ -5426,7 +4122,7 @@
       ]
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:925:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:830:15)
 
   console.log
      >>>>>>> zodSchemaAsText1 : [z
@@ -5435,7 +4131,7 @@
       })
       .optional()]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:947:14)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:852:14)
 
   console.info
     [@ZodSchemaParser].[constructor] zod schema provided to constructor: z
@@ -5553,7 +4249,7 @@
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral = [voila: z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:754:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:756:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenArray is :[{
@@ -5562,7 +4258,7 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:768:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:770:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - processedNode printedChildrenOfChildrensArray is :[{
@@ -5572,22 +4268,22 @@
       ]
     }]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:773:19)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:775:19)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.name = [voila]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:780:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:782:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - propStructure.initializer = [z.string()]
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:783:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:785:21)
 
   console.log
     [@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[voila] = this.betterExperiment(z.string())
 
-      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:787:21)
+      at ZodSchemaParser.reifyObjectLiteralExpression (src/parser/ZodSchemaParser.ts:789:21)
 
   console.log
     [@ZodSchemaParser].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=CallExpression] is :[z.string()]
@@ -5636,150 +4332,74 @@
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [string], and caller is [[object Object]]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:971:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:973:19)
 
   console.log
     [@ZodSchemaParser].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [object]
 
-      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:890:19)
+      at ZodSchemaParser.reifyZodFunctionCallWithOneArg (src/parser/ZodSchemaParser.ts:892:19)
 
   console.log
     [@ZodSchemaParser].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [optional]
 
-      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1066:19)
+      at ZodSchemaParser.reifyNoArgsZodFunctionCall (src/parser/ZodSchemaParser.ts:1068:19)
 
   console.log
      >>>>>>> reifiedZodSchema :[[object Object]]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:957:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:862:15)
 
   console.log
      >>>>>>> reifiedZodSchema's type is :[object]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:960:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:865:15)
 
   console.log
      >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse1) is :[{
-      "success": false,
-      "error": {
-        "issues": [
-          {
-            "code": "invalid_type",
-            "expected": "object",
-            "received": "null",
-            "path": [],
-            "message": "Expected object, received null"
-          }
-        ],
-        "name": "ZodError"
-      }
+      "success": true
     }]
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:963:15)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:868:15)
 
-FAIL tests/parser/ZodSchemaParser.test.ts (13.415 s)
-  Testing - ZodSchemaParser parse() method
-    Test the parse() method properly instantiate the zod schema
-      × shall return the same extracted frontmatter  (2054 ms)
+FAIL tests/parser/ZodSchemaParser.test.ts (12.479 s)
   Testing - ZodSchemaParser experiment() method
-    Test the experiment() method properly find the top function call in the zod schema
-      × shall return the top function call  (1344 ms)
-      × shall return the top function call  (1450 ms)
-      √ shall return the top function call  (1246 ms)
-      √ shall return the top function call  (1276 ms)
-      × shall return the top function call  (973 ms)
-      √ shall return the top function call  (1098 ms)
-      √ shall return the top function call  (1067 ms)
-      × shall return the top function call  (1065 ms)
+    [zodSchemaAsText3] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1834 ms)
+    [zodSchemaAsText5] - Test the betterExperiment() method reifies a zod schema
+      × which successfully pass the zod parse test  (1641 ms)
+    [zodSchemaAsText6] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1505 ms)
+    [zodSchemaAsText7] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1308 ms)
+    [zodSchemaAsText8] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (960 ms)
+    [zodSchemaAsText9] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1167 ms)
+    [zodSchemaAsText2] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1162 ms)
+    [zodSchemaAsText1] - Test the betterExperiment() method properly find the top function call in the zod schema
+      √ which successfully pass the zod parse test  (1105 ms)
 
-  ● Testing - ZodSchemaParser parse() method › Test the parse() method properly instantiate the zod schema › shall return the same extracted frontmatter 
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: true
-    Received: false
-
-    [0m [90m 652 |[39m         [32m` >>>>>>> resultOfZodParse :[${JSON.stringify(resultOfZodParse, null, 2)}]`[39m
-     [90m 653 |[39m       )[33m;[39m
-    [31m[1m>[22m[39m[90m 654 |[39m       expect(resultOfZodParse[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
-     [90m     |[39m                                        [31m[1m^[22m[39m
-     [90m 655 |[39m     })[33m;[39m
-     [90m 656 |[39m
-     [90m 657 |[39m   })[33m;[39m[0m
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:654:40)
-
-  ● Testing - ZodSchemaParser experiment() method › Test the experiment() method properly find the top function call in the zod schema › shall return the top function call 
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: true
-    Received: [{"voila": "ça marche"}, {"voila": "super bien!"}]
-
-    [0m [90m 700 |[39m       )[33m;[39m
-     [90m 701 |[39m       expect([32m`${(typeof reifiedZodSchema)}`[39m)[33m.[39mtoEqual([32m`${(typeof zodSchemaInstance3)}`[39m)
-    [31m[1m>[22m[39m[90m 702 |[39m       expect(zodSchemaInstance3[33m.[39mparse(testTsObjectToParse3))[33m.[39mtoBe([36mtrue[39m)
-     [90m     |[39m                                                              [31m[1m^[22m[39m
-     [90m 703 |[39m       expect(reifiedZodSchema[33m.[39msafeParse(testTsObjectToParse3)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
-     [90m 704 |[39m
-     [90m 705 |[39m       [90m// const { data } = zodMatterParse(testMarkDown3, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..[39m[0m
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:702:62)
-
-  ● Testing - ZodSchemaParser experiment() method › Test the experiment() method properly find the top function call in the zod schema › shall return the top function call 
+  ● Testing - ZodSchemaParser experiment() method › [zodSchemaAsText5] - Test the betterExperiment() method reifies a zod schema › which successfully pass the zod parse test 
 
     expect(received).toBe(expected) // Object.is equality
 
     Expected: true
     Received: false
 
-    [0m [90m 735 |[39m       )[33m;[39m
-     [90m 736 |[39m       expect([32m`${(typeof reifiedZodSchema)}`[39m)[33m.[39mtoEqual([32m`${(typeof zodSchemaInstance5)}`[39m)
-    [31m[1m>[22m[39m[90m 737 |[39m       expect(zodSchemaInstance5[33m.[39msafeParse(testTsObjectToParse5)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)
-     [90m     |[39m                                                                          [31m[1m^[22m[39m
-     [90m 738 |[39m       expect(reifiedZodSchema[33m.[39msafeParse(testTsObjectToParse5)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
-     [90m 739 |[39m
-     [90m 740 |[39m       [90m/**[39m[0m
+    [0m [90m 641 |[39m       [90m// expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance5)}`)[39m
+     [90m 642 |[39m       expect(zodSchemaInstance5[33m.[39msafeParse(testTsObjectToParse5)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)
+    [31m[1m>[22m[39m[90m 643 |[39m       expect(reifiedZodSchema[33m.[39msafeParse(testTsObjectToParse5)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m     |[39m                                                                        [31m[1m^[22m[39m
+     [90m 644 |[39m
+     [90m 645 |[39m       [90m/**[39m
+     [90m 646 |[39m [90m       * below, an example zod-matter test[39m[0m
 
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:737:74)
-
-  ● Testing - ZodSchemaParser experiment() method › Test the experiment() method properly find the top function call in the zod schema › shall return the top function call 
-
-    expect(received).toEqual(expected) // deep equality
-
-    Expected: "boolean"
-    Received: "object"
-
-    [0m [90m 848 |[39m         [32m` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse8) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse8), null, 2)}]`[39m
-     [90m 849 |[39m       )[33m;[39m
-    [31m[1m>[22m[39m[90m 850 |[39m       expect([32m`${(typeof reifiedZodSchema)}`[39m)[33m.[39mtoEqual([32m`${(typeof testTsObjectToParse8)}`[39m)
-     [90m     |[39m                                              [31m[1m^[22m[39m
-     [90m 851 |[39m       expect(zodSchema8[33m.[39msafeParse(testTsObjectToParse8)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)
-     [90m 852 |[39m       expect(reifiedZodSchema[33m.[39msafeParse(testTsObjectToParse8)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
-     [90m 853 |[39m[0m
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:850:46)
-
-  ● Testing - ZodSchemaParser experiment() method › Test the experiment() method properly find the top function call in the zod schema › shall return the top function call 
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: true
-    Received: false
-
-    [0m [90m 965 |[39m       )[33m;[39m
-     [90m 966 |[39m       expect([32m`${(typeof reifiedZodSchema)}`[39m)[33m.[39mtoEqual([32m`${(typeof testTsObjectToParse1)}`[39m)
-    [31m[1m>[22m[39m[90m 967 |[39m       expect(zodSchemaInstance2[33m.[39msafeParse(testTsObjectToParse1)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)
-     [90m     |[39m                                                                          [31m[1m^[22m[39m
-     [90m 968 |[39m       expect(reifiedZodSchema[33m.[39msafeParse(testTsObjectToParse1)[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
-     [90m 969 |[39m
-     [90m 970 |[39m       [90m/**[39m[0m
-
-      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:967:74)
+      at Object.<anonymous> (tests/parser/ZodSchemaParser.test.ts:643:72)
 
 Test Suites: 1 failed, 1 total
-Tests:       5 failed, 4 passed, 9 total
+Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        13.52 s, estimated 14 s
+Time:        12.582 s, estimated 14 s
 Ran all test suites.
  ELIFECYCLE  Test failed. See above for more details.
