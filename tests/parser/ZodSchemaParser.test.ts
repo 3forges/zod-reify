@@ -580,7 +580,6 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
     //jest.restoreAllMocks();
     // nothing to do
   });
-
   describe("[zodSchemaAsText3] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
     it(`which successfully pass the zod parse test `, async () => {
      console.log(
@@ -592,8 +591,6 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -668,8 +665,6 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -702,8 +697,6 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -717,13 +710,11 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(zodSchema7.safeParse(testTsObjectToParse7).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse7).success).toBe(true);
 
-      /**
-       * below, an example zod-matter test
-       */
-      /*
-      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      expect(data).toEqual(testTsObjectToParse5);
-      */
+      // below, an example zod-matter test
+
+      //const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      //expect(data).toEqual(testTsObjectToParse5);
+      
     });
   });
 
@@ -741,8 +732,6 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -756,13 +745,13 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(zodSchema8.safeParse(testTsObjectToParse8).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse8).success).toBe(true);
 
-      /**
-       * below, an example zod-matter test
-       */
-      /*
-      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      expect(data).toEqual(testTsObjectToParse5);
-      */
+      
+       // below, an example zod-matter test
+       
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
     });
   });
 
@@ -780,8 +769,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
+      
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -795,13 +783,13 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(zodSchema9.safeParse(testTsObjectToParse9).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse9).success).toBe(true);
 
-      /**
-       * below, an example zod-matter test
-       */
-      /*
-      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      expect(data).toEqual(testTsObjectToParse5);
-      */
+      
+      // below, an example zod-matter test
+      
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
     });
   });
 
@@ -819,8 +807,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
+      
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -834,13 +821,12 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(zodSchemaInstance2.safeParse(testTsObjectToParse2).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse2).success).toBe(true);
 
-      /**
-       * below, an example zod-matter test
-       */
-      /*
-      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      expect(data).toEqual(testTsObjectToParse5);
-      */
+      // below, an example zod-matter test
+      
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
     });
   });
 
@@ -857,8 +843,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      
      
      
-      /*
-     */
+      
       console.log(
         ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
       );
@@ -872,15 +857,15 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(zodSchemaInstance2.safeParse(testTsObjectToParse1).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse1).success).toBe(true);
 
-      /**
-       * below, an example zod-matter test
-       */
-      /*
-      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      expect(data).toEqual(testTsObjectToParse5);
-      */
+      // below, an example zod-matter test
+      
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
     });
   });
+
 
   
 

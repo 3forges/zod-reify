@@ -763,7 +763,7 @@ import {
           );
 
 
-          const childrenArray: Node<ts.Node>[] = processedNode.forEachChildAsArray()
+          const childrenArray: Node<ts.Node>[] = propertyOfTheObjLiteral.forEachChildAsArray()// processedNode.forEachChildAsArray()
           const childrenOfChildrensArray: Node<ts.Node>[] = childrenArray[0].forEachChildAsArray()
           
           const printedChildrenArray = childrenArray.map((node:Node<ts.Node>) => {
@@ -792,13 +792,14 @@ import {
             );
             
             console.log(
-              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[${propStructure.name}] = this.betterExperiment(${childrenOfChildrensArray[1].print()})`
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[${propStructure.name}] = this.betterExperiment(${childrenArray[1].print()})`
             );
-            reifiedJsonObjectLiteralExpression[`${propStructure.name}`] = this.betterExperiment(childrenOfChildrensArray[1])
+            reifiedJsonObjectLiteralExpression[`${propStructure.name}`] = this.betterExperiment(childrenArray[1]) // this.betterExperiment(childrenOfChildrensArray[1])
           } else {
             console.log(
-              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is NOT a PropertyAssignement so I don't kknow yet how to reify it: printedChildrenOfChildrensArray is :[${JSON.stringify({
-                printedChildrenOfChildrensArray: printedChildrenOfChildrensArray
+              `[@ZodSchemaParser].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is NOT a PropertyAssignement so I don't know yet how to reify it: printedChildrenArray and printedChildrenOfChildrensArray are :[${JSON.stringify({
+                printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
+                printedChildrenArray: printedChildrenArray
               }, null, 2)}]`
             );
           }
