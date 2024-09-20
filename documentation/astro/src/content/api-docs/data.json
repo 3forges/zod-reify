@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "@pesto-io/pesto-zod",
+	"name": "@pesto-io/zod-reify",
 	"variant": "project",
 	"kind": 1,
 	"flags": {},
@@ -15,14 +15,14 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "A package where you will find <code>@pesto-io</code> parser: ZodSchemaParser, etc..."
+						"text": "A package where you will find <code>@pesto-io</code> parser: ZodSchemaReifier, etc..."
 					}
 				]
 			},
 			"children": [
 				{
 					"id": 2,
-					"name": "ZodSchemaParser",
+					"name": "ZodSchemaReifier",
 					"variant": "declaration",
 					"kind": 128,
 					"flags": {},
@@ -34,7 +34,7 @@
 							},
 							{
 								"kind": "inline-tag",
-								"tag": "@ZodSchemaParser",
+								"tag": "@ZodSchemaReifier",
 								"text": ""
 							},
 							{
@@ -52,7 +52,7 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 210,
 									"character": 4
 								}
@@ -60,7 +60,7 @@
 							"signatures": [
 								{
 									"id": 4,
-									"name": "new ZodSchemaParser",
+									"name": "new ZodSchemaReifier",
 									"variant": "signature",
 									"kind": 16384,
 									"flags": {},
@@ -74,7 +74,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 210,
 											"character": 4
 										}
@@ -124,8 +124,8 @@
 									"type": {
 										"type": "reference",
 										"target": 2,
-										"name": "ZodSchemaParser",
-										"package": "@pesto-io/pesto-zod"
+										"name": "ZodSchemaReifier",
+										"package": "@pesto-io/zod-reify"
 									}
 								}
 							]
@@ -148,7 +148,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 58,
 									"character": 12
 								}
@@ -174,7 +174,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": ""
 									},
 									{
@@ -183,7 +183,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": ""
 									},
 									{
@@ -194,7 +194,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 144,
 									"character": 12
 								}
@@ -222,7 +222,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 51,
 									"character": 12
 								}
@@ -255,7 +255,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 62,
 									"character": 12
 								}
@@ -280,7 +280,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 53,
 									"character": 12
 								}
@@ -308,7 +308,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 101,
 									"character": 12
 								}
@@ -339,7 +339,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": ""
 									},
 									{
@@ -350,7 +350,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 46,
 									"character": 12
 								}
@@ -376,7 +376,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": ""
 									},
 									{
@@ -385,7 +385,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": ""
 									},
 									{
@@ -396,7 +396,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 119,
 									"character": 12
 								}
@@ -427,7 +427,7 @@
 									},
 									{
 										"kind": "inline-tag",
-										"tag": "@ZodSchemaParser",
+										"tag": "@ZodSchemaReifier",
 										"text": "[initZodObjectLiteral(): void]"
 									},
 									{
@@ -438,7 +438,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 151,
 									"character": 12
 								}
@@ -471,7 +471,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 210,
 									"character": 26
 								}
@@ -499,7 +499,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 96,
 									"character": 12
 								}
@@ -535,7 +535,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 577,
 									"character": 11
 								}
@@ -568,7 +568,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 577,
 											"character": 11
 										}
@@ -595,7 +595,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 267,
 									"character": 11
 								}
@@ -609,7 +609,7 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 267,
 											"character": 11
 										}
@@ -631,7 +631,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 408,
 									"character": 11
 								}
@@ -647,7 +647,7 @@
 										"summary": [
 											{
 												"kind": "text",
-												"text": "This method assumes that the provided Zod Schema is of the following form:\r\n\r\n<code>\r\nz.object({\r\n // and here some JSON properties, like usual for a zod schema.\r\n})\r\n</code>\r\n\r\nBut the provided zod schema could be of the following forms:\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.object({first: z.array(z.string())}),\r\n  z.object({second: z.array(z.string())}),\r\n  z.object({third: z.array(z.string())}),\r\n])\r\n</code>\r\n\r\n\r\n<code>\r\nz.array(z.string()).optional()\r\n</code>\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.array(z.string()),\r\n  z.boolean().optional(),\r\n  z.tuple([\r\n   z.object({something: z.array(z.string())}),\r\n   z.object({somethingElse: z.array(z.string())}),\r\n  ]),\r\n])\r\n</code>\r\n\r\nSo, what I need to do here, to generalize to \r\nany zod schema declaration, is a \r\nfunction, able to determine what is the \r\nfirst top zod function called, and from there, I \r\nwill have 3 cases:\r\n\r\n- [[CASE-1]] The top zod function call is the \"object\" zod function.\r\n- [[CASE-2]] The top zod function call is the \"tuple\" zod function.\r\n- [[CASE-3]] The top zod function call is any other zod function.\r\n\r\nThose 3 cases will be processed as the first recurrent call in the {@ZodSchemaParser#parse()} method.\r\n\r\nFor those 3 cases, we will then have 3 cases for the parameter provided to the top zod function call:\r\n\r\n- [[CASE-1]] A zod Object Literal of 'ts-morph' type "
+												"text": "This method assumes that the provided Zod Schema is of the following form:\r\n\r\n<code>\r\nz.object({\r\n // and here some JSON properties, like usual for a zod schema.\r\n})\r\n</code>\r\n\r\nBut the provided zod schema could be of the following forms:\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.object({first: z.array(z.string())}),\r\n  z.object({second: z.array(z.string())}),\r\n  z.object({third: z.array(z.string())}),\r\n])\r\n</code>\r\n\r\n\r\n<code>\r\nz.array(z.string()).optional()\r\n</code>\r\n\r\n\r\n<code>\r\nz.tuple([\r\n  z.array(z.string()),\r\n  z.boolean().optional(),\r\n  z.tuple([\r\n   z.object({something: z.array(z.string())}),\r\n   z.object({somethingElse: z.array(z.string())}),\r\n  ]),\r\n])\r\n</code>\r\n\r\nSo, what I need to do here, to generalize to \r\nany zod schema declaration, is a \r\nfunction, able to determine what is the \r\nfirst top zod function called, and from there, I \r\nwill have 3 cases:\r\n\r\n- [[CASE-1]] The top zod function call is the \"object\" zod function.\r\n- [[CASE-2]] The top zod function call is the \"tuple\" zod function.\r\n- [[CASE-3]] The top zod function call is any other zod function.\r\n\r\nThose 3 cases will be processed as the first recurrent call in the {@ZodSchemaReifier#parse()} method.\r\n\r\nFor those 3 cases, we will then have 3 cases for the parameter provided to the top zod function call:\r\n\r\n- [[CASE-1]] A zod Object Literal of 'ts-morph' type "
 											},
 											{
 												"kind": "inline-tag",
@@ -745,7 +745,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 408,
 											"character": 11
 										}
@@ -767,7 +767,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 1534,
 									"character": 12
 								}
@@ -789,7 +789,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 1534,
 											"character": 12
 										}
@@ -851,7 +851,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 824,
 									"character": 12
 								}
@@ -874,7 +874,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 824,
 											"character": 12
 										}
@@ -936,7 +936,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 510,
 									"character": 11
 								}
@@ -969,7 +969,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 510,
 											"character": 11
 										}
@@ -1009,7 +1009,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 497,
 									"character": 11
 								}
@@ -1042,7 +1042,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 497,
 											"character": 11
 										}
@@ -1069,7 +1069,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 755,
 									"character": 11
 								}
@@ -1091,7 +1091,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 755,
 											"character": 11
 										}
@@ -1126,7 +1126,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "parser/ZodSchemaParser.ts",
+									"fileName": "parser/ZodSchemaReifier.ts",
 									"line": 454,
 									"character": 12
 								}
@@ -1159,7 +1159,7 @@
 									},
 									"sources": [
 										{
-											"fileName": "parser/ZodSchemaParser.ts",
+											"fileName": "parser/ZodSchemaReifier.ts",
 											"line": 454,
 											"character": 12
 										}
@@ -1212,7 +1212,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "parser/ZodSchemaParser.ts",
+							"fileName": "parser/ZodSchemaReifier.ts",
 							"line": 36,
 							"character": 15
 						}
@@ -1244,7 +1244,7 @@
 			]
 		}
 	],
-	"packageName": "@pesto-io/pesto-zod",
+	"packageName": "@pesto-io/zod-reify",
 	"readme": [
 		{
 			"kind": "text",
@@ -1268,7 +1268,7 @@
 		},
 		{
 			"kind": "code",
-			"text": "`ZodSchemaParser`"
+			"text": "`ZodSchemaReifier`"
 		},
 		{
 			"kind": "text",
@@ -1276,7 +1276,7 @@
 		},
 		{
 			"kind": "code",
-			"text": "```bash\r\nnpm i @pesto-io/pesto-zod\r\n# pnpm add @pesto-io/pesto-zod\r\n```"
+			"text": "```bash\r\nnpm i @pesto-io/zod-reify\r\n# pnpm add @pesto-io/zod-reify\r\n```"
 		},
 		{
 			"kind": "text",
@@ -1284,7 +1284,7 @@
 		},
 		{
 			"kind": "code",
-			"text": "```TypeScript\r\nimport { ZodSchemaParser } from \"@pesto-io/pesto-zod\"\r\n\r\n\r\n```"
+			"text": "```TypeScript\r\nimport { ZodSchemaReifier } from \"@pesto-io/zod-reify\"\r\n\r\n\r\n```"
 		},
 		{
 			"kind": "text",
@@ -1321,163 +1321,163 @@
 			"qualifiedName": ""
 		},
 		"2": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier"
 		},
 		"3": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.__constructor"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.__constructor"
 		},
 		"4": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier"
 		},
 		"5": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "zodSchemaAsString"
 		},
 		"6": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "p_tsConfigRootdir"
 		},
 		"7": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.unique_id"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.unique_id"
 		},
 		"8": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.project"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.project"
 		},
 		"9": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.tsConfigRootdir"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.tsConfigRootdir"
 		},
 		"10": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.filename"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.filename"
 		},
 		"11": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.sourceFile"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.sourceFile"
 		},
 		"12": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.zodSchemaVarDeclaration"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodSchemaVarDeclaration"
 		},
 		"13": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.typeChecker"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.typeChecker"
 		},
 		"14": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.zodImport"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodImport"
 		},
 		"15": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.nameOfTheZodImport"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.nameOfTheZodImport"
 		},
 		"16": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.zodObjectLiteral"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodObjectLiteral"
 		},
 		"17": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.zodSchemaAsString"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodSchemaAsString"
 		},
 		"18": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.experiment"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.experiment"
 		},
 		"19": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.experiment"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.experiment"
 		},
 		"20": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.initZodObjectLiteral"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.initZodObjectLiteral"
 		},
 		"21": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.initZodObjectLiteral"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.initZodObjectLiteral"
 		},
 		"22": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.validate"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.validate"
 		},
 		"23": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.validate"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.validate"
 		},
 		"24": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.parse"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.parse"
 		},
 		"25": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.parse"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.parse"
 		},
 		"26": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateZodJsonConfig"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateZodJsonConfig"
 		},
 		"27": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateZodJsonConfig"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateZodJsonConfig"
 		},
 		"28": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "objectLiteralNode"
 		},
 		"29": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.demoDFStraversal"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.demoDFStraversal"
 		},
 		"30": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.demoDFStraversal"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.demoDFStraversal"
 		},
 		"31": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.testInstantiateFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.testInstantiateFrom"
 		},
 		"32": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.testInstantiateFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.testInstantiateFrom"
 		},
 		"33": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "treeOfZodFunctionCalls"
 		},
 		"34": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateLeafFunctionCallFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateLeafFunctionCallFrom"
 		},
 		"35": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateLeafFunctionCallFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateLeafFunctionCallFrom"
 		},
 		"36": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "caller"
 		},
 		"37": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "calledFunction"
 		},
 		"38": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateFunctionCalledWithParamsFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateFunctionCalledWithParamsFrom"
 		},
 		"39": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
-			"qualifiedName": "ZodSchemaParser.instantiateFunctionCalledWithParamsFrom"
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.instantiateFunctionCalledWithParamsFrom"
 		},
 		"40": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "calledFunction"
 		},
 		"41": {
-			"sourceFileName": "src/parser/ZodSchemaParser.ts",
+			"sourceFileName": "src/parser/ZodSchemaReifier.ts",
 			"qualifiedName": "calledFunctionParam"
 		}
 	}

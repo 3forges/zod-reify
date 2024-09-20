@@ -1,5 +1,5 @@
 {
-  "name": "@pesto-io/pesto-zod",
+  "name": "@pesto-io/zod-reify",
   "version": "0.0.1-alpha",
   "description": "Pesto module to intantiate zod schema from Typescript source code as string.",
   "main": "dist/index.js",

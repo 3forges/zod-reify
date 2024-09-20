@@ -81,7 +81,7 @@ const testMarkDown3 = `---\n
 - voila: oh que oui
 - voila: ça marche vraiment!
 ---\n
-# Hello Pesto ZodSchemaParser!
+# Hello Pesto ZodSchemaReifier!
 `
 const testTsObjectToParse3 = [{
   voila: `ça marche`
@@ -236,7 +236,7 @@ const testMarkDown4 = `---\n
       - LEVEL3\n 
       - NOCOPY\n
 ---\n
-# Hello Pesto ZodSchemaParser!
+# Hello Pesto ZodSchemaReifier!
 `
 
 const testTsObjectToParse4 = {
@@ -465,7 +465,7 @@ const testMarkDown5 = `---\n
       - LEVEL3\n 
       - NOCOPY\n
 ---\n
-# Hello Pesto ZodSchemaParser!
+# Hello Pesto ZodSchemaReifier!
 `
 
 const testTsObjectToParse5 = {
@@ -717,14 +717,14 @@ const testTsObjectToParse10ter = {
  * ------------------------------------
  *          First Tests Suite:
  *             Testing the
- *  {@ZodSchemaParser } experiment() method
+ *  {@ZodSchemaReifier } experiment() method
  * ------------------------------------
  * ------------------------------------
  * ------------------------------------
  */
 
 
-describe("Testing - ZodSchemaParser experiment() method", () => {
+describe("Testing - ZodSchemaReifier experiment() method", () => {
   afterAll(() => {
     //jest.restoreAllMocks();
     // nothing to do
@@ -738,7 +738,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText1 : [${zodSchemaAsText1}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText1);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText1);
      const reifiedZodSchema: typeof zodSchemaInstance1 = zodSchemaParser.betterExperiment()
      
      
@@ -774,7 +774,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText2 : [${zodSchemaAsText2}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText2);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText2);
 
      const reifiedZodSchema: typeof zodSchemaInstance2 = zodSchemaParser.betterExperiment()
      
@@ -808,7 +808,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText3 : [${zodSchemaAsText3}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText3);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText3);
 
      const reifiedZodSchema: typeof zodSchemaInstance3 = zodSchemaParser.betterExperiment()
      
@@ -838,7 +838,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText4 : [${zodSchemaAsText4}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText4);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText4);
 
      const reifiedZodSchema: typeof zodSchemaInstance4 = zodSchemaParser.betterExperiment()
      
@@ -871,7 +871,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText5);
 
      const reifiedZodSchema: typeof zodSchemaInstance5 = zodSchemaParser.betterExperiment()
      
@@ -912,7 +912,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText6 : [${zodSchemaAsText6}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText6);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText6);
 
      const reifiedZodSchema: typeof zodSchema6 = zodSchemaParser.betterExperiment()
      
@@ -945,7 +945,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText7 : [${zodSchemaAsText7}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText7);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText7);
      const reifiedZodSchema: typeof zodSchema7 = zodSchemaParser.betterExperiment()
      
      
@@ -979,7 +979,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText8 : [${zodSchemaAsText8}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText8);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText8);
 
      const reifiedZodSchema: typeof zodSchema8 = zodSchemaParser.betterExperiment()
      
@@ -1016,7 +1016,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText9 : [${zodSchemaAsText9}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText9);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText9);
 
      const reifiedZodSchema: typeof zodSchema9 = zodSchemaParser.betterExperiment()
      
@@ -1052,7 +1052,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText10 : [${zodSchemaAsText10}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText10);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText10);
 
      const reifiedZodSchema: typeof zodSchemaInstance10 = zodSchemaParser.betterExperiment()
      
@@ -1112,7 +1112,7 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
 
 
 
-describe("Testing - ZodSchemaParser with zod-matter", () => {
+describe("Testing - ZodSchemaReifier with zod-matter", () => {
   afterAll(() => {
     //jest.restoreAllMocks();
     // nothing to do
@@ -1125,7 +1125,7 @@ describe("Testing - ZodSchemaParser with zod-matter", () => {
      console.log(
          ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
      );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
+     const zodSchemaParser = new parser.ZodSchemaReifier(zodSchemaAsText5);
 
      const reifiedZodSchema: typeof zodSchemaInstance5 = zodSchemaParser.betterExperiment()
      

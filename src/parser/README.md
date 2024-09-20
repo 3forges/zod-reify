@@ -5,7 +5,7 @@
 * A function able to reify 
 
 ```TypeScript
-export class ZodSchemaParser {
+export class ZodSchemaReifier {
 
 /**
  * 
