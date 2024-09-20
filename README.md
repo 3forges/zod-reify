@@ -13,7 +13,9 @@ One of the most important, is the `ZodSchemaReifier`, which is able to read some
 
 * left TODO before a first release:
 
-I have now the generalized algorithm: we need to add more test cases to fully cover all zod functions support. We also need to update docs and README. We also need to change the git repository. We also need to complete method renaming. We also need to replace any console.log with winston logging silenced by default. Finally adding some speed automated tests.
+I have now the generalized algorithm: we need to add more test cases to fully cover all zod functions support. We also need to update docs and README. We also need to change the git repository. We also need to complete method renaming. We also need to replace any console.log with winston logging silenced by default. 
+
+Finally adding some speed automated tests with https://github.com/tinylibs/tinybench
 
 ## How to Use
 
