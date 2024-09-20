@@ -58,7 +58,7 @@ const testTsObjectToParse2 = [{
   voila: `vraiment super bien!`
 }]
 
-  /**
+/**
  * ++++++++++++++++++++++++++++++++++++
  *          Test 3
  * ++++++++++++++++++++++++++++++++++++
@@ -239,6 +239,86 @@ const testMarkDown4 = `---\n
 # Hello Pesto ZodSchemaParser!
 `
 
+const testTsObjectToParse4 = {
+  title: `HiDeoo`,
+  hereAnother: {
+    reseau: {
+      cesar: [
+        "marc",
+        "aurèle",
+        "auguste"
+      ]},
+    imLackingIdea: true,
+    itsForATest: false,
+  },
+  tags: [
+    "william",
+    "the",
+    "conquerer"
+  ],
+  another: true,
+  exampleCategory: [
+    [ 
+      "joe",
+      "alfred",
+      "alvin",
+    ],
+    [ 
+      "thirteen",
+      "hundred",
+      "books",
+    ],
+    [ 
+      "going",
+      "overseas",
+      "together",
+    ]
+  ],
+  example2Category: [
+    false,
+    true,
+    false
+  ],
+  example3Category: [
+    7684464125145,
+    26454943684684,
+    1516546884648
+  ],
+  example4Category: [
+    7684464125145,
+    26454943684684,
+    1516546884648
+  ],
+  image: `./images/paysages/puydedome.png`,
+  somethingElseNested: {
+    firstname: [
+      `Jean-Baptiste`,
+      `Marie`,
+      `Éric`
+    ],
+    lastname: `Lasselle`,
+    color: `yellow`,
+    two: false,
+    three: [
+      56,
+      789,
+      159
+    ],
+    four: [
+      15,
+      46,
+      739
+    ]
+  },
+  department: {
+    divisionName: `CCOE`,
+    secrecyTags: [
+      `LEVEL3`, 
+      `NOCOPY`
+    ]
+  },
+}
+
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Test 5
@@ -276,9 +356,7 @@ const zodSchemaInstance5 = z
   });
 
 
-/**
- * -----------------------
- */
+
 const zodSchemaAsText5 = `z
   .object({
     title: z.string(),
@@ -440,7 +518,7 @@ const testTsObjectToParse5 = {
     26454943684684,
     1516546884648
   ],
-  image: `https://fastly.picsum.photos/id/6/200/200.jpg?hmac=g4Q9Vcu5Ohm8Rwap3b6HSIxUfIALZ6BasESHhw7VjLE`,
+  image: `./images/paysages/puydedome.png`,
   somethingElseNested: {
     firstname: [
       `Jean-Baptiste`,
@@ -478,7 +556,9 @@ const testTsObjectToParse5 = {
 
 
 /**
- * 
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 6
+ * ++++++++++++++++++++++++++++++++++++
  */
 const zodSchema6 = z.tuple([
   z.object({first: z.array(z.string())}),
@@ -492,7 +572,7 @@ const zodSchemaAsText6 = `z.tuple([
     ])`
     //z.keyOf(zodSchema6)
 const testTsObjectToParse6 = [
-  { 
+  {
     first: [
       "I am in the [first]",
       "I am an example of a tuple as defined by zod"
@@ -511,8 +591,11 @@ const testTsObjectToParse6 = [
     ]
   }
 ]
+
 /**
- * 
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 7
+ * ++++++++++++++++++++++++++++++++++++
  */
 const zodSchema7 = z.tuple([
   z.object({first: z.array(z.string())}),
@@ -546,13 +629,19 @@ const testTsObjectToParse7 = [
 ]
 
 /**
- * 
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 8
+ * ++++++++++++++++++++++++++++++++++++
  */
 const zodSchema8 = z.boolean().nullable().optional()
 const zodSchemaAsText8 = `z.boolean().nullable().optional()`
 const testTsObjectToParse8 = false
+
+
 /**
- * 
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 9
+ * ++++++++++++++++++++++++++++++++++++
  */
 const zodSchema9 = z.array(z.boolean().nullish()).nullable().optional()
 const zodSchemaAsText9 = `z.array(z.boolean().nullish()).nullable().optional()`
@@ -562,6 +651,65 @@ const testTsObjectToParse9 = [
   true
 ]
 
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 10
+ * ++++++++++++++++++++++++++++++++++++
+ */
+const zodSchemaInstance10 = z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable();
+
+const zodSchemaAsText10 = `z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()`;
+
+// const testTsObjectToParse1 = null // fails the test
+const testTsObjectToParse10 = undefined
+const testTsObjectToParse10bis = null
+const testTsObjectToParse10ter = {
+  un: {
+    deux: {
+      trois: {
+        quatre: {
+          cinq: {
+            six: {
+              sept: `Excellent!`
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /**
  * ------------------------------------
@@ -575,11 +723,86 @@ const testTsObjectToParse9 = [
  * ------------------------------------
  */
 
+
 describe("Testing - ZodSchemaParser experiment() method", () => {
   afterAll(() => {
     //jest.restoreAllMocks();
     // nothing to do
   });
+
+  /**
+   * 
+   */
+  describe("[zodSchemaAsText1] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
+    it(`which successfully pass the zod parse test `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText1 : [${zodSchemaAsText1}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText1);
+     const reifiedZodSchema: typeof zodSchemaInstance1 = zodSchemaParser.betterExperiment()
+     
+     
+     
+      
+      console.log(
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse1) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse1), null, 2)}]`
+      );
+      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse1)}`)
+      expect(zodSchemaInstance2.safeParse(testTsObjectToParse1).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse1).success).toBe(true);
+
+      // below, an example zod-matter test
+      
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
+    });
+  });
+
+  /**
+   * 
+   */
+  describe("[zodSchemaAsText2] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
+    it(`which successfully pass the zod parse test `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText2 : [${zodSchemaAsText2}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText2);
+
+     const reifiedZodSchema: typeof zodSchemaInstance2 = zodSchemaParser.betterExperiment()
+     
+     
+     
+      
+      console.log(
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse2) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse2), null, 2)}]`
+      );
+      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse2)}`)
+      expect(zodSchemaInstance2.safeParse(testTsObjectToParse2).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse2).success).toBe(true);
+
+      // below, an example zod-matter test
+      
+      
+      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      // expect(data).toEqual(testTsObjectToParse5);
+      
+    });
+  });
+
   describe("[zodSchemaAsText3] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
     it(`which successfully pass the zod parse test `, async () => {
      console.log(
@@ -603,6 +826,36 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       //expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance3)}`)
       expect(zodSchemaInstance3.safeParse(testTsObjectToParse3).success).toBe(true)
       expect(reifiedZodSchema.safeParse(testTsObjectToParse3).success).toBe(true);
+
+      // const { data } = zodMatterParse(testMarkDown3, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      
+    });
+
+  });
+
+  describe("[zodSchemaAsText4] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
+    it(`which successfully pass the zod parse test `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText4 : [${zodSchemaAsText4}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText4);
+
+     const reifiedZodSchema: typeof zodSchemaInstance4 = zodSchemaParser.betterExperiment()
+     
+     
+     
+      console.log(
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse4) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse4), null, 2)}]`
+      );
+      //expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance4)}`)
+      expect(zodSchemaInstance4.safeParse(testTsObjectToParse4).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse4).success).toBe(true);
 
       // const { data } = zodMatterParse(testMarkDown3, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
       
@@ -784,90 +1037,131 @@ describe("Testing - ZodSchemaParser experiment() method", () => {
       expect(reifiedZodSchema.safeParse(testTsObjectToParse9).success).toBe(true);
 
       
-      // below, an example zod-matter test
-      
-      
-      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      // expect(data).toEqual(testTsObjectToParse5);
-      
     });
   });
 
-  /**
-   * 
-   */
-  describe("[zodSchemaAsText2] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
-     console.log(
-         ` >>>>>>> zodSchemaAsText2 : [${zodSchemaAsText2}]`
-     );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText2);
-
-     const reifiedZodSchema: typeof zodSchemaInstance2 = zodSchemaParser.betterExperiment()
-     
-     
-     
-      
-      console.log(
-        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
-      );
-      console.log(
-        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
-      );
-      console.log(
-        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse2) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse2), null, 2)}]`
-      );
-      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse2)}`)
-      expect(zodSchemaInstance2.safeParse(testTsObjectToParse2).success).toBe(true)
-      expect(reifiedZodSchema.safeParse(testTsObjectToParse2).success).toBe(true);
-
-      // below, an example zod-matter test
-      
-      
-      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      // expect(data).toEqual(testTsObjectToParse5);
-      
-    });
-  });
-
-  /**
-   * 
-   */
-  describe("[zodSchemaAsText1] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
-     console.log(
-         ` >>>>>>> zodSchemaAsText1 : [${zodSchemaAsText1}]`
-     );
-     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText1);
-     const reifiedZodSchema: typeof zodSchemaInstance1 = zodSchemaParser.betterExperiment()
-     
-     
-     
-      
-      console.log(
-        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
-      );
-      console.log(
-        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
-      );
-      console.log(
-        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse1) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse1), null, 2)}]`
-      );
-      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse1)}`)
-      expect(zodSchemaInstance2.safeParse(testTsObjectToParse1).success).toBe(true)
-      expect(reifiedZodSchema.safeParse(testTsObjectToParse1).success).toBe(true);
-
-      // below, an example zod-matter test
-      
-      
-      // const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
-      // expect(data).toEqual(testTsObjectToParse5);
-      
-    });
-  });
 
 
   
 
+  /**
+   * 
+   */
+  describe("[zodSchemaAsText10] - Test the betterExperiment() method properly find the top function call in the zod schema", () => {
+    it(`which successfully pass the zod parse test `, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText10 : [${zodSchemaAsText10}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText10);
+
+     const reifiedZodSchema: typeof zodSchemaInstance10 = zodSchemaParser.betterExperiment()
+     
+     
+     
+      
+      console.log(
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse10) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse10ter), null, 2)}]`
+      );
+      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testTsObjectToParse9)}`)
+      expect(zodSchemaInstance10.safeParse(testTsObjectToParse10ter).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse10ter).success).toBe(true)
+      expect(zodSchemaInstance10.safeParse(testTsObjectToParse10bis).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse10bis).success).toBe(true)
+      expect(zodSchemaInstance10.safeParse(testTsObjectToParse10).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse10).success).toBe(true)
+
+      
+    });
+  });
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+describe("Testing - ZodSchemaParser with zod-matter", () => {
+  afterAll(() => {
+    //jest.restoreAllMocks();
+    // nothing to do
+  });
+  /**
+   * 
+   */
+  describe("[zodSchemaAsText5] - Test that the betterExperiment() method reifies a zod schema", () => {
+    it(`which successfully extracts frontmatter from markdown using zod-matter`, async () => {
+     console.log(
+         ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
+     );
+     const zodSchemaParser = new parser.ZodSchemaParser(zodSchemaAsText5);
+
+     const reifiedZodSchema: typeof zodSchemaInstance5 = zodSchemaParser.betterExperiment()
+     
+     
+     
+      /*
+     */
+      console.log(
+        ` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${(typeof reifiedZodSchema)}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testTsObjectToParse5) is :[${JSON.stringify(reifiedZodSchema.safeParse(testTsObjectToParse5), null, 2)}]`
+      );
+      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof zodSchemaInstance5)}`)
+      expect(zodSchemaInstance5.safeParse(testTsObjectToParse5).success).toBe(true)
+      expect(reifiedZodSchema.safeParse(testTsObjectToParse5).success).toBe(true);
+
+      /**
+       * below, an example zod-matter test
+       */
+      const { data } = zodMatterParse(testMarkDown5, reifiedZodSchema) // zod-matter expects a zod schema of type "AnyZodObject", but this test case is not  it's a // ZodNullable etc..
+      console.log(
+        ` >>>>>>> zod-matter extracted fronmatter is :[${JSON.stringify(data, null, 2)}]`
+      );
+      console.log(
+        ` >>>>>>> testTsObjectToParse5 is :[${JSON.stringify(testTsObjectToParse5, null, 2)}]`
+      );
+      expect(data).toMatchObject(testTsObjectToParse5);
+      /*
+      */
+      
+    });
+
+  });
 
 });
