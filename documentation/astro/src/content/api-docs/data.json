@@ -1248,7 +1248,7 @@
 	"readme": [
 		{
 			"kind": "text",
-			"text": "![Pesto](https://raw.githubusercontent.com/3forges/pesto-zod/feature/init-src/n/ci/documentation/images/pesto-icons/32x32.png)\r\n--\r\n\r\n![npm bundle size](https://img.shields.io/bundlephobia/min/%403forges%2Fpesto-zod?style=for-the-badge&logoColor=%23dc34eb&label=bundle%20size&labelColor=%2334eb3d&color=%23dc34eb)\r\n\r\n![CircleCI (branch)](https://img.shields.io/circleci/build/github/3forges/pesto-zod/feature%252Finit-src%252Fn%252Fci?style=for-the-badge&labelColor=%2334ebd3&color=%23eb34eb)\r\n\r\n# Pesto Zod\r\n\r\nThe "
+			"text": "![Pesto](https://raw.githubusercontent.com/3forges/pesto-zod/feature/init-src/n/ci/documentation/images/pesto-icons/32x32.png)\r\n--\r\n\r\n![npm bundle size](https://img.shields.io/bundlephobia/min/%403forges%2Fpesto-zod?style=for-the-badge&logoColor=%23dc34eb&label=bundle%20size&labelColor=%2334eb3d&color=%23dc34eb)\r\n\r\n![CircleCI (branch)](https://img.shields.io/circleci/build/github/3forges/pesto-zod/feature%252Finit-src%252Fn%252Fci?style=for-the-badge&labelColor=%2334ebd3&color=%23eb34eb)\r\n\r\n# Zod Reify\r\n\r\nThe "
 		},
 		{
 			"kind": "code",
