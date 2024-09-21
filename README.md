@@ -18,13 +18,14 @@ I have now the generalized algorithm:
 * [ ] We also need to update docs and README. We also need to change the git repository.
 * [x] We also need to complete method renaming. 
 * [ ] We also need to replace any `console.log` with winston logging silenced by default.
+* [ ] setup the cloudflare pages to publish the documentation astro website
 
 Finally adding some speed automated tests with https://github.com/tinylibs/tinybench
 
 Jest Tests reporting:
 * [x] so i will use the Junit reporter: 
 * [x] and convert it to JSON, to be used by astro, with: https://github.com/Kesin11/ts-junit2json
-* [ ] only one thing left to do : : a good layout for the tests report page.
+* [ ] a good layout for the tests report page.
 
 ## How to Use
 
