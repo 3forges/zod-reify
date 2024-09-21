@@ -80,6 +80,9 @@ export default function FlowbiteNavbar({ link = "https://www.tiktok.com/@pesto-i
                             <li>
                                 <a href="/api-types-tree2" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Api Tree 2</a>
                             </li>
+                            <li>
+                                <a href="/tests-report" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tests Report</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

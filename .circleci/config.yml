@@ -87,6 +87,14 @@ jobs:
               echo "# Run Package Unit Tests!"
               # WARNING! As soon as [https://github.com/3forges/pesto-zod/pull/6] PR is merged, YOU MUST remove the [--passWithNoTests] option
               pnpm test 
+      - run:
+          name: "Generate Unit Tests report"
+          command: | 
+              echo "BASH_ENV=[${BASH_ENV}]"
+              pwd
+              echo "# Run Package Unit Tests!"
+              # WARNING! As soon as [https://github.com/3forges/pesto-zod/pull/6] PR is merged, YOU MUST remove the [--passWithNoTests] option
+              pnpm test:report
       - save_cache:
           paths:
             - node_modules

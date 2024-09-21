@@ -301,11 +301,11 @@ export class ZodSchemaReifier {
    * @param aZodExpressionNode ts-morph / TypeScript Compiler API
    * @returns the reified typescript object, returned by the zod expression
    */
-  public betterExperiment(aZodExpressionNode?: Node<ts.Node>): any {
+  public reify(aZodExpressionNode?: Node<ts.Node>): any {
     /**
      * The Object to return:
      * Instead of that object, the experiment method will return the instantiated zod object
-     * so betterExperiment is the prototype for the
+     * so reify is the prototype for the
      * generalized algorithm() which will replace parse()
      */
     let toReturn: any = null;
@@ -318,7 +318,7 @@ export class ZodSchemaReifier {
     const processedNode = aZodExpressionNode || this.zodExpressionNode;
     if (Node.isCallExpression(processedNode)) {
       console.log(
-        `[@ZodSchemaReifier].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
+        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
       );
       const childrenArray: Node<ts.Node>[] =
         processedNode.forEachChildAsArray();
@@ -328,15 +328,15 @@ export class ZodSchemaReifier {
         processedNode.forEachDescendantAsArray();
 
       console.log(
-        `[@ZodSchemaReifier].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
       );
       console.log(
-        `[@ZodSchemaReifier].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[${descendantsArray.length}]`
+        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[${descendantsArray.length}]`
       );
       /*
         descendantsArray.forEach((node:Node<ts.Node>) => {
           console.log(
-            `[@ZodSchemaReifier].[betterExperiment()] - processedNode descendantsArray.forEach descendant node is :[${node.print()}]`
+            `[@ZodSchemaReifier].[reify()] - processedNode descendantsArray.forEach descendant node is :[${node.print()}]`
           );
         })
         */
@@ -350,7 +350,7 @@ export class ZodSchemaReifier {
         })
         */
       console.log(
-        `[@ZodSchemaReifier].[betterExperiment()] - processedNode printedChildrenArray is :[${JSON.stringify(
+        `[@ZodSchemaReifier].[reify()] - processedNode printedChildrenArray is :[${JSON.stringify(
           {
             printedChildrenArray: printedChildrenArray,
           },
@@ -368,7 +368,7 @@ export class ZodSchemaReifier {
 
         const passedArgument = childrenArray[1];
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
         );
         const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
           (node: Node<ts.Node>) => {
@@ -376,7 +376,7 @@ export class ZodSchemaReifier {
           }
         );
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
+          `[@ZodSchemaReifier].[reify()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
             {
               printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
             },
@@ -386,12 +386,12 @@ export class ZodSchemaReifier {
         );
         const caller = childrenOfChildrensArray[0];
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode caller is :[${caller.print()}]`
+          `[@ZodSchemaReifier].[reify()] - processedNode caller is :[${caller.print()}]`
         );
         return this.reifyZodFunctionCallWithOneArg(
-          this.betterExperiment(caller),
+          this.reify(caller),
           calledFunctionName,
-          this.betterExperiment(passedArgument)
+          this.reify(passedArgument)
         );
       } else if (childrenArray.length == 1) {
         // i.e.: if function is called without parameters
@@ -400,7 +400,7 @@ export class ZodSchemaReifier {
           lastIndexOfDot + 1 // + 1 : to exclude the dot character
         );
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
         );
         const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
           (node: Node<ts.Node>) => {
@@ -408,7 +408,7 @@ export class ZodSchemaReifier {
           }
         );
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
+          `[@ZodSchemaReifier].[reify()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
             {
               printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
             },
@@ -418,15 +418,15 @@ export class ZodSchemaReifier {
         );
         const caller = childrenOfChildrensArray[0];
         console.log(
-          `[@ZodSchemaReifier].[betterExperiment()] - processedNode caller is :[${caller.print()}]`
+          `[@ZodSchemaReifier].[reify()] - processedNode caller is :[${caller.print()}]`
         );
         return this.reifyNoArgsZodFunctionCall(
-          this.betterExperiment(caller),
+          this.reify(caller),
           calledFunctionName
         );
       } else if (childrenArray.length > 2) {
         throw new Error(
-          `[@ZodSchemaReifier].[betterExperiment()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.`
+          `[@ZodSchemaReifier].[reify()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.`
         );
       }
     } else if (Node.isObjectLiteralExpression(processedNode)) {
@@ -439,7 +439,7 @@ export class ZodSchemaReifier {
       return z;
     } else {
       throw new Error(
-        `[@ZodSchemaReifier].[betterExperiment()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression`
+        `[@ZodSchemaReifier].[reify()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression`
       );
     }
     /**
@@ -516,7 +516,7 @@ export class ZodSchemaReifier {
           )}]`
         );
         reifiedArrayLiteralExpression.push(
-          this.betterExperiment(elementOfTheArray)
+          this.reify(elementOfTheArray)
         );
         console.log(
           `[@ZodSchemaReifier].[reifyArrayLiteralExpression()] - reifiedArrayLiteralExpression is now :[${JSON.stringify(
@@ -603,10 +603,10 @@ export class ZodSchemaReifier {
           console.log(
             `[@ZodSchemaReifier].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is a PropertyAssignement so it will be : reifiedJsonObjectLiteralExpression[${
               propStructure.name
-            }] = this.betterExperiment(${childrenArray[1].print()})`
+            }] = this.reify(${childrenArray[1].print()})`
           );
           reifiedJsonObjectLiteralExpression[`${propStructure.name}`] =
-            this.betterExperiment(childrenArray[1]); // this.betterExperiment(childrenOfChildrensArray[1])
+            this.reify(childrenArray[1]); // this.reify(childrenOfChildrensArray[1])
         } else {
           console.log(
             `[@ZodSchemaReifier].[reifyObjectLiteralExpression()] - propertyOfTheObjLiteral - is NOT a PropertyAssignement so I don't know yet how to reify it: printedChildrenArray and printedChildrenOfChildrensArray are :[${JSON.stringify(

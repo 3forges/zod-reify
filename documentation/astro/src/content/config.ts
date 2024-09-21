@@ -1,7 +1,10 @@
 import { z, defineCollection } from 'astro:content'
 import { jsonToZod } from "json-to-zod"
 import typedocData from './api-docs/data.json'; // This import style requires "esModuleInterop", see "side notes"
+import unitTestsReportData from './api-docs/data.json'; // This import style requires "esModuleInterop", see "side notes"
 import { schema as apiDocsZodSchema } from '../schemas/api-docs.zod'
+import { schema as unitTestsReportSchema } from '../schemas/unit.tests.report.schema'
+
 /*
 const typedocZodSchema = jsonToZod(typedocData)
 
@@ -22,8 +25,13 @@ const apiDocsCollection = defineCollection({
   schema: apiDocsZodSchema,
 });
 
+const unitTestsReportCollection = defineCollection({
+  type: 'data', // v2.5.0 and later
+  schema: unitTestsReportSchema,
+});
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   'api-docs': apiDocsCollection,
   'api-docs-md': apiDocsMdCollection,
+  'tests-report': unitTestsReportCollection,
 };

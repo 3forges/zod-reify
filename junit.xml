@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="17" failures="0" errors="0" time="26.26">
+  <testsuite name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method" errors="0" failures="0" skipped="0" timestamp="2024-09-21T13:14:59" time="26.149" tests="17">
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.762">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.342">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.204">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.15">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.838">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.782">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.24">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.317">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.057">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.291">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.323">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.617">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object which successfully pass the zod parse test" time="1.325">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #3: markdown frontmatter extraction zodSchema3&quot;, &quot;testMarkdown&quot;: &quot;---
+
+- voila: oh que oui
+- voila: ça marche vraiment!
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()&quot;}]" name="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #3: markdown frontmatter extraction zodSchema3&quot;, &quot;testMarkdown&quot;: &quot;---
+
+- voila: oh que oui
+- voila: ça marche vraiment!
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()&quot;}]" time="1.142">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #4: markdown frontmatter extraction zodSchema4&quot;, &quot;testMarkdown&quot;: &quot;---
+
+title: HiDeoo
+
+hereAnother: 
+
+  reseau: 
+
+    cesar: 
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \&quot;./images/paysages/puydedome.png\&quot;
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()&quot;}]" name="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #4: markdown frontmatter extraction zodSchema4&quot;, &quot;testMarkdown&quot;: &quot;---
+
+title: HiDeoo
+
+hereAnother: 
+
+  reseau: 
+
+    cesar: 
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \&quot;./images/paysages/puydedome.png\&quot;
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()&quot;}]" time="1.882">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #5: markdown frontmatter extraction zodSchema5&quot;, &quot;testMarkdown&quot;: &quot;---
+
+title: HiDeoo
+
+hereAnother:
+
+  reseau:
+
+    cesar:
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \&quot;./images/paysages/puydedome.png\&quot;
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })&quot;}]" name="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown which successfully pass the zod parse test [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #5: markdown frontmatter extraction zodSchema5&quot;, &quot;testMarkdown&quot;: &quot;---
+
+title: HiDeoo
+
+hereAnother:
+
+  reseau:
+
+    cesar:
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \&quot;./images/paysages/puydedome.png\&quot;
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+&quot;, &quot;zodMatterShouldThrow&quot;: false, &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })&quot;}]" time="1.811">
+    </testcase>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #6: markdown frontmatter extraction zodSchema6&quot;, &quot;testMarkdown&quot;: undefined, &quot;zodMatterShouldThrow&quot;: true, &quot;zodSchema&quot;: [ZodTuple], &quot;zodSchemaAsText&quot;: &quot;z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])&quot;}] should throw an error because zod matter parse does not accept zod tuples as input schema" name="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #6: markdown frontmatter extraction zodSchema6&quot;, &quot;testMarkdown&quot;: undefined, &quot;zodMatterShouldThrow&quot;: true, &quot;zodSchema&quot;: [ZodTuple], &quot;zodSchemaAsText&quot;: &quot;z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])&quot;}] should throw an error because zod matter parse does not accept zod tuples as input schema" time="1.232">
+    </testcase>
+  </testsuite>
+</testsuites>

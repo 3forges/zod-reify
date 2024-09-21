@@ -6,6 +6,7 @@ const jestConfig: JestConfigWithTsJest = {
   // from the above list
   preset: 'ts-jest',
   verbose: true,
+  reporters: [ "default", "jest-junit" ]
 }
 
 export default jestConfig
