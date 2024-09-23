@@ -1493,7 +1493,11 @@ const testCase12quarte: ZodValidateTestCase<typeof zodSchema12> = {
   testTsObjectToValidate: `2020-01-01T00:00:00.123+02`,
   expect: true,
 };
-
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 13
+ * ++++++++++++++++++++++++++++++++++++
+ */
 const zodSchema13 = z.string().datetime({ precision: 3 });;
 const testCase13: ZodValidateTestCase<typeof zodSchema13> = {
   zodSchema: zodSchema13,
@@ -1519,10 +1523,31 @@ const testCase13ter: ZodValidateTestCase<typeof zodSchema13> = {
 
 /**
  * ++++++++++++++++++++++++++++++++++++
- *          Test 13
+ *          Test 14
  * ++++++++++++++++++++++++++++++++++++
  */
+const zodSchema14 = z.object({ 
+  something: z.boolean(),
+});
+const testCase14: ZodValidateTestCase<typeof zodSchema14> = {
+  zodSchema: zodSchema14,
+  name: `Test #13: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: `{ 
+    something: !false,
+  }`,
+  expect: true,
+};
 
+const testCase14bis: ZodValidateTestCase<typeof zodSchema14> = {
+  zodSchema: zodSchema14,
+  name: `Test #13: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the "not" operator).`,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: `{ 
+    something: (!false || true),
+  }`,
+  expect: true,
+};
 
 /**
  * ------------------------------------
@@ -1557,7 +1582,9 @@ type AnyTestCaseZodSchema =
   | typeof testCase12quarte.zodSchema
   | typeof testCase13.zodSchema
   | typeof testCase13bis.zodSchema
-  | typeof testCase13ter.zodSchema;
+  | typeof testCase13ter.zodSchema
+  | typeof testCase14.zodSchema
+  | typeof testCase14bis.zodSchema;
 /**
  * ------------------------------------
  * ------------------------------------
@@ -1607,7 +1634,9 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse 
       testCase12quarte,
       testCase13,
       testCase13bis,
-      testCase13ter
+      testCase13ter,
+      testCase14,
+      testCase14bis
     ])(`which successfully pass the zod parse test`, (testCase) => {
       console.log(
         ` >>>>>>> TEST CASE [${testCase.name}] - testCase.zodSchemaAsText=[${testCase.zodSchemaAsText}]`

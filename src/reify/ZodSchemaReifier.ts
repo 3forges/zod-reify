@@ -440,13 +440,29 @@ export class ZodSchemaReifier {
       return this.reifyArrayLiteralExpression(processedNode);
     } else if (processedNode.print() == `${this.nameOfTheZodImport}`) {
       return z;
+    } else if (Node.isBigIntLiteral(processedNode)) {
+      return processedNode.print() // There I do not know what TypeScript type to return, sice Bigint is not supported by TypeScript // parseInt(processedNode.print())
     } else if (Node.isNumericLiteral(processedNode)) {
-      return parseFloat(processedNode.print())
+      try {
+        return parseInt(processedNode.print())
+      } catch (error) {
+        try {
+          return parseFloat(processedNode.print())
+        } catch (error) {
+          throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode = [${processedNode.print()}] is a numeric literal, but it is neither a Float, nor an Integer, and not even a BigInt`)
+        }
+      }
     }  else if (Node.isStringLiteral(processedNode)) {
       return processedNode.print()
     } else if (Node.isFalseLiteral(processedNode)) {
       return false
-    }  else if (Node.isTrueLiteral(processedNode)) {
+    } else if (Node.isUnaryExpression(processedNode) && !Node.isTrueLiteral(processedNode) && !Node.isFalseLiteral(processedNode)) {
+      throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an Unary Expression, zod reify does not yet support reifying Unary Expressions (but will in the future).`)
+    } else if (Node.isBinaryExpression(processedNode)) {
+      throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is a Binary Expression, zod reify does not yet support reifying Binary Expressions (but will in the future).`)
+    } else if (Node.isIdentifier(processedNode)) {
+      throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an identifier, zod reify does not support external dependencies inside the zod schema.`)
+    } else if (Node.isTrueLiteral(processedNode)) {
       return true
     } else {
       throw new Error(
