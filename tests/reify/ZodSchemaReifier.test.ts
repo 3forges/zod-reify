@@ -1513,7 +1513,7 @@ const testCase13ter: ZodValidateTestCase<typeof zodSchema13> = {
   zodSchema: zodSchema13,
   name: `Test #13ter: zodSchema13, https://zod.dev/?id=datetimes`,
   zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
-  testTsObjectToValidate: `2020-01-01T00:00:00Z`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123456Z`,
   expect: false,
 };
 
@@ -1546,7 +1546,18 @@ type AnyTestCaseZodSchema =
   | typeof testCase9.zodSchema
   | typeof testCase10.zodSchema
   | typeof testCase10bis.zodSchema
-  | typeof testCase10ter.zodSchema;
+  | typeof testCase10ter.zodSchema
+  | typeof testCase11.zodSchema
+  | typeof testCase11bis.zodSchema
+  | typeof testCase11ter.zodSchema
+  | typeof testCase11quarte.zodSchema
+  | typeof testCase12.zodSchema
+  | typeof testCase12bis.zodSchema
+  | typeof testCase12ter.zodSchema
+  | typeof testCase12quarte.zodSchema
+  | typeof testCase13.zodSchema
+  | typeof testCase13bis.zodSchema
+  | typeof testCase13ter.zodSchema;
 /**
  * ------------------------------------
  * ------------------------------------
@@ -1586,6 +1597,17 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse 
       testCase10,
       testCase10bis,
       testCase10ter,
+      testCase11,
+      testCase11bis,
+      testCase11ter,
+      testCase11quarte,
+      testCase12,
+      testCase12bis,
+      testCase12ter,
+      testCase12quarte,
+      testCase13,
+      testCase13bis,
+      testCase13ter
     ])(`which successfully pass the zod parse test`, (testCase) => {
       console.log(
         ` >>>>>>> TEST CASE [${testCase.name}] - testCase.zodSchemaAsText=[${testCase.zodSchemaAsText}]`

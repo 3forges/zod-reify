@@ -30,7 +30,7 @@ import {
 // https://www.npmjs.com/package/uuid
 // import { v4 as uuidv4 } from 'uuid';
 import { v4 as uuidv4 } from "uuid"; // pnpm add --save uuid @types/uuid
-import { z, type AnyZodObject } from "zod";
+import { number, z, type AnyZodObject } from "zod";
 
 /**
  * The {@ZodSchemaReifier } class will parse a string assumed to be a zod schema source code, and will instantiate the Zod Schema.
@@ -316,9 +316,12 @@ export class ZodSchemaReifier {
      * - or gather (into {toReturn.topZodFunctionCallWithArgs}) the top zod function called WITH argument(s): we then know that it is the zod function call "on the extreme left", meaning that the object calling that function is the zod named import. So we return, we do not need to proceed traversing the descendants.
      */
     const processedNode = aZodExpressionNode || this.zodExpressionNode;
+    console.log(
+      `[@ZodSchemaReifier].[reify()] - START - processedNode.getKindName() : [${processedNode.getKindName()}] - processedNode is [${processedNode.print()}]`
+    );
     if (Node.isCallExpression(processedNode)) {
       console.log(
-        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
+        `[@ZodSchemaReifier].[reify()] - selected CallExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
       );
       const childrenArray: Node<ts.Node>[] =
         processedNode.forEachChildAsArray();
@@ -328,10 +331,10 @@ export class ZodSchemaReifier {
         processedNode.forEachDescendantAsArray();
 
       console.log(
-        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node children count is :[${childrenArray.length}]`
+        `[@ZodSchemaReifier].[reify()] - selected CallExpression node children count is :[${childrenArray.length}]`
       );
       console.log(
-        `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  selected CallExpression node descendantsArray count is :[${descendantsArray.length}]`
+        `[@ZodSchemaReifier].[reify()] - selected CallExpression node descendantsArray count is :[${descendantsArray.length}]`
       );
       /*
         descendantsArray.forEach((node:Node<ts.Node>) => {
@@ -368,7 +371,7 @@ export class ZodSchemaReifier {
 
         const passedArgument = childrenArray[1];
         console.log(
-          `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          `[@ZodSchemaReifier].[reify()] - calledFunctionName is :[${calledFunctionName}]`
         );
         const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
           (node: Node<ts.Node>) => {
@@ -400,7 +403,7 @@ export class ZodSchemaReifier {
           lastIndexOfDot + 1 // + 1 : to exclude the dot character
         );
         console.log(
-          `[@ZodSchemaReifier].[reify()] - processedNode BEFORE forEachDescendant() -  calledFunctionName is :[${calledFunctionName}]`
+          `[@ZodSchemaReifier].[reify()] - calledFunctionName is :[${calledFunctionName}]`
         );
         const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
           (node: Node<ts.Node>) => {
@@ -437,9 +440,17 @@ export class ZodSchemaReifier {
       return this.reifyArrayLiteralExpression(processedNode);
     } else if (processedNode.print() == `${this.nameOfTheZodImport}`) {
       return z;
+    } else if (Node.isNumericLiteral(processedNode)) {
+      return parseFloat(processedNode.print())
+    }  else if (Node.isStringLiteral(processedNode)) {
+      return processedNode.print()
+    } else if (Node.isFalseLiteral(processedNode)) {
+      return false
+    }  else if (Node.isTrueLiteral(processedNode)) {
+      return true
     } else {
       throw new Error(
-        `[@ZodSchemaReifier].[reify()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression`
+        `[@ZodSchemaReifier].[reify()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression:  - processedNode.getKindName() : [${processedNode.getKindName()}] - processedNode is [${processedNode.print()}]`
       );
     }
     /**
@@ -679,6 +690,13 @@ export class ZodSchemaReifier {
         return caller.date(passedArgument);
         // break;
       }
+      case "datetime": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [datetime]`
+        );
+        return caller.datetime(passedArgument);
+        // break;
+      }
       case "function": {
         console.log(
           `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [function]`
@@ -899,6 +917,13 @@ export class ZodSchemaReifier {
           `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [date]`
         );
         return caller.date();
+        // break;
+      }
+      case "datetime": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [datetime]`
+        );
+        return caller.datetime();
         // break;
       }
       case "function": {
