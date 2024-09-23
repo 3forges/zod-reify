@@ -1418,6 +1418,116 @@ const testTsObjectToValidate10ter = {
 }
 
 */
+
+
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 11
+ * ++++++++++++++++++++++++++++++++++++
+ */
+
+const zodSchema11 = z.string().datetime();
+
+const testCase11: ZodValidateTestCase<typeof zodSchema11> = {
+  zodSchema: zodSchema11,
+  name: `Test #11: zodSchema11, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime()`,
+  testTsObjectToValidate: `2020-01-01T00:00:00Z`,
+  expect: true,
+};
+const testCase11bis: ZodValidateTestCase<typeof zodSchema11> = {
+  zodSchema: zodSchema11,
+  name: `Test #11bis: zodSchema11, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime()`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123Z`,
+  expect: true,
+};
+const testCase11ter: ZodValidateTestCase<typeof zodSchema11> = {
+  zodSchema: zodSchema11,
+  name: `Test #11ter: zodSchema11, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime()`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123456Z`,
+  expect: true,
+};
+const testCase11quarte: ZodValidateTestCase<typeof zodSchema11> = {
+  zodSchema: zodSchema11,
+  name: `Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime()`,
+  testTsObjectToValidate: `2020-01-01T00:00:00+02:00`,
+  expect: false,
+};
+
+
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 12
+ * ++++++++++++++++++++++++++++++++++++
+ */
+const zodSchema12 = z.string().datetime({ offset: true });;
+
+const testCase12: ZodValidateTestCase<typeof zodSchema12> = {
+  zodSchema: zodSchema12,
+  name: `Test #12: zodSchema12, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ offset: true });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00+02:00`,
+  expect: true,
+};
+const testCase12bis: ZodValidateTestCase<typeof zodSchema12> = {
+  zodSchema: zodSchema12,
+  name: `Test #12bis: zodSchema12, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ offset: true });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123+02:00`,
+  expect: true,
+};
+const testCase12ter: ZodValidateTestCase<typeof zodSchema12> = {
+  zodSchema: zodSchema12,
+  name: `Test #12ter: zodSchema12, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ offset: true });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123+0200`,
+  expect: true,
+};
+const testCase12quarte: ZodValidateTestCase<typeof zodSchema12> = {
+  zodSchema: zodSchema12,
+  name: `Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ offset: true });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123+02`,
+  expect: true,
+};
+
+const zodSchema13 = z.string().datetime({ precision: 3 });;
+const testCase13: ZodValidateTestCase<typeof zodSchema13> = {
+  zodSchema: zodSchema13,
+  name: `Test #13: zodSchema13, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00.123Z`,
+  expect: true,
+};
+const testCase13bis: ZodValidateTestCase<typeof zodSchema13> = {
+  zodSchema: zodSchema13,
+  name: `Test #13bis: zodSchema13, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00Z`,
+  expect: false,
+};
+const testCase13ter: ZodValidateTestCase<typeof zodSchema13> = {
+  zodSchema: zodSchema13,
+  name: `Test #13ter: zodSchema13, https://zod.dev/?id=datetimes`,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: `2020-01-01T00:00:00Z`,
+  expect: false,
+};
+
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 13
+ * ++++++++++++++++++++++++++++++++++++
+ */
+
+
+/**
+ * ------------------------------------
+ * ------------------------------------
+ */
 type AnyFrontmatterTestCaseZodSchema = 
   typeof markdownTestCase3.zodSchema |
   typeof markDownTestCase4.zodSchema |

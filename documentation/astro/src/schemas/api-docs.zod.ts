@@ -14,7 +14,12 @@ export const schema = z.object({
       kind: z.number(),
       flags: z.object({}),
       comment: z.object({
-        summary: z.array(z.object({ kind: z.string(), text: z.string() })),
+        summary: z.array(
+          z.union([
+            z.object({ kind: z.string(), text: z.string() }),
+            z.object({ kind: z.string(), tag: z.string(), text: z.string() }),
+          ])
+        ),
       }),
       children: z.array(
         z.object({
@@ -48,6 +53,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 signatures: z.array(
@@ -67,6 +73,7 @@ export const schema = z.object({
                         fileName: z.string(),
                         line: z.number(),
                         character: z.number(),
+                        url: z.string(),
                       })
                     ),
                     parameters: z.array(
@@ -130,6 +137,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({ type: z.string(), name: z.string() }),
@@ -157,6 +165,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({ type: z.string(), name: z.string() }),
@@ -177,6 +186,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({
@@ -200,9 +210,51 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({ type: z.string(), name: z.string() }),
+              }),
+              z.object({
+                id: z.number(),
+                name: z.string(),
+                variant: z.string(),
+                kind: z.number(),
+                flags: z.object({ isPrivate: z.boolean() }),
+                comment: z.object({
+                  summary: z.array(
+                    z.object({ kind: z.string(), text: z.string() })
+                  ),
+                }),
+                sources: z.array(
+                  z.object({
+                    fileName: z.string(),
+                    line: z.number(),
+                    character: z.number(),
+                    url: z.string(),
+                  })
+                ),
+                type: z.object({
+                  type: z.string(),
+                  target: z.object({
+                    sourceFileName: z.string(),
+                    qualifiedName: z.string(),
+                  }),
+                  typeArguments: z.array(
+                    z.object({
+                      type: z.string(),
+                      target: z.object({
+                        sourceFileName: z.string(),
+                        qualifiedName: z.string(),
+                      }),
+                      name: z.string(),
+                      package: z.string(),
+                      qualifiedName: z.string(),
+                    })
+                  ),
+                  name: z.string(),
+                  package: z.string(),
+                }),
               }),
               z.object({
                 id: z.number(),
@@ -227,6 +279,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({
@@ -255,6 +308,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({ type: z.string(), name: z.string() }),
@@ -275,6 +329,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 type: z.object({
@@ -303,12 +358,46 @@ export const schema = z.object({
                 name: z.string(),
                 variant: z.string(),
                 kind: z.number(),
+                flags: z.object({ isPrivate: z.boolean() }),
+                sources: z.array(
+                  z.object({
+                    fileName: z.string(),
+                    line: z.number(),
+                    character: z.number(),
+                    url: z.string(),
+                  })
+                ),
+                signatures: z.array(
+                  z.object({
+                    id: z.number(),
+                    name: z.string(),
+                    variant: z.string(),
+                    kind: z.number(),
+                    flags: z.object({}),
+                    sources: z.array(
+                      z.object({
+                        fileName: z.string(),
+                        line: z.number(),
+                        character: z.number(),
+                        url: z.string(),
+                      })
+                    ),
+                    type: z.object({ type: z.string(), name: z.string() }),
+                  })
+                ),
+              }),
+              z.object({
+                id: z.number(),
+                name: z.string(),
+                variant: z.string(),
+                kind: z.number(),
                 flags: z.object({ isPublic: z.boolean() }),
                 sources: z.array(
                   z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 signatures: z.array(
@@ -336,96 +425,42 @@ export const schema = z.object({
                         fileName: z.string(),
                         line: z.number(),
                         character: z.number(),
+                        url: z.string(),
                       })
                     ),
-                    type: z.object({
-                      type: z.string(),
-                      target: z.object({
-                        sourceFileName: z.string(),
-                        qualifiedName: z.string(),
-                      }),
-                      name: z.string(),
-                      package: z.string(),
-                    }),
-                  })
-                ),
-              }),
-              z.object({
-                id: z.number(),
-                name: z.string(),
-                variant: z.string(),
-                kind: z.number(),
-                flags: z.object({ isPublic: z.boolean() }),
-                sources: z.array(
-                  z.object({
-                    fileName: z.string(),
-                    line: z.number(),
-                    character: z.number(),
-                  })
-                ),
-                signatures: z.array(
-                  z.object({
-                    id: z.number(),
-                    name: z.string(),
-                    variant: z.string(),
-                    kind: z.number(),
-                    flags: z.object({}),
-                    sources: z.array(
+                    parameters: z.array(
                       z.object({
-                        fileName: z.string(),
-                        line: z.number(),
-                        character: z.number(),
-                      })
-                    ),
-                    type: z.object({ type: z.string(), name: z.string() }),
-                  })
-                ),
-              }),
-              z.object({
-                id: z.number(),
-                name: z.string(),
-                variant: z.string(),
-                kind: z.number(),
-                flags: z.object({ isPublic: z.boolean() }),
-                sources: z.array(
-                  z.object({
-                    fileName: z.string(),
-                    line: z.number(),
-                    character: z.number(),
-                  })
-                ),
-                signatures: z.array(
-                  z.object({
-                    id: z.number(),
-                    name: z.string(),
-                    variant: z.string(),
-                    kind: z.number(),
-                    flags: z.object({}),
-                    comment: z.object({
-                      summary: z.array(
-                        z.union([
-                          z.object({ kind: z.string(), text: z.string() }),
-                          z.object({
-                            kind: z.string(),
-                            tag: z.string(),
-                            text: z.string(),
+                        id: z.number(),
+                        name: z.string(),
+                        variant: z.string(),
+                        kind: z.number(),
+                        flags: z.object({ isOptional: z.boolean() }),
+                        comment: z.object({
+                          summary: z.array(
+                            z.object({ kind: z.string(), text: z.string() })
+                          ),
+                        }),
+                        type: z.object({
+                          type: z.string(),
+                          target: z.object({
+                            sourceFileName: z.string(),
+                            qualifiedName: z.string(),
                           }),
-                        ])
-                      ),
-                      blockTags: z.array(
-                        z.object({
-                          tag: z.string(),
-                          content: z.array(
-                            z.object({ kind: z.string(), text: z.string() })
+                          typeArguments: z.array(
+                            z.object({
+                              type: z.string(),
+                              target: z.object({
+                                sourceFileName: z.string(),
+                                qualifiedName: z.string(),
+                              }),
+                              name: z.string(),
+                              package: z.string(),
+                              qualifiedName: z.string(),
+                            })
                           ),
-                        })
-                      ),
-                    }),
-                    sources: z.array(
-                      z.object({
-                        fileName: z.string(),
-                        line: z.number(),
-                        character: z.number(),
+                          name: z.string(),
+                          package: z.string(),
+                        }),
                       })
                     ),
                     type: z.object({ type: z.string(), name: z.string() }),
@@ -443,6 +478,7 @@ export const schema = z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 signatures: z.array(
@@ -452,130 +488,12 @@ export const schema = z.object({
                     variant: z.string(),
                     kind: z.number(),
                     flags: z.object({}),
-                    comment: z.object({
-                      summary: z.array(
-                        z.object({ kind: z.string(), text: z.string() })
-                      ),
-                    }),
                     sources: z.array(
                       z.object({
                         fileName: z.string(),
                         line: z.number(),
                         character: z.number(),
-                      })
-                    ),
-                    parameters: z.array(
-                      z.object({
-                        id: z.number(),
-                        name: z.string(),
-                        variant: z.string(),
-                        kind: z.number(),
-                        flags: z.object({}),
-                        comment: z.object({
-                          summary: z.array(
-                            z.object({ kind: z.string(), text: z.string() })
-                          ),
-                        }),
-                        type: z.object({ type: z.string(), name: z.string() }),
-                      })
-                    ),
-                    type: z.object({ type: z.string(), name: z.string() }),
-                  })
-                ),
-              }),
-              z.object({
-                id: z.number(),
-                name: z.string(),
-                variant: z.string(),
-                kind: z.number(),
-                flags: z.object({ isPrivate: z.boolean() }),
-                sources: z.array(
-                  z.object({
-                    fileName: z.string(),
-                    line: z.number(),
-                    character: z.number(),
-                  })
-                ),
-                signatures: z.array(
-                  z.object({
-                    id: z.number(),
-                    name: z.string(),
-                    variant: z.string(),
-                    kind: z.number(),
-                    flags: z.object({}),
-                    comment: z.object({
-                      summary: z.array(z.unknown()),
-                      blockTags: z.array(
-                        z.object({
-                          tag: z.string(),
-                          content: z.array(z.unknown()),
-                        })
-                      ),
-                    }),
-                    sources: z.array(
-                      z.object({
-                        fileName: z.string(),
-                        line: z.number(),
-                        character: z.number(),
-                      })
-                    ),
-                    parameters: z.array(
-                      z.object({
-                        id: z.number(),
-                        name: z.string(),
-                        variant: z.string(),
-                        kind: z.number(),
-                        flags: z.object({}),
-                        comment: z.object({
-                          summary: z.array(
-                            z.object({ kind: z.string(), text: z.string() })
-                          ),
-                        }),
-                        type: z.object({ type: z.string(), name: z.string() }),
-                      })
-                    ),
-                    type: z.object({ type: z.string(), name: z.string() }),
-                  })
-                ),
-              }),
-              z.object({
-                id: z.number(),
-                name: z.string(),
-                variant: z.string(),
-                kind: z.number(),
-                flags: z.object({ isPublic: z.boolean() }),
-                sources: z.array(
-                  z.object({
-                    fileName: z.string(),
-                    line: z.number(),
-                    character: z.number(),
-                  })
-                ),
-                signatures: z.array(
-                  z.object({
-                    id: z.number(),
-                    name: z.string(),
-                    variant: z.string(),
-                    kind: z.number(),
-                    flags: z.object({}),
-                    comment: z.object({
-                      summary: z.array(
-                        z.object({ kind: z.string(), text: z.string() })
-                      ),
-                      blockTags: z.array(
-                        z.object({
-                          tag: z.string(),
-                          content: z.array(
-                            z.object({ kind: z.string(), text: z.string() })
-                          ),
-                        })
-                      ),
-                    }),
-                    sources: z.array(
-                      z.object({
-                        fileName: z.string(),
-                        line: z.number(),
-                        character: z.number(),
+                        url: z.string(),
                       })
                     ),
                     parameters: z.array(
@@ -605,58 +523,13 @@ export const schema = z.object({
                 name: z.string(),
                 variant: z.string(),
                 kind: z.number(),
-                flags: z.object({ isPublic: z.boolean() }),
-                sources: z.array(
-                  z.object({
-                    fileName: z.string(),
-                    line: z.number(),
-                    character: z.number(),
-                  })
-                ),
-                signatures: z.array(
-                  z.object({
-                    id: z.number(),
-                    name: z.string(),
-                    variant: z.string(),
-                    kind: z.number(),
-                    flags: z.object({}),
-                    comment: z.object({
-                      summary: z.array(
-                        z.object({ kind: z.string(), text: z.string() })
-                      ),
-                    }),
-                    sources: z.array(
-                      z.object({
-                        fileName: z.string(),
-                        line: z.number(),
-                        character: z.number(),
-                      })
-                    ),
-                    parameters: z.array(
-                      z.object({
-                        id: z.number(),
-                        name: z.string(),
-                        variant: z.string(),
-                        kind: z.number(),
-                        flags: z.object({}),
-                        type: z.object({ type: z.string(), name: z.string() }),
-                      })
-                    ),
-                    type: z.object({ type: z.string(), name: z.string() }),
-                  })
-                ),
-              }),
-              z.object({
-                id: z.number(),
-                name: z.string(),
-                variant: z.string(),
-                kind: z.number(),
                 flags: z.object({ isPrivate: z.boolean() }),
                 sources: z.array(
                   z.object({
                     fileName: z.string(),
                     line: z.number(),
                     character: z.number(),
+                    url: z.string(),
                   })
                 ),
                 signatures: z.array(
@@ -684,6 +557,189 @@ export const schema = z.object({
                         fileName: z.string(),
                         line: z.number(),
                         character: z.number(),
+                        url: z.string(),
+                      })
+                    ),
+                    parameters: z.array(
+                      z.union([
+                        z.object({
+                          id: z.number(),
+                          name: z.string(),
+                          variant: z.string(),
+                          kind: z.number(),
+                          flags: z.object({}),
+                          type: z.object({
+                            type: z.string(),
+                            name: z.string(),
+                          }),
+                        }),
+                        z.object({
+                          id: z.number(),
+                          name: z.string(),
+                          variant: z.string(),
+                          kind: z.number(),
+                          flags: z.object({}),
+                          comment: z.object({
+                            summary: z.array(
+                              z.object({ kind: z.string(), text: z.string() })
+                            ),
+                          }),
+                          type: z.object({
+                            type: z.string(),
+                            name: z.string(),
+                          }),
+                        }),
+                      ])
+                    ),
+                    type: z.object({ type: z.string(), name: z.string() }),
+                  })
+                ),
+              }),
+              z.object({
+                id: z.number(),
+                name: z.string(),
+                variant: z.string(),
+                kind: z.number(),
+                flags: z.object({ isPrivate: z.boolean() }),
+                sources: z.array(
+                  z.object({
+                    fileName: z.string(),
+                    line: z.number(),
+                    character: z.number(),
+                    url: z.string(),
+                  })
+                ),
+                signatures: z.array(
+                  z.object({
+                    id: z.number(),
+                    name: z.string(),
+                    variant: z.string(),
+                    kind: z.number(),
+                    flags: z.object({}),
+                    comment: z.object({
+                      summary: z.array(
+                        z.object({ kind: z.string(), text: z.string() })
+                      ),
+                      blockTags: z.array(
+                        z.object({
+                          tag: z.string(),
+                          content: z.array(z.unknown()),
+                        })
+                      ),
+                    }),
+                    sources: z.array(
+                      z.object({
+                        fileName: z.string(),
+                        line: z.number(),
+                        character: z.number(),
+                        url: z.string(),
+                      })
+                    ),
+                    parameters: z.array(
+                      z.object({
+                        id: z.number(),
+                        name: z.string(),
+                        variant: z.string(),
+                        kind: z.number(),
+                        flags: z.object({}),
+                        type: z.object({
+                          type: z.string(),
+                          target: z.object({
+                            sourceFileName: z.string(),
+                            qualifiedName: z.string(),
+                          }),
+                          name: z.string(),
+                          package: z.string(),
+                        }),
+                      })
+                    ),
+                    type: z.object({ type: z.string(), name: z.string() }),
+                  })
+                ),
+              }),
+              z.object({
+                id: z.number(),
+                name: z.string(),
+                variant: z.string(),
+                kind: z.number(),
+                flags: z.object({ isPrivate: z.boolean() }),
+                sources: z.array(
+                  z.object({
+                    fileName: z.string(),
+                    line: z.number(),
+                    character: z.number(),
+                    url: z.string(),
+                  })
+                ),
+                signatures: z.array(
+                  z.object({
+                    id: z.number(),
+                    name: z.string(),
+                    variant: z.string(),
+                    kind: z.number(),
+                    flags: z.object({}),
+                    sources: z.array(
+                      z.object({
+                        fileName: z.string(),
+                        line: z.number(),
+                        character: z.number(),
+                        url: z.string(),
+                      })
+                    ),
+                    parameters: z.array(
+                      z.object({
+                        id: z.number(),
+                        name: z.string(),
+                        variant: z.string(),
+                        kind: z.number(),
+                        flags: z.object({}),
+                        type: z.object({ type: z.string(), name: z.string() }),
+                      })
+                    ),
+                    type: z.object({ type: z.string(), name: z.string() }),
+                  })
+                ),
+              }),
+              z.object({
+                id: z.number(),
+                name: z.string(),
+                variant: z.string(),
+                kind: z.number(),
+                flags: z.object({ isPrivate: z.boolean() }),
+                sources: z.array(
+                  z.object({
+                    fileName: z.string(),
+                    line: z.number(),
+                    character: z.number(),
+                    url: z.string(),
+                  })
+                ),
+                signatures: z.array(
+                  z.object({
+                    id: z.number(),
+                    name: z.string(),
+                    variant: z.string(),
+                    kind: z.number(),
+                    flags: z.object({}),
+                    comment: z.object({
+                      summary: z.array(
+                        z.object({ kind: z.string(), text: z.string() })
+                      ),
+                      blockTags: z.array(
+                        z.object({
+                          tag: z.string(),
+                          content: z.array(
+                            z.object({ kind: z.string(), text: z.string() })
+                          ),
+                        })
+                      ),
+                    }),
+                    sources: z.array(
+                      z.object({
+                        fileName: z.string(),
+                        line: z.number(),
+                        character: z.number(),
+                        url: z.string(),
                       })
                     ),
                     type: z.object({ type: z.string(), name: z.string() }),
@@ -700,6 +756,7 @@ export const schema = z.object({
               fileName: z.string(),
               line: z.number(),
               character: z.number(),
+              url: z.string(),
             })
           ),
         })
@@ -712,6 +769,7 @@ export const schema = z.object({
           fileName: z.string(),
           line: z.number(),
           character: z.number(),
+          url: z.string(),
         })
       ),
     })
@@ -762,7 +820,5 @@ export const schema = z.object({
     37: z.object({ sourceFileName: z.string(), qualifiedName: z.string() }),
     38: z.object({ sourceFileName: z.string(), qualifiedName: z.string() }),
     39: z.object({ sourceFileName: z.string(), qualifiedName: z.string() }),
-    40: z.object({ sourceFileName: z.string(), qualifiedName: z.string() }),
-    41: z.object({ sourceFileName: z.string(), qualifiedName: z.string() }),
   }),
 });

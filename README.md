@@ -1,4 +1,4 @@
-![Pesto](https://raw.githubusercontent.com/3forges/zod-reify/feature/init-src/n/ci/documentation/images/pesto-icons/32x32.png)
+![Pesto](./documentation/images/pesto-icons/32x32.png)
 --
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/%403forges%2Fzod-reify?style=for-the-badge&logoColor=%23dc34eb&label=bundle%20size&labelColor=%2334eb3d&color=%23dc34eb)
