@@ -464,9 +464,10 @@ export class ZodSchemaReifier {
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an Unary Expression, zod reify does not yet support reifying Unary Expressions (but will in the future).`)
     } */else if (Node.isBinaryExpression(processedNode)) {
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is a Binary Expression, zod reify does not yet support reifying Binary Expressions (but will in the future).`)
-    } else if (Node.isIdentifier(processedNode)) {
+    } /* else if (Node.isIdentifier(processedNode)) {
+      // I am not sure about isIdentifier: IS the zod named import an Identifier ?
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an identifier, zod reify does not support external dependencies inside the zod schema.`)
-    } else if (Node.isUndefinedKeyword(processedNode)) {
+    } */else if (Node.isUndefinedKeyword(processedNode)) {
       return undefined
     } else if (Node.isNullLiteral(processedNode)) {
       return null
