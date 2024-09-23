@@ -456,12 +456,20 @@ export class ZodSchemaReifier {
       return processedNode.print()
     } else if (Node.isFalseLiteral(processedNode)) {
       return false
-    } else if (Node.isUnaryExpression(processedNode) && !Node.isTrueLiteral(processedNode) && !Node.isFalseLiteral(processedNode)) {
+    } /*else if (Node.isUnaryExpression(processedNode) && !Node.isTrueLiteral(processedNode) && !Node.isFalseLiteral(processedNode)) {
+      // I am excluding UnaryExpression, because
+      // an UnaryExpression can be many things  like an Array, 
+      // cf. https://github.com/dsherret/ts-morph/blob/ccf1bd58a522e7b4df179eb89876b86f603afde7/packages/ts-morph/src/compiler/ast/common/Node.ts#L4158
+      // 
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an Unary Expression, zod reify does not yet support reifying Unary Expressions (but will in the future).`)
-    } else if (Node.isBinaryExpression(processedNode)) {
+    } */else if (Node.isBinaryExpression(processedNode)) {
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is a Binary Expression, zod reify does not yet support reifying Binary Expressions (but will in the future).`)
     } else if (Node.isIdentifier(processedNode)) {
       throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode=[${processedNode.print()}] is an identifier, zod reify does not support external dependencies inside the zod schema.`)
+    } else if (Node.isUndefinedKeyword(processedNode)) {
+      return undefined
+    } else if (Node.isNullLiteral(processedNode)) {
+      return null
     } else if (Node.isTrueLiteral(processedNode)) {
       return true
     } else {
