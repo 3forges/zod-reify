@@ -26687,38 +26687,176 @@
 
       at tests/reify/ZodSchemaReifier.test.ts:1754:14
 
-FAIL tests/reify/ZodSchemaReifier.test.ts (40.368 s)
+FAIL tests/reify/ZodSchemaReifier.test.ts (40.238 s)
   Tests of the {@ZodSchemaReifier} reify() method against the zod parse method
     Test the reify() returns a zod schema which successfully parses the test TypeScript Object
-      √ which successfully pass the zod parse test (1941 ms)
-      √ which successfully pass the zod parse test (1316 ms)
-      √ which successfully pass the zod parse test (1176 ms)
-      √ which successfully pass the zod parse test (1156 ms)
-      √ which successfully pass the zod parse test (1967 ms)
-      √ which successfully pass the zod parse test (1885 ms)
-      √ which successfully pass the zod parse test (1277 ms)
-      √ which successfully pass the zod parse test (1290 ms)
-      √ which successfully pass the zod parse test (987 ms)
-      √ which successfully pass the zod parse test (1113 ms)
-      √ which successfully pass the zod parse test (1329 ms)
-      √ which successfully pass the zod parse test (1332 ms)
-      √ which successfully pass the zod parse test (1549 ms)
-      √ which successfully pass the zod parse test (979 ms)
-      √ which successfully pass the zod parse test (940 ms)
-      √ which successfully pass the zod parse test (941 ms)
-      √ which successfully pass the zod parse test (997 ms)
-      √ which successfully pass the zod parse test (949 ms)
-      √ which successfully pass the zod parse test (951 ms)
-      √ which successfully pass the zod parse test (951 ms)
-      √ which successfully pass the zod parse test (957 ms)
-      √ which successfully pass the zod parse test (969 ms)
-      √ which successfully pass the zod parse test (961 ms)
-      √ which successfully pass the zod parse test (964 ms)
-      × which successfully pass the zod parse test (966 ms)
-      × which successfully pass the zod parse test (969 ms)
+      √ [{"expect": true, "name": "Test #1: zodSchema1", "testTsObjectToValidate": undefined, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test (1907 ms)
+      √ [{"expect": false, "name": "Test #1bis: zodSchema1", "testTsObjectToValidate": null, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test (1299 ms)
+      √ [{"expect": true, "name": "Test #2: zodSchema2", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()"}] successfully pass the zod parse test (1152 ms)
+      √ [{"expect": true, "name": "Test #3: zodSchema3", "testTsObjectToValidate": [Array], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()"}] successfully pass the zod parse test (1142 ms)
+      √ [{"expect": true, "name": "Test #4: zodSchema4", "testTsObjectToValidate": [Object], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()"}] successfully pass the zod parse test (1951 ms)
+      √ [{"expect": true, "name": "Test #5: zodSchema5", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })"}] successfully pass the zod parse test (1869 ms)
+      √ [{"expect": true, "name": "Test #6: zodSchema6", "testTsObjectToValidate": [Array], "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])"}] successfully pass the zod parse test (1250 ms)
+      √ [{"expect": true, "name": "Test #7: zodSchema7", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ]).nullable().optional()"}] successfully pass the zod parse test (1303 ms)
+      √ [{"expect": true, "name": "Test #8: zodSchema8", "testTsObjectToValidate": false, "zodSchema": [ZodOptional], "zodSchemaAsText": "z.boolean().nullable().optional()"}] successfully pass the zod parse test (1019 ms)
+      √ [{"expect": true, "name": "Test #9: zodSchema9", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.array(z.boolean().nullish()).nullable().optional()"}] successfully pass the zod parse test (1159 ms)
+      √ [{"expect": true, "name": "Test #10: zodSchema10", "testTsObjectToValidate": [Object], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1350 ms)
+      √ [{"expect": true, "name": "Test #10bis: zodSchema10", "testTsObjectToValidate": null, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1370 ms)
+      √ [{"expect": true, "name": "Test #10ter: zodSchema10", "testTsObjectToValidate": undefined, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1327 ms)
+      √ [{"expect": true, "name": "Test #11: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (1133 ms)
+      √ [{"expect": true, "name": "Test #11bis: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (970 ms)
+      √ [{"expect": true, "name": "Test #11ter: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (932 ms)
+      √ [{"expect": false, "name": "Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (939 ms)
+      √ [{"expect": true, "name": "Test #12: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (951 ms)
+      √ [{"expect": true, "name": "Test #12bis: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (951 ms)
+      √ [{"expect": true, "name": "Test #12ter: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+0200", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (948 ms)
+      √ [{"expect": true, "name": "Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (949 ms)
+      √ [{"expect": true, "name": "Test #13: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (961 ms)
+      √ [{"expect": false, "name": "Test #13bis: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (952 ms)
+      √ [{"expect": false, "name": "Test #13ter: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (955 ms)
+      × [{"expect": true, "name": "Test #13: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": "{ 
+    something: !false,
+  }", "zodSchema": [ZodObject], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (961 ms)
+      × [{"expect": true, "name": "Test #13: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \"not\" operator).", "testTsObjectToValidate": "{ 
+    something: (!false || true),
+  }", "zodSchema": [ZodObject], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (974 ms)
   Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method
     Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown
-      √ which successfully pass the zod parse test [{"expectedFrontmatter": [Array], "name": "Test #3: markdown frontmatter extraction zodSchema3", "testMarkdown": "---
+      √ [{"expectedFrontmatter": [Array], "name": "Test #3: markdown frontmatter extraction zodSchema3", "testMarkdown": "---
 
 - voila: oh que oui
 - voila: ça marche vraiment!
@@ -26731,8 +26869,8 @@ FAIL tests/reify/ZodSchemaReifier.test.ts (40.368 s)
   })
   .array()
   .optional()
-  .nullable()"}] (1129 ms)
-      √ which successfully pass the zod parse test [{"expectedFrontmatter": [Object], "name": "Test #4: markdown frontmatter extraction zodSchema4", "testMarkdown": "---
+  .nullable()"}] successfully pass the zod parse test [%p] (1223 ms)
+      √ [{"expectedFrontmatter": [Object], "name": "Test #4: markdown frontmatter extraction zodSchema4", "testMarkdown": "---
 
 title: HiDeoo
 
@@ -26916,8 +27054,8 @@ department:
       secrecyTags: z.array(z.string()).optional(),
     }),
   })
-  .optional()"}] (2216 ms)
-      √ which successfully pass the zod parse test [{"expectedFrontmatter": [Object], "name": "Test #5: markdown frontmatter extraction zodSchema5", "testMarkdown": "---
+  .optional()"}] successfully pass the zod parse test [%p] (2235 ms)
+      √ [{"expectedFrontmatter": [Object], "name": "Test #5: markdown frontmatter extraction zodSchema5", "testMarkdown": "---
 
 title: HiDeoo
 
@@ -27100,14 +27238,16 @@ department:
       divisionName: z.string(),
       secrecyTags: z.array(z.string()).optional(),
     }),
-  })"}] (1859 ms)
+  })"}] successfully pass the zod parse test [%p] (1947 ms)
       √ [{"expectedFrontmatter": [Array], "name": "Test #6: markdown frontmatter extraction zodSchema6", "testMarkdown": undefined, "zodMatterShouldThrow": true, "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
       z.object({first: z.array(z.string())}),
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
-    ])"}] should throw an error because zod matter parse does not accept zod tuples as input schema (1210 ms)
+    ])"}] should throw an error because zod matter parse does not accept zod tuples as input schema (1241 ms)
 
-  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › which successfully pass the zod parse test
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #13: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": "{ 
+    something: !false,
+  }", "zodSchema": [ZodObject], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -27124,7 +27264,9 @@ department:
 
       at tests/reify/ZodSchemaReifier.test.ts:1664:9
 
-  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › which successfully pass the zod parse test
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #13: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \"not\" operator).", "testTsObjectToValidate": "{ 
+    something: (!false || true),
+  }", "zodSchema": [ZodObject], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -27144,6 +27286,6 @@ department:
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 28 passed, 30 total
 Snapshots:   0 total
-Time:        40.483 s, estimated 41 s
+Time:        40.351 s, estimated 41 s
 Ran all test suites.
  ELIFECYCLE  Test failed. See above for more details.

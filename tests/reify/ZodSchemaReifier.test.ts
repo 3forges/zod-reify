@@ -1531,21 +1531,25 @@ const zodSchema14 = z.object({
 });
 const testCase14: ZodValidateTestCase<typeof zodSchema14> = {
   zodSchema: zodSchema14,
-  name: `Test #13: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
-  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
-  testTsObjectToValidate: `{ 
+  name: `Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  zodSchemaAsText: `z.object({ 
+    something: z.boolean(),
+  });`,
+  testTsObjectToValidate: { 
     something: !false,
-  }`,
+  },
   expect: true,
 };
 
 const testCase14bis: ZodValidateTestCase<typeof zodSchema14> = {
   zodSchema: zodSchema14,
-  name: `Test #13: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the "not" operator).`,
-  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
-  testTsObjectToValidate: `{ 
-    something: (!false || true),
-  }`,
+  name: `Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the "not" operator, and the "or" operator).`,
+  zodSchemaAsText: `z.object({ 
+    something: z.boolean(),
+  });`,
+  testTsObjectToValidate: { 
+    something: !false || true,
+  },
   expect: true,
 };
 
@@ -1637,7 +1641,7 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse 
       testCase13ter,
       testCase14,
       testCase14bis
-    ])(`which successfully pass the zod parse test`, (testCase) => {
+    ])(`[%p] successfully pass the zod parse test`, (testCase) => {
       console.log(
         ` >>>>>>> TEST CASE [${testCase.name}] - testCase.zodSchemaAsText=[${testCase.zodSchemaAsText}]`
       );
@@ -1688,7 +1692,7 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod-matter
       markDownTestCase4,
       markDownTestCase5,
       // markDownTestCase6 // test case 6 gives a zod tuple but zod matter expects a zod object
-    ])(`which successfully pass the zod parse test [%p]`, (testCase) => {
+    ])(`[%p] successfully pass the zod parse test [%p]`, (testCase) => {
       console.log(
         ` >>>>>>> TEST CASE [${testCase.name}] - testCase.zodSchemaAsText=[${testCase.zodSchemaAsText}]`
       );
@@ -1802,7 +1806,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
   });
 
   describe("[zodSchemaAsText1] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText1 : [${zodSchemaAsText1}]`
      );
@@ -1829,7 +1833,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
   });
 
   describe("[zodSchemaAsText2] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText2 : [${zodSchemaAsText2}]`
      );
@@ -1857,7 +1861,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
   });
 
   describe("[zodSchemaAsText3] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText3 : [${zodSchemaAsText3}]`
      );
@@ -1885,7 +1889,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
   });
 
   describe("[zodSchemaAsText4] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText4 : [${zodSchemaAsText4}]`
      );
@@ -1912,7 +1916,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
   });
 
   describe("[zodSchemaAsText5] - Test the reify() method reifies a zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText5 : [${zodSchemaAsText5}]`
      );
@@ -1942,7 +1946,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
 
 
   describe("[zodSchemaAsText6] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText6 : [${zodSchemaAsText6}]`
      );
@@ -1971,7 +1975,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
 
 
   describe("[zodSchemaAsText7] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText7 : [${zodSchemaAsText7}]`
      );
@@ -1997,7 +2001,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
 
 
   describe("[zodSchemaAsText8] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText8 : [${zodSchemaAsText8}]`
      );
@@ -2024,7 +2028,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
 
 
   describe("[zodSchemaAsText9] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText9 : [${zodSchemaAsText9}]`
      );
@@ -2058,7 +2062,7 @@ describe("Testing - ZodSchemaReifier experiment() method", () => {
 
 
   describe("[zodSchemaAsText10] - Test the reify() method properly find the top function call in the zod schema", () => {
-    it(`which successfully pass the zod parse test `, async () => {
+    it(`[%p] successfully pass the zod parse test `, async () => {
      console.log(
          ` >>>>>>> zodSchemaAsText10 : [${zodSchemaAsText10}]`
      );
