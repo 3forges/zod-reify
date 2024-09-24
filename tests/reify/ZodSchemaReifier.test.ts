@@ -1553,6 +1553,50 @@ const testCase14bis: ZodValidateTestCase<typeof zodSchema14> = {
   expect: true,
 };
 
+
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 15
+ * ++++++++++++++++++++++++++++++++++++
+ */
+const zodSchema15 = z.date().min(new Date("1900-01-01"), { message: "Too old" });
+const testCase15: ZodValidateTestCase<typeof zodSchema15> = {
+  zodSchema: zodSchema15,
+  name: `Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  zodSchemaAsText: `z.date().min(new Date("1900-01-01"), { message: "Too old" });`,
+  testTsObjectToValidate: new Date("1901-01-01"),
+  expect: true,
+};
+
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 16
+ * ++++++++++++++++++++++++++++++++++++
+ */
+const zodSchema16 = z.date().max(new Date(), { message: "Too young!" });
+const testCase16: ZodValidateTestCase<typeof zodSchema16> = {
+  zodSchema: zodSchema16,
+  name: `Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  zodSchemaAsText: `z.date().max(new Date(), { message: "Too young!" });`,
+  testTsObjectToValidate: new Date("2024-01-01"),
+  expect: true,
+};
+/**
+ * ++++++++++++++++++++++++++++++++++++
+ *          Test 17
+ * ++++++++++++++++++++++++++++++++++++
+ */
+const zodSchema17 = z.coerce.date();
+const testCase17: ZodValidateTestCase<typeof zodSchema17> = {
+  zodSchema: zodSchema17,
+  name: `Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  zodSchemaAsText: `z.coerce.date();`,
+  testTsObjectToValidate: new Date("2024-01-01"),
+  expect: true,
+};
+
+const dateSchema = z.coerce.date();
+
 /**
  * ------------------------------------
  * ------------------------------------
@@ -1588,7 +1632,10 @@ type AnyTestCaseZodSchema =
   | typeof testCase13bis.zodSchema
   | typeof testCase13ter.zodSchema
   | typeof testCase14.zodSchema
-  | typeof testCase14bis.zodSchema;
+  | typeof testCase14bis.zodSchema
+  | typeof testCase15.zodSchema
+  | typeof testCase16.zodSchema
+  | typeof testCase17.zodSchema;
 /**
  * ------------------------------------
  * ------------------------------------
@@ -1640,7 +1687,10 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse 
       testCase13bis,
       testCase13ter,
       testCase14,
-      testCase14bis
+      testCase14bis,
+      testCase15,
+      testCase16,
+      testCase17,
     ])(`[%p] successfully pass the zod parse test`, (testCase) => {
       console.log(
         ` >>>>>>> TEST CASE [${testCase.name}] - testCase.zodSchemaAsText=[${testCase.zodSchemaAsText}]`

@@ -876,11 +876,98 @@ export class ZodSchemaReifier {
         return caller.readonly(passedArgument);
         // break;
       }
-      default:
+      case "gt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [gt]`
+        );
+        return caller.gt(passedArgument);
+        // break;
+      }
+      case "gte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [gte]`
+        );
+        return caller.gte(passedArgument);
+        // break;
+      }
+      case "lt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [lt]`
+        );
+        return caller.lt(passedArgument);
+        // break;
+      }
+      case "lte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [lte]`
+        );
+        return caller.lte(passedArgument);
+        // break;
+      }
+      case "int": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [int]`
+        );
+        return caller.int(passedArgument);
+        // break;
+      }
+      case "positive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [positive]`
+        );
+        return caller.positive(passedArgument);
+        // break;
+      }
+      case "nonnegative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [nonnegative]`
+        );
+        return caller.nonnegative(passedArgument);
+        // break;
+      }
+      case "negative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [negative]`
+        );
+        return caller.negative(passedArgument);
+        // break;
+      }
+      case "nonpositive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [nonpositive]`
+        );
+        return caller.nonpositive(passedArgument);
+        // break;
+      }
+      case "multipleOf": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [multipleOf]`
+        );
+        return caller.multipleOf(passedArgument);
+        // break;
+      }
+      case "finite": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [finite]`
+        );
+        return caller.finite(passedArgument);
+        // break;
+      }
+      case "safe": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg()] - Ok zod functionName is [safe]`
+        );
+        return caller.safe(passedArgument);
+        // break;
+      }
+
+      default: {
         throw new Error(
           `[@ZodSchemaReifier].[reifyZodFunctionCallWithOneArg(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
         );
         break;
+      }
+
     }
     throw new Error("Method implementation not completed yet.");
   }
@@ -1105,7 +1192,90 @@ export class ZodSchemaReifier {
         return caller.readonly();
         // break;
       }
-
+      case "gt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [gt]`
+        );
+        return caller.gt();
+        // break;
+      }
+      case "gte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [gte]`
+        );
+        return caller.gte();
+        // break;
+      }
+      case "lt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [lt]`
+        );
+        return caller.lt();
+        // break;
+      }
+      case "lte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [lte]`
+        );
+        return caller.lte();
+        // break;
+      }
+      case "int": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [int]`
+        );
+        return caller.int();
+        // break;
+      }
+      case "positive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [positive]`
+        );
+        return caller.positive();
+        // break;
+      }
+      case "nonnegative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nonnegative]`
+        );
+        return caller.nonnegative();
+        // break;
+      }
+      case "negative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [negative]`
+        );
+        return caller.negative();
+        // break;
+      }
+      case "nonpositive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [nonpositive]`
+        );
+        return caller.nonpositive();
+        // break;
+      }
+      case "multipleOf": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [multipleOf]`
+        );
+        return caller.multipleOf();
+        // break;
+      }
+      case "finite": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [finite]`
+        );
+        return caller.finite();
+        // break;
+      }
+      case "safe": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall()] - Ok zod functionName is [safe]`
+        );
+        return caller.safe();
+        // break;
+      }
       default:
         throw new Error(
           `[@ZodSchemaReifier].[reifyNoArgsZodFunctionCall(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
