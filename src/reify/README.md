@@ -1,5 +1,6 @@
 # The Zod Parser
 
+
 ## The algorithm
 
 * A function able to reify 
@@ -19,9 +20,16 @@ export class ZodSchemaReifier {
 ## Zod Support
 
 The package will soon and easily support all of the [`zod`](https://zod.dev) Functions, but:
+
 * The `infer` TypeScript operator won't be supported.
 * There must not be external dependencies except the zod library, in the zod expression provided as string to the constructor.
-* zodify, zod-reify
+* the `preprocess` function
+* the `refine` function
+* the `superRefine` function
+* the `custom` function
+* the `transform` function
+* the `catch` function
+* the `catchall` function
 
 ```TypeScript
 

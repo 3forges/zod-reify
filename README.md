@@ -13,18 +13,20 @@ One of the most important, is the `ZodSchemaReifier`, which is able to read some
 
 * left TODO before a first release:
 
-I have now the generalized algorithm: 
-* [ ] we need to add more test cases to fully cover all zod functions support. 
+I have now the generalized algorithm:
+
+* [ ] we need to add more test cases to fully cover all zod functions support.
 * [ ] We also need to update docs and README. We also need to change the git repository.
-* [x] We also need to complete method renaming. 
+* [x] We also need to complete method renaming.
 * [ ] We also need to replace any `console.log` with winston logging silenced by default.
 * [ ] setup the cloudflare pages to publish the documentation astro website
 
-Finally adding some speed automated tests with https://github.com/tinylibs/tinybench
+Finally adding some speed automated tests with <https://github.com/tinylibs/tinybench>
 
 Jest Tests reporting:
-* [x] so i will use the Junit reporter: 
-* [x] and convert it to JSON, to be used by astro, with: https://github.com/Kesin11/ts-junit2json
+
+* [x] so i will use the Junit reporter:
+* [x] and convert it to JSON, to be used by astro, with: <https://github.com/Kesin11/ts-junit2json>
 * [ ] a good layout for the tests report page.
 
 ## How to Use
@@ -66,4 +68,23 @@ pnpm run gen:api-docs
 pnpm run build:docs:astro
 # pnpm run dev:docs:astro
 
+```
+
+## ANNEX: The next Evolution
+
+### Evaluate typescript from string
+
+* <https://stackoverflow.com/questions/45153848/evaluate-typescript-from-string>
+
+```Ts
+import * as ts from "typescript";
+
+let code: string = `({
+    Run: (data: string): string => {
+        console.log(data); return Promise.resolve("SUCCESS"); }
+    })`;
+
+let result = ts.transpile(code);
+let runnable :any = eval(result);
+runnable.Run("RUN!").then((result:string)=>{console.log(result);});
 ```

@@ -616,15 +616,17 @@ export class ZodSchemaReifier implements Reifier<any> {
           2
         )}]`
       );
-      if (childrenArray.length == 2) {
-
-        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`, `${childrenArray[1].print()}`)// .reifyZodFunctionCallWithOneArg
+      if (childrenArray.length == 1) { // e.g. new Date()
+        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`)// .reifyZodFunctionCallWithOneArg
+      }
+      if (childrenArray.length == 2) { // e.g. new Date("1901-01-02")
+        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`, this.reify(childrenArray[1]))// .reifyZodFunctionCallWithOneArg
       } else if (childrenArray.length == 3) {
-
-        this.reifyZodNewExpressionWithTwoArgs(`${childrenArray[0].print()}`, `${childrenArray[1].print()}`, `${childrenArray[0].print()}`)// .reifyZodFunctionCallWithOneArg
+        // this.reifyZodNewExpressionWithTwoArgs(`${childrenArray[0].print()}`, this.reify(childrenArray[1]), this.reify(childrenArray[2])) // .reifyZodFunctionCallWithTwoArg
+        throw new Error(`[@ZodSchemaReifier].[reify()] - case of NewExpression - reifying a NewExpression for a builtin class  with a 2 arguments constructor is not supported yet. (class name = ${childrenArray[0].print()}) (constructor arg 1 = ${childrenArray[1].print()}) (constructor arg 2 = ${childrenArray[2].print()})`)
       }
       
-      throw new Error(`[@ZodSchemaReifier].[reify()] - case of NewExpression - implementation not completed yet.`)
+      
     } else {
       throw new Error(
         `[@ZodSchemaReifier].[reify()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression:  - processedNode.getKindName() : [${processedNode.getKindName()}] - processedNode is [${processedNode.print()}]`
@@ -657,6 +659,60 @@ export class ZodSchemaReifier implements Reifier<any> {
 
     return toReturn;
   }
+
+  private reifyZodNewExpressionWithOneArg(
+    className: string,
+    firstPassedArgument?: any, /* Node<ts.Node> */
+  ): any {
+    
+    switch (
+      className // reifyNoArgsZodFunctionCallsChain
+    ) {
+      case "Date": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+        );
+        if (firstPassedArgument) {
+          return new Date(firstPassedArgument);
+        } else {
+          return new Date();
+        }
+        // break;
+      }
+      case "Set": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+        );
+        if (firstPassedArgument) {
+          return new Set(firstPassedArgument);
+        } else {
+          return new Set();
+        }
+        // break;
+      }
+      case "Array": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+        );
+        if (firstPassedArgument) {
+          return new Array(firstPassedArgument);
+        } else {
+          return new Array();
+        }
+        // break;
+      }
+
+      default: {
+        throw new Error(
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg(): any] - ERROR, could not reify the new expression for class [className=${className}]`
+        );
+        break;
+      }
+
+    }
+    
+  }
+
   private reifyZodFunctionCallWithTwoArgs(
     caller: any,
     calledFunctionName: string,
@@ -965,6 +1021,7 @@ export class ZodSchemaReifier implements Reifier<any> {
     }
     throw new Error("Method implementation not completed yet.");
   }
+  
   private reifyArrayLiteralExpression(
     processedNode: ArrayLiteralExpression
   ): any {
