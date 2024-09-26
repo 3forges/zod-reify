@@ -1,0 +1,47 @@
+---
+import FlowbiteModal from '../components/flowbite/modal/FlowbiteModal';
+import FlowbiteSidebar from '../components/flowbite/sidebar/FlowbiteSidebar'
+import {FlowbiteMainContent as FakeContent} from '../components/flowbite/mocks/FlowbiteMainContent';
+import FlowbiteNavbar from '../components/flowbite/navbar/FlowbiteNavbar';
+import MainContent from './main-content.astro';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+			body {
+				padding: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="col col-span-4">
+                <FlowbiteNavbar client:only="preact" />
+            </div>
+            <!-- ... -->
+            <div class="col col-span-4">
+                <FlowbiteSidebar client:only="preact" />
+                <!-- FakeContent client:only="preact" / -->        
+				<MainContent>
+					<slot />
+				</MainContent>
+            </div>
+        </div>
+
+
+	</body>
+</html>

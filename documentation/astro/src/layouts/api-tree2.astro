@@ -1,0 +1,81 @@
+---
+// Component Imports
+import FlowbiteSidebar from '../components/flowbite/sidebar/FlowbiteSidebar'
+import FlowbiteNavbar from '../components/flowbite/navbar/FlowbiteNavbar';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+
+import ApiTypeChildrenTree from "../components/ApiTypeChildrenTree2";
+import { getCollection } from 'astro:content';
+
+// const typeDocEntries = await getCollection('api-docs-str');
+const typeDocEntries = await getCollection('api-docs');
+
+
+
+// json = JSON.stringify(object, (k, v) => v && typeof v === 'object' ? v : '' + v);
+const typeDocEntriesChildrenAstext = JSON.stringify(typeDocEntries[0].data.children)
+const typeDocEntriesChildrenNoNumbers = await JSON.parse(typeDocEntriesChildrenAstext,
+(k, v) => {
+	console.log(`convert receiver`)
+	if (k == 'id') {
+		console.log(` convert property [${k}] 's value to string`)
+		return `ID${v.toString()}` // `"${v.toString()}"`
+	} else {
+		return v
+	}
+	//return v && typeof v === 'object' ? v : '' + v
+}
+);
+console.log({ id: "rootZero", name: "routeZero", children: typeDocEntriesChildrenNoNumbers})
+/*
+console.log(typeDocEntriesChildrenNoNumbers);
+{"obj1":[{"n1":"n","n2":"1","n3":"true"},{"n1":"n","n2":"1","n3":"null"}]}
+*/
+
+// Em, let's format it
+/*
+console.log(JSON.stringify(JSON.parse(typeDocEntriesChildrenNoNumbers), null, 2));
+*/
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+			body {
+				padding: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="col col-span-4">
+                <FlowbiteNavbar client:only="preact" />
+            </div>
+            <!-- ... -->
+            <div class="col col-span-4">
+                <FlowbiteSidebar client:only="preact" />
+                
+				<div class="p-4 sm:ml-64">
+					<div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+						<ApiTypeChildrenTree client:only="preact" json={{ id: "rootZero", name: "routeZero", children: typeDocEntriesChildrenNoNumbers}/*typeDocEntries[0].data.children*/}/>
+					</div>
+				</div>
+				
+				
+            </div>
+        </div>
+
+
+	</body>
+</html>
