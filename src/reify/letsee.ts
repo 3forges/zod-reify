@@ -1,3 +1,5 @@
+import { reify } from "..";
+
 interface IConstructor<T> {
   new (...args: any[]): T;
 
@@ -67,6 +69,24 @@ const myThing = {
 var loader = new InstanceLoader<IActivatable>(myThing);
 
 var example = loader.getInstance("ClassA");
+
+/**
+ * Example with reify.ZodSchemaReifier
+ */
+
+export * as reify from "./../reify"
+import { z } from "zod";
+// const truc = new reify.ZodSchemaReifier(``)
+// var loader2 = new InstanceLoader<reify.Reifier<z.ZodString>>(reify);
+
+// var loader2 = new InstanceLoader<reify.Reifier<z.ZodTypeAny>>(reify);
+var loader2 = new InstanceLoader<reify.Reifier<any>>(reify);
+
+
+var exampleSchemaReifier = loader2.getInstance("ZodSchemaReifier", `z.string()`);
+
+const reifiedSchema = exampleSchemaReifier.reify()
+
 
 /**
  * Now I also need to make clear how to develop annotations AOP

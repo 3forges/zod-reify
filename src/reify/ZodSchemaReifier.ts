@@ -30,12 +30,16 @@ import {
 // https://www.npmjs.com/package/uuid
 // import { v4 as uuidv4 } from 'uuid';
 import { v4 as uuidv4 } from "uuid"; // pnpm add --save uuid @types/uuid
-import { number, z, type AnyZodObject } from "zod";
+//import { number, z, type AnyZodObject } from "zod";
+import { z } from "zod";
 
+export interface Reifier<X> {
+  reify(): X;
+}
 /**
  * The {@ZodSchemaReifier } class will parse a string assumed to be a zod schema source code, and will instantiate the Zod Schema.
  */
-export class ZodSchemaReifier {
+export class ZodSchemaReifier implements Reifier<any> {
   /**
    * The unique ID of
    * this {@ZodSchemaReifier } instance.
@@ -216,7 +220,7 @@ export class ZodSchemaReifier {
     );
     this.zodSchemaVarDeclaration = {
       name: `doesntMatter`,
-      initializer: zodSchemaAsString.replace(/\s|\\n?/g, ""),
+      initializer: zodSchemaAsString.replace(/new ?/g, "new-").replace(/\s|\\n?/g, "").replace(/new-?/g, "new "),
       // kind: StructureKind.VariableDeclaration, //StructureKind.VariableDeclaration,
       // hasExclamationToken: false,
       // type: `AnyZodObject`,
@@ -297,7 +301,7 @@ export class ZodSchemaReifier {
 
   /**
    * This method will be a full reccurence:
-   *
+   * 
    * @param aZodExpressionNode ts-morph / TypeScript Compiler API
    * @returns the reified typescript object, returned by the zod expression
    */
@@ -473,6 +477,104 @@ export class ZodSchemaReifier {
       return null
     } else if (Node.isTrueLiteral(processedNode)) {
       return true
+    } else if (Node.isPropertyAccessExpression(processedNode)) {
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - selected PropertyAccessExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
+      );
+      const childrenArray: Node<ts.Node>[] =
+        processedNode.forEachChildAsArray();
+      const childrenOfChildrensArray: Node<ts.Node>[] =
+        childrenArray[0].forEachChildAsArray();
+
+
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode children count is :[${childrenArray.length}]`
+      );
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode childrenOfChildrensArray count is :[${childrenOfChildrensArray.length}]`
+      );
+
+      const printedChildrenArray = childrenArray.map((node: Node<ts.Node>) => {
+        return node.print();
+      });
+      const printedChildrenOfChildrensArray = childrenOfChildrensArray.map((node: Node<ts.Node>) => {
+        return node.print();
+      });
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode printedChildrenArray is :[${JSON.stringify(
+          {
+            printedChildrenArray: printedChildrenArray,
+          },
+          null,
+          2
+        )}]`
+      );
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
+          {
+            printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
+          },
+          null,
+          2
+        )}]`
+      );
+      if (printedChildrenArray.length == 2) {
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode childrenArray[0].print() is :[${childrenArray[0].print()}]`)
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - case of Property Access Expression - processedNode childrenArray[1].print() is :[${childrenArray[1].print()}]`)
+        
+        if (`${childrenArray[0].print()}` == `${this.nameOfTheZodImport}` && `${childrenArray[1].print()}` == `coerce` ) {
+          return z.coerce
+        } else {
+          throw new Error(`[@ZodSchemaReifier].[reify()] - case of Property Access Expression - this property access expression is not [z.coerce], it is not supported.`)
+        }
+      } else {
+        throw new Error(`[@ZodSchemaReifier].[reify()] - case of Property Access Expression - this property access expression is not [z.coerce], it is not supported.`)
+      }
+      //throw new Error(`[@ZodSchemaReifier].[reify()] - case of Property Access Expression - implementation not completed yet.`)
+    } else if (Node.isNewExpression(processedNode)) {
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - selected NewExpression node [KindName=${processedNode.getKindName()}] is :[${processedNode.print()}]`
+      );
+      const childrenArray: Node<ts.Node>[] =
+        processedNode.forEachChildAsArray();
+      const childrenOfChildrensArray: Node<ts.Node>[] =
+        childrenArray[0].forEachChildAsArray();
+
+
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of NewExpression - processedNode children count is :[${childrenArray.length}]`
+      );
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of NewExpression - processedNode childrenOfChildrensArray count is :[${childrenOfChildrensArray.length}]`
+      );
+
+      const printedChildrenArray = childrenArray.map((node: Node<ts.Node>) => {
+        return node.print();
+      });
+      const printedChildrenOfChildrensArray = childrenOfChildrensArray.map((node: Node<ts.Node>) => {
+        return node.print();
+      });
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of NewExpression - processedNode printedChildrenArray is :[${JSON.stringify(
+          {
+            printedChildrenArray: printedChildrenArray,
+          },
+          null,
+          2
+        )}]`
+      );
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - case of NewExpression - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
+          {
+            printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
+          },
+          null,
+          2
+        )}]`
+      );
+      throw new Error(`[@ZodSchemaReifier].[reify()] - case of NewExpression - implementation not completed yet.`)
     } else {
       throw new Error(
         `[@ZodSchemaReifier].[reify()] - processed node is not an ObjectLiteralExpression, not an ArrayLiteralExpression, not a CallExpression:  - processedNode.getKindName() : [${processedNode.getKindName()}] - processedNode is [${processedNode.print()}]`
@@ -1325,20 +1427,23 @@ export class ZodSchemaReifier {
           getLineNumber: () => any;
           getStart: () => any;
         }) => {
-          console.error(
-            `Compilation error inside the Zod Schema you provided as string:`,
+          throw new Error(
+            `Compilation error inside the Zod Schema you provided as string: code=[${errorDiagnostic.getCode()}] | message=[${errorDiagnostic.getMessageText()}] | lineNumber=[${errorDiagnostic.getLineNumber()}] | start=[${errorDiagnostic.getStart()}] | `/*,
             {
               errorExitCode: errorDiagnostic.getCode(),
               errorMsg: errorDiagnostic.getMessageText(),
               errorLineNumber: errorDiagnostic.getLineNumber(),
               errorStartPosition: errorDiagnostic.getStart(),
             }
+            */
           );
         }
       );
-      throw new Error(
-        `There is (are) compilation error(s) inside the Zod Schema you provided as string:`
-      );
+      /*
+        throw new Error(
+                `There is (are) compilation error(s) inside the Zod Schema you provided as string`
+              );
+      */
     }
   }
 }

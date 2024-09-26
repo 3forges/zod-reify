@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="34" failures="1" errors="0" time="3.957">
-  <testsuite name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method" errors="0" failures="1" skipped="0" timestamp="2024-09-25T19:52:01" time="3.157" tests="1">
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method TypeScript Decorators Test 1 successfully get n display the lucky number, and the created properties" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method TypeScript Decorators Test 1 successfully get n display the lucky number, and the created properties" time="0.068">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: false
-    at Object.&lt;anonymous&gt; (C:\Users\Utilisateur\pesto-zod\tests\reify\LetSee.test.ts:87:43)
-    at Promise.then.completed (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:231:10)
-    at _callCircusTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:316:40)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at _runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:252:3)
-    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:126:9)
-    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
-    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
-    at run (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:71:3)
-    at runAndTransformResultsToJestFormat (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
-    at jestAdapter (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
-    at runTestInternal (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:367:16)
-    at runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:444:34)
-    at Object.worker (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+<testsuites name="jest tests" tests="34" failures="2" errors="0" time="45.514">
+  <testsuite name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method" errors="0" failures="0" skipped="0" timestamp="2024-09-26T15:17:35" time="2.874" tests="1">
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method TypeScript Decorators Test 1 successfully get n display the lucky number, and the created properties" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method TypeScript Decorators Test 1 successfully get n display the lucky number, and the created properties" time="0.075">
     </testcase>
   </testsuite>
-  <testsuite name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method" errors="0" failures="0" skipped="33" timestamp="2024-09-25T19:52:01" time="3.532" tests="33">
+  <testsuite name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method" errors="0" failures="2" skipped="0" timestamp="2024-09-26T15:17:35" time="44.963" tests="33">
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #1: zodSchema1&quot;, &quot;testTsObjectToValidate&quot;: undefined, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
     voila: z.string(),
@@ -33,8 +13,7 @@ Received: false
   .object({
     voila: z.string(),
   })
-  .optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .optional()&quot;}] successfully pass the zod parse test" time="1.88">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #1bis: zodSchema1&quot;, &quot;testTsObjectToValidate&quot;: null, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -44,8 +23,7 @@ Received: false
   .object({
     voila: z.string(),
   })
-  .optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .optional()&quot;}] successfully pass the zod parse test" time="1.288">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #2: zodSchema2&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -57,8 +35,7 @@ Received: false
     voila: z.string(),
   })
   .array()
-  .optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .optional()&quot;}] successfully pass the zod parse test" time="1.153">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #3: zodSchema3&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -72,8 +49,7 @@ Received: false
   })
   .array()
   .optional()
-  .nullable()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .nullable()&quot;}] successfully pass the zod parse test" time="1.12">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #4: zodSchema4&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -135,8 +111,7 @@ Received: false
       secrecyTags: z.array(z.string()).optional(),
     }),
   })
-  .optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .optional()&quot;}] successfully pass the zod parse test" time="1.923">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #5: zodSchema5&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -196,8 +171,7 @@ Received: false
       divisionName: z.string(),
       secrecyTags: z.array(z.string()).optional(),
     }),
-  })&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  })&quot;}] successfully pass the zod parse test" time="2.151">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #6: zodSchema6&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodTuple], &quot;zodSchemaAsText&quot;: &quot;z.tuple([
       z.object({first: z.array(z.string())}),
@@ -207,8 +181,7 @@ Received: false
       z.object({first: z.array(z.string())}),
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
-    ])&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    ])&quot;}] successfully pass the zod parse test" time="1.318">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #7: zodSchema7&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.tuple([
       z.object({first: z.array(z.string())}),
@@ -218,14 +191,11 @@ Received: false
       z.object({first: z.array(z.string())}),
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
-    ]).nullable().optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    ]).nullable().optional()&quot;}] successfully pass the zod parse test" time="1.285">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #8: zodSchema8&quot;, &quot;testTsObjectToValidate&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.boolean().nullable().optional()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #8: zodSchema8&quot;, &quot;testTsObjectToValidate&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.boolean().nullable().optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #8: zodSchema8&quot;, &quot;testTsObjectToValidate&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.boolean().nullable().optional()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #8: zodSchema8&quot;, &quot;testTsObjectToValidate&quot;: false, &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.boolean().nullable().optional()&quot;}] successfully pass the zod parse test" time="0.954">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #9: zodSchema9&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.array(z.boolean().nullish()).nullable().optional()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #9: zodSchema9&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.array(z.boolean().nullish()).nullable().optional()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #9: zodSchema9&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.array(z.boolean().nullish()).nullable().optional()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #9: zodSchema9&quot;, &quot;testTsObjectToValidate&quot;: [Array], &quot;zodSchema&quot;: [ZodOptional], &quot;zodSchemaAsText&quot;: &quot;z.array(z.boolean().nullish()).nullable().optional()&quot;}] successfully pass the zod parse test" time="1.086">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #10: zodSchema10&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -259,8 +229,7 @@ Received: false
       }),
     })
   })
-  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="1.411">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #10bis: zodSchema10&quot;, &quot;testTsObjectToValidate&quot;: null, &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -294,8 +263,7 @@ Received: false
       }),
     })
   })
-  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="1.331">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #10ter: zodSchema10&quot;, &quot;testTsObjectToValidate&quot;: undefined, &quot;zodSchema&quot;: [ZodNullable], &quot;zodSchemaAsText&quot;: &quot;z
   .object({
@@ -329,64 +297,85 @@ Received: false
       }),
     })
   })
-  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  .strict().optional().nullable()&quot;}] successfully pass the zod parse test" time="1.317">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0.964">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11bis: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11bis: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11bis: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11bis: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="1.066">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11ter: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11ter: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11ter: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #11ter: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0.972">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime()&quot;}] successfully pass the zod parse test" time="0.936">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0.953">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12bis: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12bis: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12bis: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12bis: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02:00&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0.962">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12ter: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+0200&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12ter: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+0200&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12ter: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+0200&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12ter: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+0200&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0.955">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123+02&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ offset: true });&quot;}] successfully pass the zod parse test" time="0.954">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #13: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #13: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #13: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #13: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0.962">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13bis: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13bis: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13bis: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13bis: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0.959">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13ter: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13ter: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13ter: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: false, &quot;name&quot;: &quot;Test #13ter: zodSchema13, https://zod.dev/?id=datetimes&quot;, &quot;testTsObjectToValidate&quot;: &quot;2020-01-01T00:00:00.123456Z&quot;, &quot;zodSchema&quot;: [ZodString], &quot;zodSchemaAsText&quot;: &quot;z.string().datetime({ precision: 3 });&quot;}] successfully pass the zod parse test" time="0.966">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z.object({ 
     something: z.boolean(),
   });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z.object({ 
     something: z.boolean(),
-  });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  });&quot;}] successfully pass the zod parse test" time="1.278">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \&quot;not\&quot; operator, and the \&quot;or\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z.object({ 
     something: z.boolean(),
   });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \&quot;not\&quot; operator, and the \&quot;or\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: [Object], &quot;zodSchema&quot;: [ZodObject], &quot;zodSchemaAsText&quot;: &quot;z.object({ 
     something: z.boolean(),
-  });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+  });&quot;}] successfully pass the zod parse test" time="1.156">
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 1901-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().min(new Date(\&quot;1900-01-01\&quot;), { message: \&quot;Too old\&quot; });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 1901-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().min(new Date(\&quot;1900-01-01\&quot;), { message: \&quot;Too old\&quot; });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 1901-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().min(new Date(\&quot;1900-01-01\&quot;), { message: \&quot;Too old\&quot; });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 1901-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().min(new Date(\&quot;1900-01-01\&quot;), { message: \&quot;Too old\&quot; });&quot;}] successfully pass the zod parse test" time="0.925">
+      <failure>Error: [@ZodSchemaReifier].[reify()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.
+    at ZodSchemaReifier.reify (C:\Users\Utilisateur\pesto-zod\src\reify\ZodSchemaReifier.ts:435:15)
+    at C:\Users\Utilisateur\pesto-zod\tests\reify\ZodSchemaReifier.test.ts:1702:25
+    at Object.&lt;anonymous&gt; (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-each@29.7.0\node_modules\jest-each\build\bind.js:81:13)
+    at Promise.then.completed (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().max(new Date(), { message: \&quot;Too young!\&quot; });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().max(new Date(), { message: \&quot;Too young!\&quot; });&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().max(new Date(), { message: \&quot;Too young!\&quot; });&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.date().max(new Date(), { message: \&quot;Too young!\&quot; });&quot;}] successfully pass the zod parse test" time="0.934">
+      <failure>Error: [@ZodSchemaReifier].[reify()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.
+    at ZodSchemaReifier.reify (C:\Users\Utilisateur\pesto-zod\src\reify\ZodSchemaReifier.ts:435:15)
+    at C:\Users\Utilisateur\pesto-zod\tests\reify\ZodSchemaReifier.test.ts:1702:25
+    at Object.&lt;anonymous&gt; (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-each@29.7.0\node_modules\jest-each\build\bind.js:81:13)
+    at Promise.then.completed (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-circus@29.7.0\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\Utilisateur\pesto-zod\node_modules\.pnpm\jest-runner@29.7.0\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
-    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.coerce.date();&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.coerce.date();&quot;}] successfully pass the zod parse test" time="0">
-      <skipped/>
+    <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.coerce.date();&quot;}] successfully pass the zod parse test" name="Tests of the {@ZodSchemaReifier} reify() method against the zod parse method Test the reify() returns a zod schema which successfully parses the test TypeScript Object [{&quot;expect&quot;: true, &quot;name&quot;: &quot;Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \&quot;not\&quot; operator).&quot;, &quot;testTsObjectToValidate&quot;: 2024-01-01T00:00:00.000Z, &quot;zodSchema&quot;: [ZodDate], &quot;zodSchemaAsText&quot;: &quot;z.coerce.date();&quot;}] successfully pass the zod parse test" time="0.938">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #3: markdown frontmatter extraction zodSchema3&quot;, &quot;testMarkdown&quot;: &quot;---
 
@@ -414,8 +403,7 @@ Received: false
   })
   .array()
   .optional()
-  .nullable()&quot;}] successfully pass the zod parse test [%p]" time="0">
-      <skipped/>
+  .nullable()&quot;}] successfully pass the zod parse test [%p]" time="1.121">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #4: markdown frontmatter extraction zodSchema4&quot;, &quot;testMarkdown&quot;: &quot;---
 
@@ -785,8 +773,7 @@ department:
       secrecyTags: z.array(z.string()).optional(),
     }),
   })
-  .optional()&quot;}] successfully pass the zod parse test [%p]" time="0">
-      <skipped/>
+  .optional()&quot;}] successfully pass the zod parse test [%p]" time="1.828">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Object], &quot;name&quot;: &quot;Test #5: markdown frontmatter extraction zodSchema5&quot;, &quot;testMarkdown&quot;: &quot;---
 
@@ -1154,8 +1141,7 @@ department:
       divisionName: z.string(),
       secrecyTags: z.array(z.string()).optional(),
     }),
-  })&quot;}] successfully pass the zod parse test [%p]" time="0">
-      <skipped/>
+  })&quot;}] successfully pass the zod parse test [%p]" time="1.788">
     </testcase>
     <testcase classname="Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown [{&quot;expectedFrontmatter&quot;: [Array], &quot;name&quot;: &quot;Test #6: markdown frontmatter extraction zodSchema6&quot;, &quot;testMarkdown&quot;: undefined, &quot;zodMatterShouldThrow&quot;: true, &quot;zodSchema&quot;: [ZodTuple], &quot;zodSchemaAsText&quot;: &quot;z.tuple([
       z.object({first: z.array(z.string())}),
@@ -1165,8 +1151,7 @@ department:
       z.object({first: z.array(z.string())}),
       z.object({second: z.array(z.string())}),
       z.object({third: z.array(z.string())}),
-    ])&quot;}] should throw an error because zod matter parse does not accept zod tuples as input schema" time="0">
-      <skipped/>
+    ])&quot;}] should throw an error because zod matter parse does not accept zod tuples as input schema" time="1.219">
     </testcase>
   </testsuite>
 </testsuites>

@@ -84,8 +84,11 @@ describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse 
         console.log(`reify().lastname is : ${(someC as any).reify().lastname}`);
         
         console.log(`name is : ${(someC as any).name}`);
-        expect((someC as any).lucky == 2).toBe(true)
+        // expect((someC as any).lucky == 2).toBe(true)
+        expect(`${(someC as any).reify().lastname}` == `universe`).toBe(true)
+        
       });
     });
   });
+  
   
