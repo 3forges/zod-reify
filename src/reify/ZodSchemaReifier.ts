@@ -220,7 +220,7 @@ export class ZodSchemaReifier implements Reifier<any> {
     );
     this.zodSchemaVarDeclaration = {
       name: `doesntMatter`,
-      initializer: zodSchemaAsString.replace(/new ?/g, "new-").replace(/\s|\\n?/g, "").replace(/new-?/g, "new "),
+      initializer: zodSchemaAsString // zodSchemaAsString.replace(/new ?/g, "new-").replace(/\s|\\n?/g, "").replace(/new-?/g, "new "),
       // kind: StructureKind.VariableDeclaration, //StructureKind.VariableDeclaration,
       // hasExclamationToken: false,
       // type: `AnyZodObject`,
@@ -431,9 +431,51 @@ export class ZodSchemaReifier implements Reifier<any> {
           this.reify(caller),
           calledFunctionName
         );
-      } else if (childrenArray.length > 2) {
+      } else if (childrenArray.length == 3) {
+        // i.e.: if the function call has parameters
+
+        let lastIndexOfDot = childrenArray[0].print().lastIndexOf(`.`);
+        let calledFunctionName = childrenArray[0].print().substring(
+          lastIndexOfDot + 1 // + 1 : to exclude the dot character
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - calledFunctionName is :[${calledFunctionName}]`
+        );
+        const firstPassedArgument = childrenArray[1];
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - firstPassedArgument is :[${firstPassedArgument}]`
+        );
+        const secondPassedArgument = childrenArray[2];
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - secondPassedArgument is :[${secondPassedArgument}]`
+        );
+        const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
+          (node: Node<ts.Node>) => {
+            return node.print();
+          }
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - processedNode printedChildrenOfChildrensArray is :[${JSON.stringify(
+            {
+              printedChildrenOfChildrensArray: printedChildrenOfChildrensArray,
+            },
+            null,
+            2
+          )}]`
+        );
+        const caller = childrenOfChildrensArray[0];
+        console.log(
+          `[@ZodSchemaReifier].[reify()] - processedNode caller is :[${caller.print()}]`
+        );
+        return this.reifyZodFunctionCallWithTwoArgs(// reifyZodFunctionCallWithOneArg(
+          this.reify(caller),
+          calledFunctionName,
+          this.reify(firstPassedArgument),
+          this.reify(secondPassedArgument)
+        );
+      } else if (childrenArray.length > 3) {
         throw new Error(
-          `[@ZodSchemaReifier].[reify()] - reifying a zod function call which has more than 2 passed arguments is not supported yet.`
+          `[@ZodSchemaReifier].[reify()] - reifying a zod function call which has more than 3 passed arguments is not supported yet.`
         );
       }
     } else if (Node.isObjectLiteralExpression(processedNode)) {
@@ -574,6 +616,14 @@ export class ZodSchemaReifier implements Reifier<any> {
           2
         )}]`
       );
+      if (childrenArray.length == 2) {
+
+        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`, `${childrenArray[1].print()}`)// .reifyZodFunctionCallWithOneArg
+      } else if (childrenArray.length == 3) {
+
+        this.reifyZodNewExpressionWithTwoArgs(`${childrenArray[0].print()}`, `${childrenArray[1].print()}`, `${childrenArray[0].print()}`)// .reifyZodFunctionCallWithOneArg
+      }
+      
       throw new Error(`[@ZodSchemaReifier].[reify()] - case of NewExpression - implementation not completed yet.`)
     } else {
       throw new Error(
@@ -606,6 +656,314 @@ export class ZodSchemaReifier implements Reifier<any> {
      */
 
     return toReturn;
+  }
+  private reifyZodFunctionCallWithTwoArgs(
+    caller: any,
+    calledFunctionName: string,
+    firstPassedArgument: any, /* Node<ts.Node> */
+    secondPassedArgument: any /* Node<ts.Node> */
+  ): any {
+    let toReturn = caller;
+    switch (
+      calledFunctionName // reifyNoArgsZodFunctionCallsChain
+    ) {
+      case "string": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [string]`
+        );
+        return caller.string(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "boolean": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [boolean]`
+        );
+        return caller.boolean(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "number": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [number]`
+        );
+        return caller.number(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "any": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [any]`
+        );
+        return caller.any(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "bigint": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [bigint]`
+        );
+        return caller.bigint(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "date": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [date]`
+        );
+        return caller.date(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "datetime": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [datetime]`
+        );
+        return caller.datetime(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "function": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [function]`
+        );
+        return caller.function(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "nan": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [nan]`
+        );
+        return caller.nan(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "never": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [never]`
+        );
+        return caller.never(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "null": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [null]`
+        );
+        return caller.null(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "oboolean": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [oboolean]`
+        );
+        return caller.oboolean(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "unknown": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [unknown]`
+        );
+        return caller.unknown(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "ostring": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [ostring]`
+        );
+        return caller.ostring(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "void": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [void]`
+        );
+        return caller.void(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "nullable": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [nullable]`
+        );
+        return caller.nullable(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "nullish": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [nullish]`
+        );
+        return caller.nullish(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "object": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [object]`
+        );
+        return caller.object(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "tuple": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [tuple]`
+        );
+        return caller.tuple(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "array": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [array]`
+        );
+        return caller.array(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "optional": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [optional]`
+        );
+        return caller.optional(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "required": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [required]`
+        );
+        return caller.required(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "passthrough": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [passthrough]`
+        );
+        return caller.passthrough(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "strict": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [strict]`
+        );
+        return caller.strict(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "strip": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [strip]`
+        );
+        return caller.strip(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "default": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [default]`
+        );
+        return caller.default(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "describe": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [describe]`
+        );
+        return caller.describe(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "promise": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [promise]`
+        );
+        return caller.promise(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "readonly": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [readonly]`
+        );
+        return caller.readonly(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "gt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [gt]`
+        );
+        return caller.gt(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "gte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [gte]`
+        );
+        return caller.gte(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "lt": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [lt]`
+        );
+        return caller.lt(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "lte": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [lte]`
+        );
+        return caller.lte(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "int": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [int]`
+        );
+        return caller.int(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "positive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [positive]`
+        );
+        return caller.positive(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "nonnegative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [nonnegative]`
+        );
+        return caller.nonnegative(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "negative": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [negative]`
+        );
+        return caller.negative(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "nonpositive": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [nonpositive]`
+        );
+        return caller.nonpositive(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "multipleOf": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [multipleOf]`
+        );
+        return caller.multipleOf(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "finite": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [finite]`
+        );
+        return caller.finite(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "safe": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [safe]`
+        );
+        return caller.safe(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+
+      default: {
+        throw new Error(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
+        );
+        break;
+      }
+
+    }
+    throw new Error("Method implementation not completed yet.");
   }
   private reifyArrayLiteralExpression(
     processedNode: ArrayLiteralExpression

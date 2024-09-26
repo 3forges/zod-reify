@@ -70,6 +70,66 @@ var loader = new InstanceLoader<IActivatable>(myThing);
 
 var example = loader.getInstance("ClassA");
 
+
+
+/////////////////////////////
+// None of those below work 
+/// to instantiate a Date
+
+
+const instance = Object.create(
+  Date.prototype
+);
+const args = [ "1900-01-01" ]
+const instantiatedDate = instance.constructor.apply(instance, args);
+
+const instantiatedDate2 = Object.create(
+  Date.prototype
+).constructor.apply(Date.prototype, args);
+
+console.log(` instantiatedDate is : [${instantiatedDate}]`)
+
+console.log(` instantiated Date is : [${new Date("1900-01-01")}]`)
+
+console.log(` instantiatedDate2 is : [${instantiatedDate2}]`)
+
+
+
+
+export class InstanceLoader2<T> {
+  constructor(private context?: Object) {}
+
+  getInstance(name: string, ...args: any[]): T {
+    let instance  = null
+    if (this.context) {
+      instance = Object.create(
+      this.context[name as keyof typeof this.context].prototype
+    );
+    } else if (name == "Date") {
+
+      instance = Object.create(
+      Date.prototype
+    );
+    }
+
+    instance.constructor.apply(instance, args);
+    return <T>instance;
+  }
+}
+
+var loader3 = new InstanceLoader2<Date>();
+
+var example2 = loader3.getInstance("Date", args);
+console.log(` example2 is : [${example2}]`)
+
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+
+
+
+
+
 /**
  * Example with reify.ZodSchemaReifier
  */
