@@ -220,7 +220,15 @@ export class ZodSchemaReifier implements Reifier<any> {
     );
     this.zodSchemaVarDeclaration = {
       name: `doesntMatter`,
-      initializer: zodSchemaAsString // zodSchemaAsString.replace(/new ?/g, "new-").replace(/\s|\\n?/g, "").replace(/new-?/g, "new "),
+      // initializer: zodSchemaAsString // zodSchemaAsString.replace(/new ?/g, "new-").replace(/\s|\\n?/g, "").replace(/new-?/g, "new "),
+      /**
+       * below, it is assumed that no one will never use
+       * the "new=" string inside the declaration of a zod schema.
+       * This assumption is reasonable enough, since
+       * a variable name containing the equal sign will
+       * not pass typescript compiler compilation.
+       */
+      initializer: zodSchemaAsString.replace(/new ?/g, "new=").replace(/\s|\\n?/g, "").replace(/new=?/g, "new "),
       // kind: StructureKind.VariableDeclaration, //StructureKind.VariableDeclaration,
       // hasExclamationToken: false,
       // type: `AnyZodObject`,
@@ -302,15 +310,14 @@ export class ZodSchemaReifier implements Reifier<any> {
   /**
    * This method will be a full reccurence:
    * 
-   * @param aZodExpressionNode ts-morph / TypeScript Compiler API
+   * @param aZodExpressionNode A node in the terminology of the ts-morph / TypeScript Compiler API
    * @returns the reified typescript object, returned by the zod expression
    */
   public reify(aZodExpressionNode?: Node<ts.Node>): any {
     /**
      * The Object to return:
-     * Instead of that object, the experiment method will return the instantiated zod object
-     * so reify is the prototype for the
-     * generalized algorithm() which will replace parse()
+     * Instead of that object, the experiment method will
+     * return the instantiated zod object
      */
     let toReturn: any = null;
 
@@ -320,6 +327,27 @@ export class ZodSchemaReifier implements Reifier<any> {
      * - or gather (into {toReturn.topZodFunctionCallWithArgs}) the top zod function called WITH argument(s): we then know that it is the zod function call "on the extreme left", meaning that the object calling that function is the zod named import. So we return, we do not need to proceed traversing the descendants.
      */
     const processedNode = aZodExpressionNode || this.zodExpressionNode;
+    if (processedNode == null) {
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - START - processedNode is null or undefined`
+      );
+    } else {
+      console.log(
+        `[@ZodSchemaReifier].[reify()] - START - processedNode is defined`
+      );
+    }
+    console.log(
+      `[@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [${(typeof processedNode)}]`
+    );
+    console.log(
+      `[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`
+    );
+    console.log(
+      `[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`
+    );
+    console.log(
+      `[@ZodSchemaReifier].[reify()] - START - processedNode.print() is [${processedNode.print()}]`
+    );
     console.log(
       `[@ZodSchemaReifier].[reify()] - START - processedNode.getKindName() : [${processedNode.getKindName()}] - processedNode is [${processedNode.print()}]`
     );
@@ -443,11 +471,11 @@ export class ZodSchemaReifier implements Reifier<any> {
         );
         const firstPassedArgument = childrenArray[1];
         console.log(
-          `[@ZodSchemaReifier].[reify()] - firstPassedArgument is :[${firstPassedArgument}]`
+          `[@ZodSchemaReifier].[reify()] - firstPassedArgument is :[${firstPassedArgument.print()}]`
         );
         const secondPassedArgument = childrenArray[2];
         console.log(
-          `[@ZodSchemaReifier].[reify()] - secondPassedArgument is :[${secondPassedArgument}]`
+          `[@ZodSchemaReifier].[reify()] - secondPassedArgument is :[${secondPassedArgument.print()}]`
         );
         const printedChildrenOfChildrensArray = childrenOfChildrensArray.map(
           (node: Node<ts.Node>) => {
@@ -498,7 +526,7 @@ export class ZodSchemaReifier implements Reifier<any> {
           throw new Error(`[@ZodSchemaReifier].[reify()] - processedNode = [${processedNode.print()}] is a numeric literal, but it is neither a Float, nor an Integer, and not even a BigInt`)
         }
       }
-    }  else if (Node.isStringLiteral(processedNode)) {
+    } else if (Node.isStringLiteral(processedNode)) {
       return processedNode.print()
     } else if (Node.isFalseLiteral(processedNode)) {
       return false
@@ -616,11 +644,11 @@ export class ZodSchemaReifier implements Reifier<any> {
           2
         )}]`
       );
-      if (childrenArray.length == 1) { // e.g. new Date()
-        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`)// .reifyZodFunctionCallWithOneArg
+      if (childrenArray.length == 1) { // We are in the case with the new operator, and the classname, and zero args to the class constructor, e.g. new Date()
+        return this.reifyZodNewExpressionWithLessOneOrZeroArg(`${childrenArray[0].print()}`)// .reifyZodFunctionCallWithOneArg
       }
-      if (childrenArray.length == 2) { // e.g. new Date("1901-01-02")
-        this.reifyZodNewExpressionWithOneArg(`${childrenArray[0].print()}`, this.reify(childrenArray[1]))// .reifyZodFunctionCallWithOneArg
+      if (childrenArray.length == 2) { // We are in the case with the new operator, and the classname, and one arg to the class constructor, e.g. new Date("1901-01-02")
+        return this.reifyZodNewExpressionWithLessOneOrZeroArg(`${childrenArray[0].print()}`, this.reify(childrenArray[1]))// .reifyZodFunctionCallWithOneArg
       } else if (childrenArray.length == 3) {
         // this.reifyZodNewExpressionWithTwoArgs(`${childrenArray[0].print()}`, this.reify(childrenArray[1]), this.reify(childrenArray[2])) // .reifyZodFunctionCallWithTwoArg
         throw new Error(`[@ZodSchemaReifier].[reify()] - case of NewExpression - reifying a NewExpression for a builtin class  with a 2 arguments constructor is not supported yet. (class name = ${childrenArray[0].print()}) (constructor arg 1 = ${childrenArray[1].print()}) (constructor arg 2 = ${childrenArray[2].print()})`)
@@ -660,7 +688,13 @@ export class ZodSchemaReifier implements Reifier<any> {
     return toReturn;
   }
 
-  private reifyZodNewExpressionWithOneArg(
+  /**
+   * Reifies a new expression node.
+   * @param className The name of the class to reify. Supported classes are: Date, Set, Array (oters in the future ... ?)
+   * @param firstPassedArgument 
+   * @returns The reified object returned by the call of the constructor of the <code>className</code> Class.
+   */
+  private reifyZodNewExpressionWithLessOneOrZeroArg(
     className: string,
     firstPassedArgument?: any, /* Node<ts.Node> */
   ): any {
@@ -670,10 +704,10 @@ export class ZodSchemaReifier implements Reifier<any> {
     ) {
       case "Date": {
         console.log(
-          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}]`
         );
         if (firstPassedArgument) {
-          return new Date(firstPassedArgument);
+          return new Date(this.reify(firstPassedArgument));
         } else {
           return new Date();
         }
@@ -681,10 +715,10 @@ export class ZodSchemaReifier implements Reifier<any> {
       }
       case "Set": {
         console.log(
-          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod functionName is [${className}]`
         );
         if (firstPassedArgument) {
-          return new Set(firstPassedArgument);
+          return new Set(this.reify(firstPassedArgument));
         } else {
           return new Set();
         }
@@ -692,10 +726,10 @@ export class ZodSchemaReifier implements Reifier<any> {
       }
       case "Array": {
         console.log(
-          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg()] - Ok zod functionName is [${className}]`
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod functionName is [${className}]`
         );
         if (firstPassedArgument) {
-          return new Array(firstPassedArgument);
+          return new Array(this.reify(firstPassedArgument));
         } else {
           return new Array();
         }
@@ -704,7 +738,7 @@ export class ZodSchemaReifier implements Reifier<any> {
 
       default: {
         throw new Error(
-          `[@ZodSchemaReifier].[reifyZodNewExpressionWithOneArg(): any] - ERROR, could not reify the new expression for class [className=${className}]`
+          `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg(): any] - ERROR, could not reify the new expression for class [className=${className}]`
         );
         break;
       }
@@ -1010,10 +1044,40 @@ export class ZodSchemaReifier implements Reifier<any> {
         return caller.safe(firstPassedArgument, secondPassedArgument);
         // break;
       }
-
+      case "max": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [max]`
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [max] and firstPassedArgument=[${firstPassedArgument}]`
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [max] and secondPassedArgument=[${secondPassedArgument}]`
+        );
+        // throw new Error(`DEBUG stop point.`)
+        return caller.max(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      case "min": {
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [min]`
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [min] and firstPassedArgument=[${firstPassedArgument}]`
+        );
+        console.log(
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs()] - Ok zod functionName is [min] and secondPassedArgument=[${secondPassedArgument}]`
+        );
+        // throw new Error(`DEBUG stop point.`)
+        return caller.min(firstPassedArgument, secondPassedArgument);
+        // break;
+      }
+      /*
+      
+      */
       default: {
         throw new Error(
-          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}]`
+          `[@ZodSchemaReifier].[reifyZodFunctionCallWithTwoArgs(): any] - ERROR, could not determine the zod function which matches [calledFunctionName=${calledFunctionName}], and firstPassedArgument=[${firstPassedArgument}], and secondPassedArgument=[${JSON.stringify(secondPassedArgument, null, 4)}] `
         );
         break;
       }

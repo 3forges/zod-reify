@@ -4,6 +4,8 @@ import { z } from "zod";
 
 import * as reifier from "../../src/reify";
 
+// live testing: https://playcode.io/typescript
+
 /**
  * ------------------------------------
  * ------------------------------------
@@ -1565,7 +1567,7 @@ const testCase15: ZodValidateTestCase<typeof zodSchema15> = {
   name: `Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
   zodSchemaAsText: `z.date().min(new Date("1900-01-01"), { message: "Too old" });`,
   testTsObjectToValidate: new Date("1901-01-01"),
-  expect: true,
+  expect: false,
 };
 
 /**
