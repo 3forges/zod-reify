@@ -1649,7 +1649,9 @@ type AnyTestCaseZodSchema =
  * ------------------------------------
  * ------------------------------------
  */
+// [jest -t '<describeString> <itString>']
 // [pnpm test -- --testNamePattern 'debug - testCase15']
+// see also https://stackoverflow.com/questions/42827054/how-do-i-run-a-single-test-using-jest
 describe("debug - testCase15",() => {
   describe("Test the reify() method", () => {
     it(`should returns a zod schema which successfully parses the test TypeScript Object`, () => {
