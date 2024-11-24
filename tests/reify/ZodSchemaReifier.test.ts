@@ -1564,7 +1564,7 @@ const testCase14bis: ZodValidateTestCase<typeof zodSchema14> = {
 const zodSchema15 = z.date().min(new Date("1900-01-01"), { message: "Too old" });
 const testCase15: ZodValidateTestCase<typeof zodSchema15> = {
   zodSchema: zodSchema15,
-  name: `Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  name: `Test #15: zodSchema15, z.date().min(new Date("1900-01-01"), { message: "Too old" })`,
   zodSchemaAsText: `z.date().min(new Date("1900-01-01"), { message: "Too old" });`,
   testTsObjectToValidate: new Date("1901-01-01"),
   expect: false,
@@ -1578,7 +1578,7 @@ const testCase15: ZodValidateTestCase<typeof zodSchema15> = {
 const zodSchema16 = z.date().max(new Date(), { message: "Too young!" });
 const testCase16: ZodValidateTestCase<typeof zodSchema16> = {
   zodSchema: zodSchema16,
-  name: `Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  name: `Test #16: zodSchema16, z.date().max(new Date(), { message: "Too young!" }) `,
   zodSchemaAsText: `z.date().max(new Date(), { message: "Too young!" });`,
   testTsObjectToValidate: new Date("2024-01-01"),
   expect: true,
@@ -1591,7 +1591,7 @@ const testCase16: ZodValidateTestCase<typeof zodSchema16> = {
 const zodSchema17 = z.coerce.date();
 const testCase17: ZodValidateTestCase<typeof zodSchema17> = {
   zodSchema: zodSchema17,
-  name: `Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).`,
+  name: `Test #17: zodSchema17, z.coerce.date().`,
   zodSchemaAsText: `z.coerce.date();`,
   testTsObjectToValidate: new Date("2024-01-01"),
   expect: true,
@@ -1649,6 +1649,40 @@ type AnyTestCaseZodSchema =
  * ------------------------------------
  * ------------------------------------
  */
+// [pnpm test -- --testNamePattern 'debug - testCase15']
+describe("debug - testCase15",() => {
+  describe("Test the reify() method", () => {
+    it(`should returns a zod schema which successfully parses the test TypeScript Object`, () => {
+      console.log(
+        ` >>>>>>> DEBUG TEST CASE [${testCase15.name}] - testCase.zodSchemaAsText=[${testCase15.zodSchemaAsText}]`
+      );
+      const zodSchemaParser = new reifier.ZodSchemaReifier(
+        testCase15.zodSchemaAsText
+      );
+      const reifiedZodSchema: typeof testCase15.zodSchema =
+        zodSchemaParser.reify();
+
+      console.log(` >>>>>>> reifiedZodSchema :[${reifiedZodSchema}]`);
+      console.log(
+        ` >>>>>>> reifiedZodSchema's type is :[${typeof reifiedZodSchema}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testCase.testTsObjectToValidate) is :[${JSON.stringify(
+          reifiedZodSchema.safeParse(testCase15.testTsObjectToValidate),
+          null,
+          2
+        )}]`
+      );
+      // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testCase.testTsObjectToValidate)}`)
+      expect(
+        testCase15.zodSchema.safeParse(testCase15.testTsObjectToValidate).success
+      ).toBe(testCase15.expect);
+      expect(
+        reifiedZodSchema.safeParse(testCase15.testTsObjectToValidate).success
+      ).toBe(testCase15.expect);
+    });
+  });
+})
 
 describe("Tests of the {@ZodSchemaReifier} reify() method against the zod parse method", () => {
   // beforeEach((): void => {
