@@ -225,6 +225,7 @@ jobs:
     <<: *jobs-commons
     environment:
       BASH_ENV: /home/circleci/.profile
+      PNPM_VERSION: << pipeline.parameters.pnpm_version >>
       # PESTO_ZOD_NPM_TOKEN: << pipeline.parameters.npm_publish_auth_secret_token >>
       PKG_COMMIT_HASH: << pipeline.git.base_revision >>
     steps:
