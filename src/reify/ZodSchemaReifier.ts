@@ -339,9 +339,11 @@ export class ZodSchemaReifier implements Reifier<any> {
     console.log(
       `[@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [${(typeof processedNode)}]`
     );
+    /*
     console.log(
       `[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`
     );
+    */
     console.log(
       `[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`
     );
@@ -691,12 +693,12 @@ export class ZodSchemaReifier implements Reifier<any> {
   /**
    * Reifies a new expression node.
    * @param className The name of the class to reify. Supported classes are: Date, Set, Array (oters in the future ... ?)
-   * @param firstPassedArgument 
+   * @param constructorArg 
    * @returns The reified object returned by the call of the constructor of the <code>className</code> Class.
    */
   private reifyZodNewExpressionWithLessOneOrZeroArg(
     className: string,
-    firstPassedArgument?: any, /* Node<ts.Node> */
+    constructorArg?: any, /* the passed argument Node<ts.Node> */
   ): any {
     
     switch (
@@ -706,9 +708,15 @@ export class ZodSchemaReifier implements Reifier<any> {
         console.log(
           `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}]`
         );
-        if (firstPassedArgument) {
-          return new Date(this.reify(firstPassedArgument));
+        if (constructorArg) {
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new Date(${constructorArg})]`
+          );
+          return new Date(constructorArg);
         } else {
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new Date()]`
+          );
           return new Date();
         }
         // break;
@@ -717,9 +725,16 @@ export class ZodSchemaReifier implements Reifier<any> {
         console.log(
           `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod functionName is [${className}]`
         );
-        if (firstPassedArgument) {
-          return new Set(this.reify(firstPassedArgument));
+        if (constructorArg) {
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new Set(${constructorArg})]`
+          );
+          return new Set(constructorArg);
         } else {
+
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new Set()]`
+          );
           return new Set();
         }
         // break;
@@ -728,9 +743,15 @@ export class ZodSchemaReifier implements Reifier<any> {
         console.log(
           `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod functionName is [${className}]`
         );
-        if (firstPassedArgument) {
-          return new Array(this.reify(firstPassedArgument));
+        if (constructorArg) {
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new ${className}(${constructorArg})]`
+          );
+          return new Array(constructorArg);
         } else {
+          console.log(
+            `[@ZodSchemaReifier].[reifyZodNewExpressionWithLessOneOrZeroArg()] - Ok zod className is [${className}], and will return [new ${className}()]`
+          );
           return new Array();
         }
         // break;

@@ -56,6 +56,57 @@ Git clone the source, and:
 pnpm i
 ```
 
+### Running the Tests
+
+`Jest` is the framework used to run automatic, non regression, unit testing.
+
+* To run all `jest` tests, run:
+
+```bash
+pnpm test
+```
+
+Inside the `./tests/reify/ZodSchemaReifier.test.ts` Test Suite file, the tests are designed like this:
+* You will find a number of `TestCase` Objects
+* The Jest Tests run an `each` loop over arrays of `TestCase` Objects
+* All The `TestCase` Objects implement either of:
+  * `ZodValidateTestCase<T>`: the Test cases implementing that interface are all meant to test running the `zod` `safeParse` method, using a zod schema reified using the `reify` method, defined in the `ZodSchemaReifier` class, which source code is in `./src/reify/ZodSchemaReifier.ts`.
+  * `FrontMatterValidateTestCase<T>`: the Test cases implementing that interface are all meant to test running the `zod` `safeParse` method, using a zod schema reified using the `reify` method, defined in the `ZodSchemaReifier` class, which source code is in `./src/reify/ZodSchemaReifier.ts`, over frontmatter data parsed by the [`zod-matter`](https://github.com/HiDeoo/zod-matter) [`parse` method](https://github.com/HiDeoo/zod-matter?tab=readme-ov-file#parse), over a test markdown.
+  * both of the `ZodValidateTestCase<T>` and `FrontMatterValidateTestCase<T>` interfaces have a `name` property
+
+* To run a single test case (important to debug your code), you can simply use the value of the `name` (coming from either of `ZodValidateTestCase<T>` or `FrontMatterValidateTestCase<T>` interfaces), like this:
+
+```bash
+
+# --
+# below will run only the 
+# 'const testCase1bis: ZodValidateTestCase', cf. The './tests/reify/ZodSchemaReifier.test.ts' Test Suite file.
+
+pnpm test -- -t 'Test #1bis: zodSchema1 should fail with null'
+
+# --
+# below will run only the 
+# 'const testCase2: ZodValidateTestCase', cf. The './tests/reify/ZodSchemaReifier.test.ts' Test Suite file.
+pnpm test -- -t 'Test #2: zodSchema2'
+
+
+# --
+# below will run only the 
+# 'const markDownTestCase4: FrontMatterValidateTestCase', cf. The './tests/reify/ZodSchemaReifier.test.ts' Test Suite file.
+pnpm test -- -t 'Test #4: markdown frontmatter extraction zodSchema4'
+
+```
+
+Worth noting, other test run options:
+
+```bash
+# [pnpm test -- -i <your-test-file> -c <jest-config> -t "<test-block-name>"]
+# --- 
+# [pnpm test -- -c ./jest.config.ts]
+# [pnpm test -- -c ./jest.config.ts -t 'Test #1bis: zodSchema1 should fail with null']
+
+```
+
 ### Generate the docs
 
 ```bash
