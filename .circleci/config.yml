@@ -109,6 +109,7 @@ jobs:
     <<: *jobs-commons
     environment:
       BASH_ENV: /home/circleci/.profile
+      PNPM_VERSION: << pipeline.parameters.pnpm_version >>
     steps:
       - run:
           name: "System setup"
