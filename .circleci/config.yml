@@ -11,10 +11,12 @@ parameters:
     default: true
   runner_image_tag:
     type: string
-    default: "21.7.1" # "lts-bullseye"
+    # default: "21.7.1" # "lts-bullseye"
+    default: "20.12.0" # "lts-bullseye"
   pnpm_version:
     type: string
-    default: "9.10.0"
+    default: "9.11.0"
+    # default: "9.10.0"
   npm_publish_auth_secret_user:
     type: string
     default: "xxxx"
