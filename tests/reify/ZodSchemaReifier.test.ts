@@ -3,6 +3,7 @@ import { z } from "zod";
 // import * as grayMatter from "gray-matter"; // pnpm add --save gray-matter
 
 import * as reifier from "../../src/reify";
+import { FrontMatterValidateTestCase, ZodValidateTestCase } from "./zod.coverage.testcases";
 
 // --- // --- 
 // live testing: https://playcode.io/typescript
@@ -33,21 +34,6 @@ import * as reifier from "../../src/reify";
  * ------------------------------------
  * ------------------------------------
  */
-type ZodValidateTestCase<T> = {
-  zodSchema: T;
-  zodSchemaAsText: string;
-  testTsObjectToValidate: any;
-  expect: boolean;
-  name: string;
-};
-type FrontMatterValidateTestCase<T> = {
-  zodSchema: T;
-  zodSchemaAsText: string;
-  expectedFrontmatter: any;
-  testMarkdown: any;
-  name: string;
-  zodMatterShouldThrow: boolean;
-};
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Test 1
@@ -1051,11 +1037,10 @@ describe("Tests of the {@ZodSchemaReifier} reify() method", () => {
         ` >>>>>>> reifiedZodSchema's type is :[${typeof reifiedZodSchema}]`
       );
       console.log(
-        ` >>>>>>> reifiedZodSchema.safeParse(testCase.testTsObjectToValidate) is :[${JSON.stringify(
-          reifiedZodSchema.safeParse(testCase.testTsObjectToValidate),
-          null,
-          2
-        )}]`
+        ` >>>>>>> reifiedZodSchema.safeParse(testCase.testTsObjectToValidate).success is :[${reifiedZodSchema.safeParse(testCase.testTsObjectToValidate).success}]`
+      );
+      console.log(
+        ` >>>>>>> reifiedZodSchema.safeParse(testCase.testTsObjectToValidate).success is :[${reifiedZodSchema.safeParse(testCase.testTsObjectToValidate).success}]`
       );
       // expect(`${(typeof reifiedZodSchema)}`).toEqual(`${(typeof testCase.testTsObjectToValidate)}`)
       expect(
