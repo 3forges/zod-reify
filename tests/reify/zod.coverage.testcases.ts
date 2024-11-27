@@ -419,55 +419,86 @@ export const coverageTestCase11ter: ZodValidateTestCase<
 // **
 // ######### z.coerce.string()
 // *
-//
+// TODO: complete all coerce examples, https://zod.dev/?id=coercion-for-primitives
 
 export const coverageTestCase12ZodSchema = z.coerce.string();
 
 export const coverageTestCase12: ZodValidateTestCase<
   typeof coverageTestCase12ZodSchema
 > = {
-  name: `Coverage Test #12: coverageTestCase12ZodSchema should successfully parse a Symbol('bastille')`,
+  name: `Coverage Test #12: coverageTestCase12ZodSchema should successfully parse the "tuna" string`,
   zodSchema: coverageTestCase12ZodSchema,
   zodSchemaAsText: `z.coerce.string();`,
-  testTsObjectToValidate: "whatever",
+  testTsObjectToValidate: "tuna",
   expect: true,
 };
 export const coverageTestCase12bis: ZodValidateTestCase<
   typeof coverageTestCase12ZodSchema
 > = {
   ...coverageTestCase12,
-  name: `Coverage Test #12bis: coverageTestCase12ZodSchema should fail to parse undefined because it is not null.`,
+  name: `Coverage Test #12bis: coverageTestCase12ZodSchema should successfully parse the 12 number as if it was the "12" string.`,
   expect: false,
-  testTsObjectToValidate: undefined,
+  testTsObjectToValidate: 12,
 };
 
 
 // **
 // ######### z.coerce.string().email().min(5)
 // *
-// /!\/!\ TODO /!\/!\
-// /!\/!\ : THE TWO BELOW 
-// /!\/!\   TEST CASES NEED TO
-// /!\/!\   BE COMPLETED THEY ARE UNFINISHED!!!
+// 
 
 export const coverageTestCase13ZodSchema = z.coerce.string().email().min(5);
 
 export const coverageTestCase13: ZodValidateTestCase<
   typeof coverageTestCase13ZodSchema
 > = {
-  name: `Coverage Test #13: coverageTestCase13ZodSchema should successfully parse a Symbol('bastille')`,
+  name: `Coverage Test #13: coverageTestCase13ZodSchema should successfully parse the "5@g.co" email address`,
   zodSchema: coverageTestCase13ZodSchema,
-  zodSchemaAsText: `z.coerce.string();`,
-  testTsObjectToValidate: "whatever",
+  zodSchemaAsText: `z.coerce.string().email().min(5);`,
+  testTsObjectToValidate: "5@g.co",
   expect: true,
 };
+
 export const coverageTestCase13bis: ZodValidateTestCase<
   typeof coverageTestCase13ZodSchema
 > = {
   ...coverageTestCase13,
-  name: `Coverage Test #13bis: coverageTestCase13ZodSchema should fail to parse undefined because it is not null.`,
+  name: `Coverage Test #13bis: coverageTestCase13ZodSchema should fail to parse "whateverATg.co" because it has not the format of an email address.`,
   expect: false,
-  testTsObjectToValidate: undefined,
+  testTsObjectToValidate: "whateverATg.co",
+};
+export const coverageTestCase13ter: ZodValidateTestCase<
+  typeof coverageTestCase13ZodSchema
+> = {
+  ...coverageTestCase13,
+  name: `Coverage Test #13ter: coverageTestCase13ZodSchema should fail to parse "whateverATg.co" because it has not the format of an email address.`,
+  expect: false,
+  testTsObjectToValidate: "5@g.c",
+};
+
+// **
+// ######### z.coerce.string().email().min(7)
+// *
+// 
+
+export const coverageTestCase14ZodSchema = z.coerce.string().email().min(5);
+
+export const coverageTestCase14: ZodValidateTestCase<
+  typeof coverageTestCase14ZodSchema
+> = {
+  name: `Coverage Test #14: coverageTestCase14ZodSchema should successfully parse the "w@gm.co" email address, because its length is 7.`,
+  zodSchema: coverageTestCase14ZodSchema,
+  zodSchemaAsText: `z.coerce.string().email().min(7);`,
+  testTsObjectToValidate: "w@gm.co",
+  expect: true,
+};
+export const coverageTestCase14bis: ZodValidateTestCase<
+  typeof coverageTestCase14ZodSchema
+> = {
+  ...coverageTestCase14,
+  name: `Coverage Test #14bis: coverageTestCase14ZodSchema should fail to parse "w@g.co" because its length is less than 7, it actually is 6.`,
+  expect: false,
+  testTsObjectToValidate: "w@g.co",
 };
 
 /**
