@@ -5,7 +5,7 @@ import { z } from "zod";
 //  bad: https://playcode.io/typescript
 //  much better: https://stackblitz.com/edit/react-ts-playground-bwjkfn?file=index.tsx,src%2Ftest.ts,src%2FHello.tsx
 // ---
-//
+// Very interesting TypeScript concept to dig in: https://www.typescriptlang.org/docs/handbook/symbols.html
 /**
  * ------------------------------------
  * ------------------------------------
@@ -62,7 +62,23 @@ export type AnyZodCoverageTestCase =
   | typeof coverageTestCase12.zodSchema
   | typeof coverageTestCase12bis.zodSchema
   | typeof coverageTestCase13.zodSchema
-  | typeof coverageTestCase13bis.zodSchema;
+  | typeof coverageTestCase13bis.zodSchema
+  | typeof coverageTestCase13ter.zodSchema
+  | typeof coverageTestCase14.zodSchema
+  | typeof coverageTestCase14bis.zodSchema
+  | typeof coverageTestCase15.zodSchema
+  | typeof coverageTestCase15bis.zodSchema
+  | typeof coverageTestCase15ter.zodSchema
+  | typeof coverageTestCase15quarte.zodSchema
+  | typeof coverageTestCase15quinte.zodSchema
+  | typeof coverageTestCase16.zodSchema
+  | typeof coverageTestCase16bis.zodSchema
+  | typeof coverageTestCase16ter.zodSchema
+  | typeof coverageTestCase16quarte.zodSchema
+  | typeof coverageTestCase17.zodSchema
+  | typeof coverageTestCase18.zodSchema
+  | typeof coverageTestCase19.zodSchema
+  | typeof coverageTestCase20.zodSchema;
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Test Case 1
@@ -238,7 +254,7 @@ export const coverageTestCase7ZodSchema = z.symbol();
 export const coverageTestCase7: ZodValidateTestCase<
   typeof coverageTestCase7ZodSchema
 > = {
-  name: `Coverage Test #7: coverageTestCase7ZodSchema should successfully parse a Symbol('bastille')`,
+  name: `Coverage Test #7: coverageTestCase7ZodSchema should successfully parse a Symbol('bastille'). See https://www.typescriptlang.org/docs/handbook/symbols.html`,
   zodSchema: coverageTestCase7ZodSchema,
   zodSchemaAsText: `z.symbol();`,
   testTsObjectToValidate: Symbol("bastille"),
@@ -286,7 +302,7 @@ export const coverageTestCase9ZodSchema = z.null();
 export const coverageTestCase9: ZodValidateTestCase<
   typeof coverageTestCase9ZodSchema
 > = {
-  name: `Coverage Test #9: coverageTestCase9ZodSchema should successfully parse a Symbol('bastille')`,
+  name: `Coverage Test #9: coverageTestCase9ZodSchema should successfully parse a Symbol('bastille'). See https://www.typescriptlang.org/docs/handbook/symbols.html`,
   zodSchema: coverageTestCase9ZodSchema,
   zodSchemaAsText: `z.null();`,
   testTsObjectToValidate: null,
@@ -395,7 +411,7 @@ export const coverageTestCase11ter: ZodValidateTestCase<
 // The never type represents
 // the type of values that never occur: it
 // can only be a function return type.
-// 
+//
 // *
 //   /!\/!\/!\
 //   /!\/!\/!\
@@ -412,9 +428,8 @@ export const coverageTestCase11ter: ZodValidateTestCase<
 //   /!\ error stating that "zod.function()" is not supported.
 //   /!\/!\/!\
 //   /!\/!\/!\
-// 
-// 
-
+//
+//
 
 // **
 // ######### z.coerce.string()
@@ -440,12 +455,35 @@ export const coverageTestCase12bis: ZodValidateTestCase<
   expect: false,
   testTsObjectToValidate: 12,
 };
-
+export const coverageTestCase12ter: ZodValidateTestCase<
+  typeof coverageTestCase12ZodSchema
+> = {
+  ...coverageTestCase12,
+  name: `Coverage Test #12ter: coverageTestCase12ZodSchema should successfully parse null as if it was the "null" string.`,
+  expect: false,
+  testTsObjectToValidate: null,
+};
+export const coverageTestCase12quarte: ZodValidateTestCase<
+  typeof coverageTestCase12ZodSchema
+> = {
+  ...coverageTestCase12,
+  name: `Coverage Test #12quarte: coverageTestCase12ZodSchema should successfully parse undefined as if it was the "undefined" 9-characters string.`,
+  expect: false,
+  testTsObjectToValidate: undefined,
+};
+export const coverageTestCase12quinte: ZodValidateTestCase<
+  typeof coverageTestCase12ZodSchema
+> = {
+  ...coverageTestCase12,
+  name: `Coverage Test #12quinte: coverageTestCase12ZodSchema should successfully parse true as if it was the "true" 4-characters string.`,
+  expect: false,
+  testTsObjectToValidate: true,
+};
 
 // **
 // ######### z.coerce.string().email().min(5)
 // *
-// 
+//
 
 export const coverageTestCase13ZodSchema = z.coerce.string().email().min(5);
 
@@ -479,9 +517,9 @@ export const coverageTestCase13ter: ZodValidateTestCase<
 // **
 // ######### z.coerce.string().email().min(7)
 // *
-// 
+//
 
-export const coverageTestCase14ZodSchema = z.coerce.string().email().min(5);
+export const coverageTestCase14ZodSchema = z.coerce.string().email().min(7);
 
 export const coverageTestCase14: ZodValidateTestCase<
   typeof coverageTestCase14ZodSchema
@@ -500,6 +538,203 @@ export const coverageTestCase14bis: ZodValidateTestCase<
   expect: false,
   testTsObjectToValidate: "w@g.co",
 };
+
+
+
+// **
+// ######### z.coerce.boolean()
+// *
+// * Boolean coercion with z.coerce.boolean() may
+// * not work how you expect. 
+// * Any truthy value is coerced to true, and
+// * any falsy value is coerced to false.
+// *  - 
+// * https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+// * 
+// * https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+// * 
+//
+/**
+ * const schema = z.coerce.boolean(); // Boolean(input)
+ * 
+ * schema.parse("tuna"); // => true
+ * schema.parse("true"); // => true
+ * schema.parse("false"); // => true
+ * schema.parse(1); // => true
+ * schema.parse([]); // => true
+ * 
+ * schema.parse(0); // => false
+ * schema.parse(""); // => false
+ * schema.parse(undefined); // => false
+ * schema.parse(null); // => false
+ */
+//
+
+export const coverageTestCase15ZodSchema = z.coerce.boolean();
+
+export const coverageTestCase15: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  name: `Coverage Test #15: coverageTestCase15ZodSchema should successfully parse the "tuna" string, because it is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.`,
+  zodSchema: coverageTestCase15ZodSchema,
+  zodSchemaAsText: `z.coerce.boolean();`,
+  testTsObjectToValidate: "tuna",
+  expect: true,
+};
+export const coverageTestCase15bis: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #15bis: coverageTestCase15ZodSchema should successfully parse the "true" string, because it is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.`,
+  expect: false,
+  testTsObjectToValidate: "true",
+};
+
+export const coverageTestCase15ter: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #15ter: coverageTestCase15ZodSchema should successfully parse the "false" string, because it is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.`,
+  expect: false,
+  testTsObjectToValidate: "false",
+};
+
+
+export const coverageTestCase15quarte: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #15quarte: coverageTestCase15ZodSchema should successfully parse the number 1, because it is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.`,
+  expect: false,
+  testTsObjectToValidate: 1,
+};
+
+
+export const coverageTestCase15quinte: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #15quinte: coverageTestCase15ZodSchema should successfully parse the empty array [], because it is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.`,
+  expect: false,
+  testTsObjectToValidate: [],
+};
+
+
+export const coverageTestCase16: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #16: coverageTestCase15ZodSchema should successfully parse the number 0, because it is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.`,
+  expect: false,
+  testTsObjectToValidate: 0,
+};
+
+
+export const coverageTestCase16bis: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #16bis: coverageTestCase15ZodSchema should successfully parse the empty string "", because it is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.`,
+  expect: false,
+  testTsObjectToValidate: "",
+};
+
+export const coverageTestCase16ter: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #16ter: coverageTestCase15ZodSchema should successfully parse an undefined value, because it is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.`,
+  expect: false,
+  testTsObjectToValidate: undefined,
+};
+export const coverageTestCase16quarte: ZodValidateTestCase<
+  typeof coverageTestCase15ZodSchema
+> = {
+  ...coverageTestCase15,
+  name: `Coverage Test #16quarte: coverageTestCase15ZodSchema should successfully parse null, because it is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.`,
+  expect: false,
+  testTsObjectToValidate: null,
+};
+
+//
+/**
+ * const schema = z.coerce.boolean(); // Boolean(input)
+ * 
+ * schema.parse("tuna"); // => true
+ * schema.parse("true"); // => true
+ * schema.parse("false"); // => true
+ * schema.parse(1); // => true
+ * schema.parse([]); // => true
+ * 
+ * schema.parse(0); // => false
+ * schema.parse(""); // => false
+ * schema.parse(undefined); // => false
+ * schema.parse(null); // => false
+ */
+//
+export const coverageTestCase17ZodSchema = z.literal("tuna");
+let tunaLiteralExample: "tuna" = "tuna";
+
+export const coverageTestCase17: ZodValidateTestCase<
+  typeof coverageTestCase17ZodSchema
+> = {
+  name: `Coverage Test #17: coverageTestCase17ZodSchema should successfully parse the tunaLiteralExample variable, because its type a literal value.`,
+  zodSchema: coverageTestCase17ZodSchema,
+  zodSchemaAsText: `z.literal("tuna");`,
+  testTsObjectToValidate: tunaLiteralExample,
+  expect: true,
+};
+
+export const coverageTestCase18ZodSchema = z.literal(12);
+let twelveLiteralExample: 12 = 12;
+
+export const coverageTestCase18: ZodValidateTestCase<
+  typeof coverageTestCase18ZodSchema
+> = {
+  name: `Coverage Test #18: coverageTestCase18ZodSchema should successfully parse the twelveLiteralExample variable, because its type a literal value.`,
+  zodSchema: coverageTestCase18ZodSchema,
+  zodSchemaAsText: `z.literal(12);`,
+  testTsObjectToValidate: twelveLiteralExample,
+  expect: true,
+};
+
+export const coverageTestCase19ZodSchema = z.literal(2n);
+let twobigLiteralExample: 2n = 2n;
+
+export const coverageTestCase19: ZodValidateTestCase<
+  typeof coverageTestCase19ZodSchema
+> = {
+  name: `Coverage Test #19: coverageTestCase19ZodSchema should successfully parse the twobigLiteralExample variable, because its type a literal value.`,
+  zodSchema: coverageTestCase19ZodSchema,
+  zodSchemaAsText: `z.literal(2n);`,
+  testTsObjectToValidate: twobigLiteralExample,
+  expect: true,
+};
+
+export const coverageTestCase20ZodSchema = z.literal(true);
+let truLiteralExample: true = true;
+
+export const coverageTestCase20: ZodValidateTestCase<
+  typeof coverageTestCase20ZodSchema
+> = {
+  name: `Coverage Test #20: coverageTestCase20ZodSchema should successfully parse the truLiteralExample variable, because its type a literal value.`,
+  zodSchema: coverageTestCase20ZodSchema,
+  zodSchemaAsText: `z.literal(true);`,
+  testTsObjectToValidate: truLiteralExample,
+  expect: true,
+};
+
+// I don't know how to test a Symbol literal...
+/**
+ * const terrificSymbol = Symbol("terrific");
+ * const terrific = z.literal(terrificSymbol);
+ * let exampleTerrificSymbolLiteral: Symbol = Symbol("terrific");
+ * 
+ */
+
+
+// TODO (next): https://zod.dev/?id=strings
+
 
 /**
  * ++++++++++++++++++++++++++++++++++++
@@ -543,16 +778,29 @@ export const allZodCoverageTesCases: {
 
   { name: coverageTestCase13.name, testCase: coverageTestCase13 },
   { name: coverageTestCase13bis.name, testCase: coverageTestCase13bis },
+  { name: coverageTestCase13ter.name, testCase: coverageTestCase13ter },
 
-  /*
   { name: coverageTestCase14.name, testCase: coverageTestCase14 },
   { name: coverageTestCase14bis.name, testCase: coverageTestCase14bis },
 
   { name: coverageTestCase15.name, testCase: coverageTestCase15 },
   { name: coverageTestCase15bis.name, testCase: coverageTestCase15bis },
+  { name: coverageTestCase15ter.name, testCase: coverageTestCase15ter },
+  { name: coverageTestCase15quarte.name, testCase: coverageTestCase15quarte },
+  { name: coverageTestCase15quinte.name, testCase: coverageTestCase15quinte },
 
   { name: coverageTestCase16.name, testCase: coverageTestCase16 },
   { name: coverageTestCase16bis.name, testCase: coverageTestCase16bis },
+  { name: coverageTestCase16ter.name, testCase: coverageTestCase16ter },
+  { name: coverageTestCase16quarte.name, testCase: coverageTestCase16quarte },
+  
+  { name: coverageTestCase17.name, testCase: coverageTestCase17 },
+  
+  { name: coverageTestCase18.name, testCase: coverageTestCase18 },
+  
+  { name: coverageTestCase19.name, testCase: coverageTestCase19 },
+  
+  /*
 
   { name: coverageTestCase17.name, testCase: coverageTestCase17 },
   { name: coverageTestCase17bis.name, testCase: coverageTestCase17bis },
@@ -560,6 +808,20 @@ export const allZodCoverageTesCases: {
   { name: coverageTestCase18.name, testCase: coverageTestCase18 },
   { name: coverageTestCase18bis.name, testCase: coverageTestCase18bis },
 
-  */
+  { name: coverageTestCase19.name, testCase: coverageTestCase19 },
+  
 
+  */
 ];
+
+
+
+
+
+
+
+
+
+
+
+
