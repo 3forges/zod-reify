@@ -736,6 +736,465 @@ export const coverageTestCase20: ZodValidateTestCase<
 // TODO (next): https://zod.dev/?id=strings
 
 
+// **
+// ######### z.string().*(*)
+// *
+// * All examples at https://zod.dev/?id=strings
+// * 
+// 
+export const coverageTestCase21ZodSchema = z.string().max(5);
+
+export const coverageTestCase21: ZodValidateTestCase<
+  typeof coverageTestCase21ZodSchema
+> = {
+  name: `Coverage Test #21: coverageTestCase21ZodSchema should successfully parse the "five" string, because its length is less than 5.`,
+  zodSchema: coverageTestCase21ZodSchema,
+  zodSchemaAsText: `z.string().max(5);`,
+  testTsObjectToValidate: "five",
+  expect: true,
+};
+export const coverageTestCase21bis: ZodValidateTestCase<
+  typeof coverageTestCase21ZodSchema
+> = {
+  ...coverageTestCase21,
+  name: `Coverage Test #21bis: coverageTestCase21ZodSchema should fail to parse "onetwo" string because its length is 6, more than 5.`,
+  expect: false,
+  testTsObjectToValidate: "onetwo",
+};
+
+// *
+
+export const coverageTestCase22ZodSchema = z.string().min(5);
+
+export const coverageTestCase22: ZodValidateTestCase<
+  typeof coverageTestCase22ZodSchema
+> = {
+  name: `Coverage Test #22: coverageTestCase22ZodSchema should successfully parse the "onetwo" string, because its length is 6, more than 5.`,
+  zodSchema: coverageTestCase22ZodSchema,
+  zodSchemaAsText: `z.string().min(5);`,
+  testTsObjectToValidate: "onetwo",
+  expect: true,
+};
+export const coverageTestCase22bis: ZodValidateTestCase<
+  typeof coverageTestCase22ZodSchema
+> = {
+  ...coverageTestCase22,
+  name: `Coverage Test #22bis: coverageTestCase22ZodSchema should fail to parse "five" string because its length is 4, less than 5.`,
+  expect: false,
+  testTsObjectToValidate: "five",
+};
+
+// *
+
+export const coverageTestCase23ZodSchema = z.string().length(5);
+
+export const coverageTestCase23: ZodValidateTestCase<
+  typeof coverageTestCase23ZodSchema
+> = {
+  name: `Coverage Test #23: coverageTestCase23ZodSchema should successfully parse the "ofive" string, because its length is 5.`,
+  zodSchema: coverageTestCase23ZodSchema,
+  zodSchemaAsText: `z.string().length(5);`,
+  testTsObjectToValidate: "ofive",
+  expect: true,
+};
+export const coverageTestCase23bis: ZodValidateTestCase<
+  typeof coverageTestCase23ZodSchema
+> = {
+  ...coverageTestCase23,
+  name: `Coverage Test #23bis: coverageTestCase23ZodSchema should fail to parse "fourfive" string because its length is 8, not equal to 5.`,
+  expect: false,
+  testTsObjectToValidate: "fourfive",
+};
+
+// * z.string().email()
+
+export const coverageTestCase24ZodSchema = z.string().email();
+
+export const coverageTestCase24: ZodValidateTestCase<
+  typeof coverageTestCase24ZodSchema
+> = {
+  name: `Coverage Test #24: coverageTestCase24ZodSchema should successfully parse the "ofive@pesto-io.io" string, because it is a valid email address.`,
+  zodSchema: coverageTestCase24ZodSchema,
+  zodSchemaAsText: `z.string().email();`,
+  testTsObjectToValidate: "ofive@pesto-io.io",
+  expect: true,
+};
+export const coverageTestCase24bis: ZodValidateTestCase<
+  typeof coverageTestCase24ZodSchema
+> = {
+  ...coverageTestCase24,
+  name: `Coverage Test #24bis: coverageTestCase24ZodSchema should fail to parse "fourfiveATpesto-io.io" string, because it is not a valid email address.`,
+  expect: false,
+  testTsObjectToValidate: "fourfiveATpesto-io.io",
+};
+
+// * z.string().url()
+
+export const coverageTestCase25ZodSchema = z.string().url();
+
+export const coverageTestCase25: ZodValidateTestCase<
+  typeof coverageTestCase25ZodSchema
+> = {
+  name: `Coverage Test #25: coverageTestCase25ZodSchema should successfully parse the "smtp://my_emailaddress:my_password@box.domain.com" string, because it is a valid URL.`,
+  zodSchema: coverageTestCase25ZodSchema,
+  zodSchemaAsText: `z.string().url();`,
+  testTsObjectToValidate: "smtp://my_emailaddress:my_password@box.domain.com",
+  expect: true,
+};
+export const coverageTestCase25bis: ZodValidateTestCase<
+  typeof coverageTestCase25ZodSchema
+> = {
+  ...coverageTestCase25,
+  name: `Coverage Test #25bis: coverageTestCase25ZodSchema should fail to parse "file://my_emailaddress:my_password@box.domain.com" string, because it is not a valid URL.`,
+  expect: false,
+  testTsObjectToValidate: "file://my_emailaddress:my_password@box.domain.com",
+};
+
+// * z.string().emoji()
+// https://github.com/muan/emoji
+
+export const coverageTestCase26ZodSchema = z.string().emoji();
+
+export const coverageTestCase26: ZodValidateTestCase<
+  typeof coverageTestCase26ZodSchema
+> = {
+  name: `Coverage Test #26: coverageTestCase26ZodSchema should successfully parse the "💯" string, because it is a valid emoji.`,
+  zodSchema: coverageTestCase26ZodSchema,
+  zodSchemaAsText: `z.string().emoji();`,
+  testTsObjectToValidate: "💯",
+  expect: true,
+};
+export const coverageTestCase26bis: ZodValidateTestCase<
+  typeof coverageTestCase26ZodSchema
+> = {
+  ...coverageTestCase26,
+  name: `Coverage Test #26bis: coverageTestCase26ZodSchema should fail to parse ":sweat_smile:" string, because it is not a valid emoji (it is a markdown notation for emoji).`,
+  expect: false,
+  testTsObjectToValidate: ":sweat_smile:",
+};
+
+
+// * z.string().uuid()
+// * 
+// * https://github.com/uuidjs/uuid
+
+export const coverageTestCase27ZodSchema = z.string().uuid();
+
+export const coverageTestCase27: ZodValidateTestCase<
+  typeof coverageTestCase27ZodSchema
+> = {
+  name: `Coverage Test #27: coverageTestCase27ZodSchema should successfully parse the "5be05513-709d-4e4e-b6b0-3d11824e2639" string, because it is a valid UUID.`,
+  zodSchema: coverageTestCase27ZodSchema,
+  zodSchemaAsText: `z.string().uuid();`,
+  testTsObjectToValidate: "5be05513-709d-4e4e-b6b0-3d11824e2639",
+  expect: true,
+};
+export const coverageTestCase27bis: ZodValidateTestCase<
+  typeof coverageTestCase27ZodSchema
+> = {
+  ...coverageTestCase27,
+  name: `Coverage Test #27bis: coverageTestCase27ZodSchema should fail to parse "xi92qbp687h3w8q81d3792v6" string, because it is not a valid UUID (it is a CUID).`,
+  expect: false,
+  testTsObjectToValidate: "xi92qbp687h3w8q81d3792v6",
+};
+
+
+
+// * z.string().cuid()
+// * 
+// * https://github.com/paralleldrive/cuid
+// 
+
+export const coverageTestCase28ZodSchema = z.string().cuid();
+
+export const coverageTestCase28: ZodValidateTestCase<
+  typeof coverageTestCase28ZodSchema
+> = {
+  name: `Coverage Test #28: coverageTestCase28ZodSchema should successfully parse the  "cjld2cjxh0000qzrmn831i7rn" string, because it is a valid CUID v1.`,
+  zodSchema: coverageTestCase28ZodSchema,
+  zodSchemaAsText: `z.string().cuid();`,
+  testTsObjectToValidate: "cjld2cjxh0000qzrmn831i7rn",
+  expect: true,
+};
+export const coverageTestCase28bis: ZodValidateTestCase<
+  typeof coverageTestCase28ZodSchema
+> = {
+  ...coverageTestCase28,
+  name: `Coverage Test #28bis: coverageTestCase28ZodSchema should fail to parse "xi92qbp687h3w8q81d3792v6" string, because it is not a valid CUID v1 (it is a CUID v2).`,
+  expect: false,
+  testTsObjectToValidate: "xi92qbp687h3w8q81d3792v6",
+};
+
+// * z.string().cuid2()
+// * 
+// * https://github.com/paralleldrive/cuid2
+
+export const coverageTestCase29ZodSchema = z.string().cuid2();
+
+export const coverageTestCase29: ZodValidateTestCase<
+  typeof coverageTestCase29ZodSchema
+> = {
+  name: `Coverage Test #29: coverageTestCase29ZodSchema should successfully parse the  "xi92qbp687h3w8q81d3792v6" string, because it is a valid CUID v2.`,
+  zodSchema: coverageTestCase29ZodSchema,
+  zodSchemaAsText: `z.string().cuid2();`,
+  testTsObjectToValidate: "xi92qbp687h3w8q81d3792v6",
+  expect: true,
+};
+export const coverageTestCase29bis: ZodValidateTestCase<
+  typeof coverageTestCase29ZodSchema
+> = {
+  ...coverageTestCase29,
+  name: `Coverage Test #29bis: coverageTestCase29ZodSchema should fail to parse "5be05513-709d-4e4e-b6b0-3d11824e2639" string, because it is not a valid CUID v2 (it is a UUID).`,
+  expect: false,
+  testTsObjectToValidate: "5be05513-709d-4e4e-b6b0-3d11824e2639",
+};
+
+
+// * z.string().nanoid() // supported by zod verion 3.23.8, but not by zod verion 3.22.4
+// * 
+// * https://github.com/ai/nanoid
+
+
+export const coverageTestCase30ZodSchema = z.string().nanoid();
+
+export const coverageTestCase30: ZodValidateTestCase<
+  typeof coverageTestCase30ZodSchema
+> = {
+  name: `Coverage Test #30: coverageTestCase30ZodSchema should successfully parse the  "01G65Z755AFWAKHE12NY0CQ9FH" string, because it is a valid Nano ID.`,
+  zodSchema: coverageTestCase30ZodSchema,
+  zodSchemaAsText: `z.string().nanoid();`,
+  testTsObjectToValidate: "V1StGXR8_Z5jdHi6B-myT",
+  expect: true,
+};
+export const coverageTestCase30bis: ZodValidateTestCase<
+  typeof coverageTestCase30ZodSchema
+> = {
+  ...coverageTestCase30,
+  name: `Coverage Test #30bis: coverageTestCase30ZodSchema should fail to parse "01G65Z755AFWAKHE12NY0CQ9FH" string, because it is not a valid Nano ID (it is a ULID).`,
+  expect: false,
+  testTsObjectToValidate: "01G65Z755AFWAKHE12NY0CQ9FH",
+};
+
+
+// - 
+
+// * z.string().ulid()
+// * 
+// * https://github.com/oklog/ulid
+
+export const coverageTestCase31ZodSchema = z.string().ulid();
+
+export const coverageTestCase31: ZodValidateTestCase<
+  typeof coverageTestCase31ZodSchema
+> = {
+  name: `Coverage Test #31: coverageTestCase31ZodSchema should successfully parse the  "01G65Z755AFWAKHE12NY0CQ9FH" string, because it is a valid ULID.`,
+  zodSchema: coverageTestCase31ZodSchema,
+  zodSchemaAsText: `z.string().ulid();`,
+  testTsObjectToValidate: "01G65Z755AFWAKHE12NY0CQ9FH",
+  expect: true,
+};
+export const coverageTestCase31bis: ZodValidateTestCase<
+  typeof coverageTestCase31ZodSchema
+> = {
+  ...coverageTestCase31,
+  name: `Coverage Test #31bis: coverageTestCase31ZodSchema should fail to parse "5be05513-709d-4e4e-b6b0-3d11824e2639" string, because it is not a valid ULID (it is a UUID).`,
+  expect: false,
+  testTsObjectToValidate: "5be05513-709d-4e4e-b6b0-3d11824e2639",
+};
+
+// * z.string().regex()
+// * 
+// * 
+
+export const coverageTestCase32ZodSchema = z.string().regex(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g);
+
+export const coverageTestCase32: ZodValidateTestCase<
+  typeof coverageTestCase32ZodSchema
+> = {
+  name: `Coverage Test #32: coverageTestCase32ZodSchema should successfully parse the  "something@wow.io" string, because it is does comply with the  /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/g  regular expression.`,
+  zodSchema: coverageTestCase32ZodSchema,
+  zodSchemaAsText: `z.string().regex(/^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/g);`,
+  testTsObjectToValidate: "something@wow.io",
+  expect: true,
+};
+export const coverageTestCase32bis: ZodValidateTestCase<
+  typeof coverageTestCase32ZodSchema
+> = {
+  ...coverageTestCase32,
+  name: `Coverage Test #32bis: coverageTestCase32ZodSchema should fail to parse "Anything That does not match." string, because it is does not comply with the  /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/g  regular expression.`,
+  expect: false,
+  testTsObjectToValidate: "Anything That does not match.",
+};
+
+//
+// * z.string().includes("tuna", { message: "Must include tuna" });
+// * 
+// * 
+
+export const coverageTestCase33ZodSchema = z.string().includes("red tuna is super good", { message: "Must include 'tuna is super good'" });
+
+export const coverageTestCase33: ZodValidateTestCase<
+  typeof coverageTestCase33ZodSchema
+> = {
+  name: `Coverage Test #33: coverageTestCase33ZodSchema should successfully parse the  "something@red tuna is super good.io" string, because it is does include the 'tuna is super good' string.`,
+  zodSchema: coverageTestCase33ZodSchema,
+  zodSchemaAsText: `z.string().includes("red tuna is super good", { message: "Must include 'tuna is super good'" });`,
+  testTsObjectToValidate: "something@red tuna is super good.io",
+  expect: true,
+};
+export const coverageTestCase33bis: ZodValidateTestCase<
+  typeof coverageTestCase33ZodSchema
+> = {
+  ...coverageTestCase33,
+  name: `Coverage Test #33bis: coverageTestCase33ZodSchema should fail to parse "something@tuna is super good.io" string, because it is does NOT include the 'tuna is super good' string.`,
+  expect: false,
+  testTsObjectToValidate: "something@tuna is super good.io",
+};
+
+
+//
+// * z.string().includes("tuna", { message: "Must include tuna" });
+// * 
+// * 
+
+export const coverageTestCase34ZodSchema = z.string().startsWith("Someone who des not like red tuna", { message: "Must start with 'Someone who des not like red tuna'" });
+
+export const coverageTestCase34: ZodValidateTestCase<
+  typeof coverageTestCase34ZodSchema
+> = {
+  name: `Coverage Test #34: coverageTestCase34ZodSchema should successfully parse the  "Someone who des not like red tuna has just his own tastes." string, because it is does start with the 'Someone who des not like red tuna' string.`,
+  zodSchema: coverageTestCase34ZodSchema,
+  zodSchemaAsText: `z.string().startsWith("Someone who des not like red tuna", { message: "Must start with 'Someone who des not like red tuna'" });`,
+  testTsObjectToValidate: "Someone who des not like red tuna has just his own tastes.",
+  expect: true,
+};
+export const coverageTestCase34bis: ZodValidateTestCase<
+  typeof coverageTestCase34ZodSchema
+> = {
+  ...coverageTestCase34,
+  name: `Coverage Test #34bis: coverageTestCase34ZodSchema should fail to parse "something@tuna is super good.io" string, because it is does NOT start with the 'Someone who des not like red tuna' string.`,
+  expect: false,
+  testTsObjectToValidate: "something@Someone who des not like red tuna.io",
+};
+
+
+// 
+//
+// * z.string().endsWith(".com", { message: "Only .com domains allowed" });
+// * 
+// * 
+
+export const coverageTestCase35ZodSchema = z.string().endsWith(".com", { message: "Only .com domains allowed" });
+
+export const coverageTestCase35: ZodValidateTestCase<
+  typeof coverageTestCase35ZodSchema
+> = {
+  name: `Coverage Test #35: coverageTestCase35ZodSchema should successfully parse the  "Well OK I see .com" string, because it ends with the '.com' string.`,
+  zodSchema: coverageTestCase35ZodSchema,
+  zodSchemaAsText: `z.string().endsWith(".com", { message: "Only .com domains allowed" });`,
+  testTsObjectToValidate: "Well OK I see .com",
+  expect: true,
+};
+export const coverageTestCase35bis: ZodValidateTestCase<
+  typeof coverageTestCase35ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #35bis: coverageTestCase35ZodSchema should fail to parse "zodrocks.co.uk" string, because it is does NOT end with the '.com' string.`,
+  expect: false,
+  testTsObjectToValidate: "zodrocks.co.uk",
+};
+
+
+// 
+//
+// * z.string().datetime({ message: "Invalid datetime string! Must be UTC." });
+// * 
+// * 
+
+export const coverageTestCase36ZodSchema = z.string().datetime({ message: "Invalid datetime string! Must be UTC." });
+
+export const coverageTestCase36: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  name: `Coverage Test #36: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123456Z" string, because it is does comply with the ISO 8601 date time format.`,
+  zodSchema: coverageTestCase36ZodSchema,
+  zodSchemaAsText: `z.string().datetime({ message: "Invalid datetime string! Must be UTC." });`,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123456Z",
+  expect: true,
+};
+export const coverageTestCase36bis: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36bis: coverageTestCase36ZodSchema should fail to parse the "2020-01-01T00:00:00+02:00" string, because it is does NOT comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00+02:00",
+};
+
+
+export const coverageTestCase36ter: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36ter: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123Z" string, because it is does comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123Z",
+};
+export const coverageTestCase36quarte: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36quarte: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00Z" string, because it is does comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00Z",
+};
+
+
+
+// 
+//
+// * z.string().datetime({ offset: true });
+// * TODO: Impl. to complete, Ctrl + F "z.string().datetime({ offset: true })" inside https://zod.dev/?id=strings
+// * 
+
+export const coverageTestCase36ZodSchema = z.string().datetime({ offset: true });
+
+export const coverageTestCase36: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  name: `Coverage Test #36: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123456Z" string, because it is does comply with the ISO 8601 date time format.`,
+  zodSchema: coverageTestCase36ZodSchema,
+  zodSchemaAsText: `z.string().datetime({ message: "Invalid datetime string! Must be UTC." });`,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123456Z",
+  expect: true,
+};
+export const coverageTestCase36bis: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36bis: coverageTestCase36ZodSchema should fail to parse the "2020-01-01T00:00:00+02:00" string, because it is does NOT comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00+02:00",
+};
+
+
+export const coverageTestCase36ter: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36ter: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123Z" string, because it is does comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123Z",
+};
+export const coverageTestCase36quarte: ZodValidateTestCase<
+  typeof coverageTestCase36ZodSchema
+> = {
+  ...coverageTestCase35,
+  name: `Coverage Test #36quarte: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00Z" string, because it is does comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00Z",
+};
+
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Table of all Test Cases

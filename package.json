@@ -35,7 +35,7 @@
     "dev:docs": "bash -c 'pnpm run gen:api-docs && pnpm exec serve docs/'",
     "test": "jest --silent=false",
     "test:report:junit": "jest --ci --reporters=default --reporters=jest-junit",
-    "test:report":"bash -c  \"if [ -f ./junit.xml ]; then rm junit.xml; fi;\" && bash -c \"pnpm run 'test:report:junit'\"",
+    "test:report": "bash -c  \"if [ -f ./junit.xml ]; then rm junit.xml; fi;\" && bash -c \"pnpm run 'test:report:junit'\"",
     "gen:unit:tests:report:json": "bash -c \"pnpm run 'test:report'\" && bash -c  \"if [ -f ./jest.junit.report.json ]; then rm ./jest.junit.report.json; fi;\" && bash -c  \"if [ -f ./documentation/astro/src/content/tests-report/unit-tests/jest.junit.report.json ]; then rm ./documentation/astro/src/content/tests-report/unit-tests/jest.junit.report.json; fi;\" && pnpm exec junit2json junit.xml | jq . | tee -a jest.junit.report.json && cp ./jest.junit.report.json documentation/astro/src/content/tests-report/unit-tests/ && rm junit.xml && rm ./jest.junit.report.json",
     "gen:unit:tests:report:json:prod": "bash -c \"pnpm run 'test:report'\" && bash -c  \"if [ -f ./jest.junit.report.json ]; then rm ./jest.junit.report.json; fi;\" && bash -c  \"if [ -f ./documentation/astro/src/content/tests-report/unit-tests/jest.junit.report.json ]; then rm ./documentation/astro/src/content/tests-report/unit-tests/jest.junit.report.json; fi;\" && pnpm exec junit2json junit.xml | tee -a jest.junit.report.json && cp ./jest.junit.report.json documentation/astro/src/content/tests-report/unit-tests/ && rm junit.xml && rm ./jest.junit.report.json",
     "gen:unit:tests:report:json:debug": "cat documentation/astro/src/content/tests-report/unit-tests/jest.junit.report.json | jq .",
@@ -60,7 +60,8 @@
   "dependencies": {
     "redaxios": "^0.5.1",
     "ts-morph": "^23.0.0",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/htmlparser2": "^3.10.7",
@@ -98,7 +99,6 @@
     "typedoc-plugin-markdown": "4.0.0-next.54",
     "typescript": "^5.4.3",
     "unified": "^11.0.4",
-    "zod": "^3.22.4",
     "zod-matter": "^0.1.1"
   }
 }
