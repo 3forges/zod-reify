@@ -1106,10 +1106,10 @@ export const coverageTestCase35bis: ZodValidateTestCase<
 
 
 // 
-//
+// * 
 // * z.string().datetime({ message: "Invalid datetime string! Must be UTC." });
 // * 
-// * 
+// 
 
 export const coverageTestCase36ZodSchema = z.string().datetime({ message: "Invalid datetime string! Must be UTC." });
 
@@ -1125,7 +1125,7 @@ export const coverageTestCase36: ZodValidateTestCase<
 export const coverageTestCase36bis: ZodValidateTestCase<
   typeof coverageTestCase36ZodSchema
 > = {
-  ...coverageTestCase35,
+  ...coverageTestCase36,
   name: `Coverage Test #36bis: coverageTestCase36ZodSchema should fail to parse the "2020-01-01T00:00:00+02:00" string, because it is does NOT comply with the ISO 8601 date time format.`,
   expect: false,
   testTsObjectToValidate: "2020-01-01T00:00:00+02:00",
@@ -1135,66 +1135,319 @@ export const coverageTestCase36bis: ZodValidateTestCase<
 export const coverageTestCase36ter: ZodValidateTestCase<
   typeof coverageTestCase36ZodSchema
 > = {
-  ...coverageTestCase35,
+  ...coverageTestCase36,
   name: `Coverage Test #36ter: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123Z" string, because it is does comply with the ISO 8601 date time format.`,
-  expect: false,
+  expect: true,
   testTsObjectToValidate: "2020-01-01T00:00:00.123Z",
 };
 export const coverageTestCase36quarte: ZodValidateTestCase<
   typeof coverageTestCase36ZodSchema
 > = {
-  ...coverageTestCase35,
+  ...coverageTestCase36,
   name: `Coverage Test #36quarte: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00Z" string, because it is does comply with the ISO 8601 date time format.`,
-  expect: false,
+  expect: true,
   testTsObjectToValidate: "2020-01-01T00:00:00Z",
 };
 
 
 
 // 
-//
+// * --- * 
 // * z.string().datetime({ offset: true });
-// * TODO: Impl. to complete, Ctrl + F "z.string().datetime({ offset: true })" inside https://zod.dev/?id=strings
 // * 
+// * 
+// 
 
-export const coverageTestCase36ZodSchema = z.string().datetime({ offset: true });
+export const coverageTestCase38ZodSchema = z.string().datetime({ offset: true });
 
-export const coverageTestCase36: ZodValidateTestCase<
-  typeof coverageTestCase36ZodSchema
+export const coverageTestCase38: ZodValidateTestCase<
+  typeof coverageTestCase38ZodSchema
 > = {
-  name: `Coverage Test #36: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123456Z" string, because it is does comply with the ISO 8601 date time format.`,
-  zodSchema: coverageTestCase36ZodSchema,
-  zodSchemaAsText: `z.string().datetime({ message: "Invalid datetime string! Must be UTC." });`,
-  testTsObjectToValidate: "2020-01-01T00:00:00.123456Z",
+  name: `Coverage Test #38: coverageTestCase38ZodSchema should successfully parse the "2020-01-01T00:00:00+02:00" string, because it is does comply with the ISO 8601 date time format, with offset.`,
+  zodSchema: coverageTestCase38ZodSchema,
+  zodSchemaAsText: `z.string().datetime({ offset: true });`,
+  testTsObjectToValidate: "2020-01-01T00:00:00+02:00",
   expect: true,
 };
-export const coverageTestCase36bis: ZodValidateTestCase<
-  typeof coverageTestCase36ZodSchema
+
+export const coverageTestCase38bis: ZodValidateTestCase<
+  typeof coverageTestCase38ZodSchema
 > = {
-  ...coverageTestCase35,
-  name: `Coverage Test #36bis: coverageTestCase36ZodSchema should fail to parse the "2020-01-01T00:00:00+02:00" string, because it is does NOT comply with the ISO 8601 date time format.`,
-  expect: false,
-  testTsObjectToValidate: "2020-01-01T00:00:00+02:00",
+  ...coverageTestCase38,
+  name: `Coverage Test #38bis: coverageTestCase38ZodSchema should successfully parse the "2020-01-01T00:00:00.123+02:00" string, because it is does comply with the ISO 8601 date time format, with offset.`,
+  expect: true,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123+02:00",
 };
 
-
-export const coverageTestCase36ter: ZodValidateTestCase<
-  typeof coverageTestCase36ZodSchema
+export const coverageTestCase38ter: ZodValidateTestCase<
+  typeof coverageTestCase38ZodSchema
 > = {
-  ...coverageTestCase35,
-  name: `Coverage Test #36ter: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00.123Z" string, because it is does comply with the ISO 8601 date time format.`,
-  expect: false,
-  testTsObjectToValidate: "2020-01-01T00:00:00.123Z",
+  ...coverageTestCase38,
+  name: `Coverage Test #38ter: coverageTestCase38ZodSchema should successfully parse the "2020-01-01T00:00:00.123+0200" string, because it is does comply with the ISO 8601 date time format, with offset.`,
+  expect: true,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123+0200",
 };
-export const coverageTestCase36quarte: ZodValidateTestCase<
-  typeof coverageTestCase36ZodSchema
+
+export const coverageTestCase38quarte: ZodValidateTestCase<
+  typeof coverageTestCase38ZodSchema
 > = {
-  ...coverageTestCase35,
-  name: `Coverage Test #36quarte: coverageTestCase36ZodSchema should successfully parse the "2020-01-01T00:00:00Z" string, because it is does comply with the ISO 8601 date time format.`,
+  ...coverageTestCase38,
+  name: `Coverage Test #38quarte: coverageTestCase38ZodSchema should successfully parse the "2020-01-01T00:00:00.123+02" string, because it is does comply with the ISO 8601 date time format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123+02",
+};
+
+export const coverageTestCase38quinte: ZodValidateTestCase<
+  typeof coverageTestCase38ZodSchema
+> = {
+  ...coverageTestCase38,
+  name: `Coverage Test #38quinte: coverageTestCase38ZodSchema should successfully parse the "2020-01-01T00:00:00Z" string, because it is does comply with the ISO 8601 date time format.`,
   expect: false,
   testTsObjectToValidate: "2020-01-01T00:00:00Z",
 };
 
+
+// 
+// * --- * 
+// * const datetime = z.string().datetime({ precision: 3 });
+// * 
+// 
+
+export const coverageTestCase39ZodSchema = z.string().datetime({ precision: 3 });
+
+export const coverageTestCase39: ZodValidateTestCase<
+  typeof coverageTestCase39ZodSchema
+> = {
+  name: `Coverage Test #39: coverageTestCase39ZodSchema should successfully parse the "2020-01-01T00:00:00.123Z" string, because it is does comply with the ISO 8601 date time format, and its precision is exactly the required 3 precision.`,
+  zodSchema: coverageTestCase39ZodSchema,
+  zodSchemaAsText: `z.string().datetime({ precision: 3 });`,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123Z",
+  expect: true,
+};
+
+export const coverageTestCase39bis: ZodValidateTestCase<
+  typeof coverageTestCase39ZodSchema
+> = {
+  ...coverageTestCase39,
+  name: `Coverage Test #39bis: coverageTestCase39ZodSchema should fail to parse the "2020-01-01T00:00:00Z" string, because its precision is not the exactly required 3 precision.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-01T00:00:00Z",
+};
+
+export const coverageTestCase39ter: ZodValidateTestCase<
+  typeof coverageTestCase39ZodSchema
+> = {
+  ...coverageTestCase39,
+  name: `Coverage Test #39ter: coverageTestCase39ZodSchema should successfully parse the "2020-01-01T00:00:00.123456Z" string, because its precision is 6, not the exactly required 3 precision.`,
+  expect: true,
+  testTsObjectToValidate: "2020-01-01T00:00:00.123456Z",
+};
+
+// 
+// * --- * 
+// * const datetime = z.string().date();
+// * 
+// * https://zod.dev/?id=dates
+// 
+export const coverageTestCase40ZodSchema = z.string().date(); // validates strings in the format YYYY-MM-DD
+
+export const coverageTestCase40: ZodValidateTestCase<
+  typeof coverageTestCase40ZodSchema
+> = {
+  name: `Coverage Test #40: coverageTestCase40ZodSchema should successfully parse the "2020-01-01" string, because it does comply with the YYYY-MM-DD format.`,
+  zodSchema: coverageTestCase40ZodSchema,
+  zodSchemaAsText: `z.string().date();`,
+  testTsObjectToValidate: "2020-01-01",
+  expect: true,
+};
+
+export const coverageTestCase40bis: ZodValidateTestCase<
+  typeof coverageTestCase40ZodSchema
+> = {
+  ...coverageTestCase40,
+  name: `Coverage Test #40bis: coverageTestCase40ZodSchema should fail to parse the "2020-1-1" string, because it does NOT comply with the YYYY-MM-DD format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-1-1",
+};
+
+export const coverageTestCase40ter: ZodValidateTestCase<
+  typeof coverageTestCase40ZodSchema
+> = {
+  ...coverageTestCase40,
+  name: `Coverage Test #40ter: coverageTestCase40ZodSchema should fail to parse the "2020-01-32" string, because it does NOT comply with the YYYY-MM-DD format.`,
+  expect: false,
+  testTsObjectToValidate: "2020-01-32",
+};
+
+
+// 
+// * --- * 
+// * const datetime = z.string().time();
+// * https://zod.dev/?id=times
+// * 
+// 
+export const coverageTestCase41ZodSchema = z.string().time(); // validates strings in the format HH:MM:SS[.s+]
+
+export const coverageTestCase41: ZodValidateTestCase<
+  typeof coverageTestCase41ZodSchema
+> = {
+  name: `Coverage Test #41: coverageTestCase41ZodSchema should successfully parse the "00:00:00" string, because it does comply with the HH:MM:SS[.s+] format.`,
+  zodSchema: coverageTestCase41ZodSchema,
+  zodSchemaAsText: `z.string().time();`,
+  testTsObjectToValidate: "00:00:00",
+  expect: true,
+};
+
+export const coverageTestCase41bis: ZodValidateTestCase<
+  typeof coverageTestCase41ZodSchema
+> = {
+  ...coverageTestCase41,
+  name: `Coverage Test #41bis: coverageTestCase41ZodSchema should successfully parse the "09:52:31" string, because it does comply with the HH:MM:SS[.s+] format.`,
+  expect: true,
+  testTsObjectToValidate: "09:52:31",
+};
+
+export const coverageTestCase41ter: ZodValidateTestCase<
+  typeof coverageTestCase41ZodSchema
+> = {
+  ...coverageTestCase41,
+  name: `Coverage Test #41ter: coverageTestCase41ZodSchema should successfully parse the "23:59:59.9999999" string, because it does comply with the HH:MM:SS[.s+] format.`,
+  expect: true,
+  testTsObjectToValidate: "23:59:59.9999999",
+};
+
+export const coverageTestCase41quarte: ZodValidateTestCase<
+  typeof coverageTestCase41ZodSchema
+> = {
+  ...coverageTestCase41,
+  name: `Coverage Test #41quarte: coverageTestCase41ZodSchema should fail to parse the "00:00:00.123Z" string, because it does NOT comply with the HH:MM:SS[.s+] format (no Z allowed).`,
+  expect: false,
+  testTsObjectToValidate: "00:00:00.123Z",
+};
+
+export const coverageTestCase41quinte: ZodValidateTestCase<
+  typeof coverageTestCase41ZodSchema
+> = {
+  ...coverageTestCase41,
+  name: `Coverage Test #41quinte: coverageTestCase41ZodSchema should fail to parse the "00:00:00.123+02:00" string, because it does NOT comply with the HH:MM:SS[.s+] format (no offsets allowed).`,
+  expect: false,
+  testTsObjectToValidate: "00:00:00.123+02:00",
+};
+
+
+
+
+// 
+// * --- * 
+// * const ip = z.string().ip();
+// * https://zod.dev/?id=ip-addresses
+// * 
+// 
+export const coverageTestCase42ZodSchema = z.string().ip(); // validates strings in the IPv4 or IPv6 format
+
+export const coverageTestCase42: ZodValidateTestCase<
+  typeof coverageTestCase42ZodSchema
+> = {
+  name: `Coverage Test #42: coverageTestCase42ZodSchema should successfully parse the "192.168.1.1" string, because it a valid IP Address.`,
+  zodSchema: coverageTestCase42ZodSchema,
+  zodSchemaAsText: `z.string().ip();`,
+  testTsObjectToValidate: "192.168.1.1",
+  expect: true,
+};
+
+export const coverageTestCase42bis: ZodValidateTestCase<
+  typeof coverageTestCase42ZodSchema
+> = {
+  ...coverageTestCase42,
+  name: `Coverage Test #42bis: coverageTestCase42ZodSchema should successfully parse the "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003" string, because it is a valid IP Address.`,
+  expect: true,
+  testTsObjectToValidate: "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003",
+};
+
+export const coverageTestCase42ter: ZodValidateTestCase<
+  typeof coverageTestCase42ZodSchema
+> = {
+  ...coverageTestCase42,
+  name: `Coverage Test #42ter: coverageTestCase42ZodSchema should successfully parse the "84d5:51a0:9114:1855:4cfa:f2d7:1f12:192.168.1.1" string, because it complies with IP Address format constraints (even if there are 2 IP Addresses).`,
+  expect: true,
+  testTsObjectToValidate: "84d5:51a0:9114:1855:4cfa:f2d7:1f12:192.168.1.1",
+};
+
+export const coverageTestCase42quarte: ZodValidateTestCase<
+  typeof coverageTestCase42ZodSchema
+> = {
+  ...coverageTestCase42,
+  name: `Coverage Test #42quarte: coverageTestCase42ZodSchema should fail to parse the "256.1.1.1" string, because it does NOT a valid IP Address ('256' is not allowed).`,
+  expect: false,
+  testTsObjectToValidate: "256.1.1.1",
+};
+
+export const coverageTestCase42quinte: ZodValidateTestCase<
+  typeof coverageTestCase42ZodSchema
+> = {
+  ...coverageTestCase42,
+  name: `Coverage Test #42quinte: coverageTestCase42ZodSchema should fail to parse the "84d5:51a0:9114:gggg:4cfa:f2d7:1f12:7003" string, because it does NOT a valid IP Address  ('g' is not allowed).`,
+  expect: false,
+  testTsObjectToValidate: "84d5:51a0:9114:gggg:4cfa:f2d7:1f12:7003",
+};
+
+
+// 
+// * --- * 
+// * const ipv4 = z.string().ip({ version: "v4" }); // validates strings in the IPv4 format
+// * const ipv6 = z.string().ip({ version: "v6" }); // validates strings in the IPv6 format
+// * https://zod.dev/?id=ip-addresses
+// * 
+// 
+export const coverageTestCase43ZodSchema = z.string().ip({ version: "v4" }); // validates strings in the format HH:MM:SS[.s+]
+
+export const coverageTestCase43: ZodValidateTestCase<
+  typeof coverageTestCase43ZodSchema
+> = {
+  name: `Coverage Test #43: coverageTestCase43ZodSchema should successfully parse the "192.168.1.1" string, because it a valid IP v4 Address.`,
+  zodSchema: coverageTestCase43ZodSchema,
+  zodSchemaAsText: `z.string().ip({ version: "v4" });`,
+  testTsObjectToValidate: "192.168.1.1",
+  expect: true,
+};
+
+export const coverageTestCase43bis: ZodValidateTestCase<
+  typeof coverageTestCase43ZodSchema
+> = {
+  ...coverageTestCase43,
+  name: `Coverage Test #43bis: coverageTestCase43ZodSchema should fail to parse the "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003" string, because it does NOT a valid IP v4 Address (it is an IP v6 Address).`,
+  expect: false,
+  testTsObjectToValidate: "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003",
+};
+
+export const coverageTestCase44ZodSchema = z.string().ip({ version: "v6" }); // validates strings in the format HH:MM:SS[.s+]
+
+export const coverageTestCase44: ZodValidateTestCase<
+  typeof coverageTestCase44ZodSchema
+> = {
+  name: `Coverage Test #44: coverageTestCase44ZodSchema should fail to parse the "192.168.1.1" string, because it is NOT a valid IP v6 Address (it is an IP v4 Address).`,
+  zodSchema: coverageTestCase44ZodSchema,
+  zodSchemaAsText: `z.string().ip({ version: "v6" });`,
+  testTsObjectToValidate: "192.168.1.1",
+  expect: false,
+};
+
+export const coverageTestCase44bis: ZodValidateTestCase<
+  typeof coverageTestCase44ZodSchema
+> = {
+  ...coverageTestCase44,
+  name: `Coverage Test #44bis: coverageTestCase44ZodSchema should successfully parse the "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003" string, because it is a valid IP v6 Address.`,
+  expect: true,
+  testTsObjectToValidate: "84d5:51a0:9114:1855:4cfa:f2d7:1f12:7003",
+};
+
+
+// 
+// * --- * 
+// * 
+// * https://zod.dev/?id=numbers
+// * 
+// * TODO: Impl. to complete
 /**
  * ++++++++++++++++++++++++++++++++++++
  *          Table of all Test Cases
