@@ -1,0 +1,21 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/flowbite/**/*.js'
+	],
+	theme: {
+		extend: {
+			listStyleType: {
+				none: 'none',
+				disc: 'disc',
+				decimal: 'decimal',
+				square: 'square',
+				roman: 'upper-roman',
+			  }
+		},
+	},
+	plugins: [
+		require('flowbite/plugin')
+	],
+}

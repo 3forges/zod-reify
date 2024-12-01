@@ -1,0 +1,3286 @@
+
+> @pesto-io/zod-reify@0.0.1-alpha test C:\Users\Utilisateur\zod-reify
+> jest --silent=false
+
+  console.log
+     >>>>>>> TEST CASE 1 [decorators]
+
+      at Object.<anonymous> (tests/reify/LetSee.test.ts:79:17)
+
+  console.log
+    created : 24/11/2024, 19:03:40
+
+      at Object.<anonymous> (tests/reify/LetSee.test.ts:82:17)
+
+  console.log
+    lucky is : 4
+
+      at Object.<anonymous> (tests/reify/LetSee.test.ts:83:17)
+
+  console.log
+    reify().lastname is : universe
+
+      at Object.<anonymous> (tests/reify/LetSee.test.ts:84:17)
+
+  console.log
+    name is : undefined
+
+      at Object.<anonymous> (tests/reify/LetSee.test.ts:86:17)
+
+PASS tests/reify/LetSee.test.ts
+  Tests of the {@ZodSchemaReifier} reify() method against the zod parse method
+    TypeScript Decorators Test 1
+      √ successfully get n display the lucky number, and the created properties (73 ms)
+
+  console.log
+     >>>>>>> TEST CASE [Test #1: zodSchema1] - testCase.zodSchemaAsText=[z
+      .object({
+        voila: z.string(),
+      })
+      .optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        voila: z.string(),
+      })
+      .optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ voila: z.string(), }).optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ voila: z.string(), }).optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #1bis: zodSchema1] - testCase.zodSchemaAsText=[z
+      .object({
+        voila: z.string(),
+      })
+      .optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        voila: z.string(),
+      })
+      .optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ voila: z.string(), }).optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ voila: z.string(), }).optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #2: zodSchema2] - testCase.zodSchemaAsText=[z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ voila: z.string(), }).array().optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ voila: z.string(), }).array().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #3: zodSchema3] - testCase.zodSchemaAsText=[z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()
+      .nullable()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()
+      .nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ voila: z.string(), }).array().optional().nullable()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ voila: z.string(), }).array().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #4: zodSchema4] - testCase.zodSchemaAsText=[z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+      .optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+      .optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), }).optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), }).optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #5: zodSchema5] - testCase.zodSchemaAsText=[z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #6: zodSchema6] - testCase.zodSchemaAsText=[z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ])]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ])
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),])]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),])
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #7: zodSchema7] - testCase.zodSchemaAsText=[z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ]).nullable().optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ]).nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),]).nullable().optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),]).nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #8: zodSchema8] - testCase.zodSchemaAsText=[z.boolean().nullable().optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.boolean().nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.boolean().nullable().optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.boolean().nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #9: zodSchema9] - testCase.zodSchemaAsText=[z.array(z.boolean().nullish()).nullable().optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.array(z.boolean().nullish()).nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.array(z.boolean().nullish()).nullable().optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.array(z.boolean().nullish()).nullable().optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #10: zodSchema10] - testCase.zodSchemaAsText=[z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #10bis: zodSchema10] - testCase.zodSchemaAsText=[z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #10ter: zodSchema10] - testCase.zodSchemaAsText=[z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        un: z.object({
+          deux: z.object({
+            trois: z.object({
+              quatre: z.object({
+                cinq: z.object({
+                  six: z.object({
+                    sept: z.string(),
+                  }),
+                }),
+              }),
+            }),
+          }),
+        })
+      })
+      .strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ un: z.object({ deux: z.object({ trois: z.object({ quatre: z.object({ cinq: z.object({ six: z.object({ sept: z.string(), }), }), }), }), }), }) }).strict().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #11: zodSchema11, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #11bis: zodSchema11, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #11ter: zodSchema11, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #12: zodSchema12, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ offset: true });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ offset: true });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ offset: true })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ offset: true })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #12bis: zodSchema12, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ offset: true });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ offset: true });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ offset: true })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ offset: true })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #12ter: zodSchema12, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ offset: true });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ offset: true });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ offset: true })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ offset: true })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ offset: true });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ offset: true });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ offset: true })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ offset: true })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #13: zodSchema13, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ precision: 3 });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ precision: 3 });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ precision: 3 })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ precision: 3 })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #13bis: zodSchema13, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ precision: 3 });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ precision: 3 });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ precision: 3 })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ precision: 3 })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #13ter: zodSchema13, https://zod.dev/?id=datetimes] - testCase.zodSchemaAsText=[z.string().datetime({ precision: 3 });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.string().datetime({ precision: 3 });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.string().datetime({ precision: 3 })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.string().datetime({ precision: 3 })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).] - testCase.zodSchemaAsText=[z.object({ 
+        something: z.boolean(),
+      });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.object({ 
+        something: z.boolean(),
+      });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ something: z.boolean(), })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ something: z.boolean(), })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the "not" operator, and the "or" operator).] - testCase.zodSchemaAsText=[z.object({ 
+        something: z.boolean(),
+      });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.object({ 
+        something: z.boolean(),
+      });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ something: z.boolean(), })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ something: z.boolean(), })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).] - testCase.zodSchemaAsText=[z.date().min(new Date("1900-01-01"), { message: "Too old" });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.date().min(new Date("1900-01-01"), { message: "Too old" });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.date().min(new Date("1900-01-01"), { message: "Tooold" })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.date().min(new Date("1900-01-01"), { message: "Tooold" })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).] - testCase.zodSchemaAsText=[z.date().max(new Date(), { message: "Too young!" });]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.date().max(new Date(), { message: "Too young!" });
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.date().max(new Date(), { message: "Tooyoung!" })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.date().max(new Date(), { message: "Tooyoung!" })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the "not" operator).] - testCase.zodSchemaAsText=[z.coerce.date();]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1697:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.coerce.date();
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.coerce.date()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.coerce.date()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #3: markdown frontmatter extraction zodSchema3] - testCase.zodSchemaAsText=[z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()
+      .nullable()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1748:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        voila: z.string(),
+      })
+      .array()
+      .optional()
+      .nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ voila: z.string(), }).array().optional().nullable()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ voila: z.string(), }).array().optional().nullable()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #4: markdown frontmatter extraction zodSchema4] - testCase.zodSchemaAsText=[z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+      .optional()]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1748:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+      .optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), }).optional()]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), }).optional()
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #5: markdown frontmatter extraction zodSchema5] - testCase.zodSchemaAsText=[z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1748:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z
+      .object({
+        title: z.string(),
+        hereAnother: z.object({
+          reseau: z.object({
+            cesar: z.array(z.string()),
+          }),
+          imLackingIdea: z.boolean().optional(),
+          itsForATest: z.boolean(),
+        }),
+        tags: z.array(z.string()),
+        another: z.boolean().nullish(),
+        exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+        example2Category: z.nullable(z.array(z.boolean())).optional(),
+        example3Category: z.optional(z.number()).array(),
+        example4Category: z.array(z.number()).optional(),
+        image: z.string().optional(),
+        somethingElseNested: z.object({
+          firstname: z.string().array(),
+          lastname: z.string(),
+          color: z.string(),
+          two: z.boolean().optional(),
+          three: z.number().array().optional(),
+          four: z.array(z.number()).optional(),
+        }),
+        department: z.object({
+          divisionName: z.string(),
+          secrecyTags: z.array(z.string()).optional(),
+        }),
+      })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.object({ title: z.string(), hereAnother: z.object({ reseau: z.object({ cesar: z.array(z.string()), }), imLackingIdea: z.boolean().optional(), itsForATest: z.boolean(), }), tags: z.array(z.string()), another: z.boolean().nullish(), exampleCategory: z.array(z.array(z.string().nullable())).optional(), example2Category: z.nullable(z.array(z.boolean())).optional(), example3Category: z.optional(z.number()).array(), example4Category: z.array(z.number()).optional(), image: z.string().optional(), somethingElseNested: z.object({ firstname: z.string().array(), lastname: z.string(), color: z.string(), two: z.boolean().optional(), three: z.number().array().optional(), four: z.array(z.number()).optional(), }), department: z.object({ divisionName: z.string(), secrecyTags: z.array(z.string()).optional(), }), })
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+  console.log
+     >>>>>>> TEST CASE [Test #6: markdown frontmatter extraction zodSchema6] - testCase.zodSchemaAsText=[z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ])]
+
+      at tests/reify/ZodSchemaReifier.test.ts:1790:15
+
+  console.info
+    [@ZodSchemaReifier].[constructor] zod schema provided to constructor: z.tuple([
+          z.object({first: z.array(z.string())}),
+          z.object({second: z.array(z.string())}),
+          z.object({third: z.array(z.string())}),
+        ])
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:217:13)
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [doesntMatter]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.log
+    [@ZodSchemaReifier].[initZodExpressionNode()] - WALKING DESCENDANTS OF VAR DECLARATION, current node = [z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),])]
+
+      at src/reify/ZodSchemaReifier.ts:293:17
+
+  console.info
+    [@ZodSchemaReifier].[constructor] After [this.initZodExpressionNode()], [this.zodExpressionNode] is : z.tuple([z.object({ first: z.array(z.string()) }), z.object({ second: z.array(z.string()) }), z.object({ third: z.array(z.string()) }),])
+
+      at new ZodSchemaReifier (src/reify/ZodSchemaReifier.ts:262:13)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - processedNode is defined
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:335:15)
+
+  console.log
+    [@ZodSchemaReifier].[reify()] - START - (typeof processedNode) is [object]
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:339:13)
+
+FAIL tests/reify/ZodSchemaReifier.test.ts (42.564 s)
+  Tests of the {@ZodSchemaReifier} reify() method against the zod parse method
+    Test the reify() returns a zod schema which successfully parses the test TypeScript Object
+      × [{"expect": true, "name": "Test #1: zodSchema1", "testTsObjectToValidate": undefined, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test (1858 ms)
+      × [{"expect": false, "name": "Test #1bis: zodSchema1", "testTsObjectToValidate": null, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test (1319 ms)
+      × [{"expect": true, "name": "Test #2: zodSchema2", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()"}] successfully pass the zod parse test (1381 ms)
+      × [{"expect": true, "name": "Test #3: zodSchema3", "testTsObjectToValidate": [Array], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()"}] successfully pass the zod parse test (1414 ms)
+      × [{"expect": true, "name": "Test #4: zodSchema4", "testTsObjectToValidate": [Object], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()"}] successfully pass the zod parse test (1566 ms)
+      × [{"expect": true, "name": "Test #5: zodSchema5", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })"}] successfully pass the zod parse test (1486 ms)
+      × [{"expect": true, "name": "Test #6: zodSchema6", "testTsObjectToValidate": [Array], "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])"}] successfully pass the zod parse test (1250 ms)
+      × [{"expect": true, "name": "Test #7: zodSchema7", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ]).nullable().optional()"}] successfully pass the zod parse test (1104 ms)
+      × [{"expect": true, "name": "Test #8: zodSchema8", "testTsObjectToValidate": false, "zodSchema": [ZodOptional], "zodSchemaAsText": "z.boolean().nullable().optional()"}] successfully pass the zod parse test (973 ms)
+      × [{"expect": true, "name": "Test #9: zodSchema9", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.array(z.boolean().nullish()).nullable().optional()"}] successfully pass the zod parse test (1104 ms)
+      × [{"expect": true, "name": "Test #10: zodSchema10", "testTsObjectToValidate": [Object], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1278 ms)
+      × [{"expect": true, "name": "Test #10bis: zodSchema10", "testTsObjectToValidate": null, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1348 ms)
+      × [{"expect": true, "name": "Test #10ter: zodSchema10", "testTsObjectToValidate": undefined, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test (1078 ms)
+      × [{"expect": true, "name": "Test #11: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (914 ms)
+      × [{"expect": true, "name": "Test #11bis: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (946 ms)
+      × [{"expect": true, "name": "Test #11ter: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (930 ms)
+      × [{"expect": false, "name": "Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test (1039 ms)
+      × [{"expect": true, "name": "Test #12: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (945 ms)
+      × [{"expect": true, "name": "Test #12bis: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (978 ms)
+      × [{"expect": true, "name": "Test #12ter: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+0200", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (1067 ms)
+      × [{"expect": true, "name": "Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test (942 ms)
+      × [{"expect": true, "name": "Test #13: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (983 ms)
+      × [{"expect": false, "name": "Test #13bis: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (954 ms)
+      × [{"expect": false, "name": "Test #13ter: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test (932 ms)
+      × [{"expect": true, "name": "Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z.object({ 
+    something: z.boolean(),
+  });"}] successfully pass the zod parse test (1207 ms)
+      × [{"expect": true, "name": "Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \"not\" operator, and the \"or\" operator).", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z.object({ 
+    something: z.boolean(),
+  });"}] successfully pass the zod parse test (1050 ms)
+      × [{"expect": false, "name": "Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 1901-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.date().min(new Date(\"1900-01-01\"), { message: \"Too old\" });"}] successfully pass the zod parse test (933 ms)
+      × [{"expect": true, "name": "Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 2024-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.date().max(new Date(), { message: \"Too young!\" });"}] successfully pass the zod parse test (923 ms)
+      × [{"expect": true, "name": "Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 2024-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.coerce.date();"}] successfully pass the zod parse test (937 ms)
+  Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method
+    Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown
+      × [{"expectedFrontmatter": [Array], "name": "Test #3: markdown frontmatter extraction zodSchema3", "testMarkdown": "---
+
+- voila: oh que oui
+- voila: ça marche vraiment!
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()"}] successfully pass the zod parse test [%p] (1051 ms)
+      × [{"expectedFrontmatter": [Object], "name": "Test #4: markdown frontmatter extraction zodSchema4", "testMarkdown": "---
+
+title: HiDeoo
+
+hereAnother: 
+
+  reseau: 
+
+    cesar: 
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \"./images/paysages/puydedome.png\"
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()"}] successfully pass the zod parse test [%p] (1148 ms)
+      × [{"expectedFrontmatter": [Object], "name": "Test #5: markdown frontmatter extraction zodSchema5", "testMarkdown": "---
+
+title: HiDeoo
+
+hereAnother:
+
+  reseau:
+
+    cesar:
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \"./images/paysages/puydedome.png\"
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodObject], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })"}] successfully pass the zod parse test [%p] (1238 ms)
+      × [{"expectedFrontmatter": [Array], "name": "Test #6: markdown frontmatter extraction zodSchema6", "testMarkdown": undefined, "zodMatterShouldThrow": true, "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])"}] should throw an error because zod matter parse does not accept zod tuples as input schema (1098 ms)
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #1: zodSchema1", "testTsObjectToValidate": undefined, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": false, "name": "Test #1bis: zodSchema1", "testTsObjectToValidate": null, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #2: zodSchema2", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #3: zodSchema3", "testTsObjectToValidate": [Array], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #4: zodSchema4", "testTsObjectToValidate": [Object], "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #5: zodSchema5", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #6: zodSchema6", "testTsObjectToValidate": [Array], "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #7: zodSchema7", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ]).nullable().optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #8: zodSchema8", "testTsObjectToValidate": false, "zodSchema": [ZodOptional], "zodSchemaAsText": "z.boolean().nullable().optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #9: zodSchema9", "testTsObjectToValidate": [Array], "zodSchema": [ZodOptional], "zodSchemaAsText": "z.array(z.boolean().nullish()).nullable().optional()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #10: zodSchema10", "testTsObjectToValidate": [Object], "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #10bis: zodSchema10", "testTsObjectToValidate": null, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #10ter: zodSchema10", "testTsObjectToValidate": undefined, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    un: z.object({
+      deux: z.object({
+        trois: z.object({
+          quatre: z.object({
+            cinq: z.object({
+              six: z.object({
+                sept: z.string(),
+              }),
+            }),
+          }),
+        }),
+      }),
+    })
+  })
+  .strict().optional().nullable()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #11: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #11bis: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #11ter: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": false, "name": "Test #11quarte: zodSchema11, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime()"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #12: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #12bis: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02:00", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #12ter: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+0200", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123+02", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ offset: true });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #13: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": false, "name": "Test #13bis: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": false, "name": "Test #13ter: zodSchema13, https://zod.dev/?id=datetimes", "testTsObjectToValidate": "2020-01-01T00:00:00.123456Z", "zodSchema": [ZodString], "zodSchemaAsText": "z.string().datetime({ precision: 3 });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #14: zodSchema14, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z.object({ 
+    something: z.boolean(),
+  });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #14bis: testCase14bis, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using both an unary, and a binary operator (the \"not\" operator, and the \"or\" operator).", "testTsObjectToValidate": [Object], "zodSchema": [ZodObject], "zodSchemaAsText": "z.object({ 
+    something: z.boolean(),
+  });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": false, "name": "Test #15: zodSchema15, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 1901-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.date().min(new Date(\"1900-01-01\"), { message: \"Too old\" });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #16: zodSchema16, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 2024-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.date().max(new Date(), { message: \"Too young!\" });"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod parse method › Test the reify() returns a zod schema which successfully parses the test TypeScript Object › [{"expect": true, "name": "Test #17: zodSchema17, a simple zod object  with one boolean property, the test assigns a boolean value to the property, using an unary operator (the \"not\" operator).", "testTsObjectToValidate": 2024-01-01T00:00:00.000Z, "zodSchema": [ZodDate], "zodSchemaAsText": "z.coerce.date();"}] successfully pass the zod parse test
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1704:25
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method › Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown › [{"expectedFrontmatter": [Array], "name": "Test #3: markdown frontmatter extraction zodSchema3", "testMarkdown": "---
+
+- voila: oh que oui
+- voila: ça marche vraiment!
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodNullable], "zodSchemaAsText": "z
+  .object({
+    voila: z.string(),
+  })
+  .array()
+  .optional()
+  .nullable()"}] successfully pass the zod parse test [%p]
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1754:51
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method › Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown › [{"expectedFrontmatter": [Object], "name": "Test #4: markdown frontmatter extraction zodSchema4", "testMarkdown": "---
+
+title: HiDeoo
+
+hereAnother: 
+
+  reseau: 
+
+    cesar: 
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \"./images/paysages/puydedome.png\"
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodOptional], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })
+  .optional()"}] successfully pass the zod parse test [%p]
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1754:51
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method › Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown › [{"expectedFrontmatter": [Object], "name": "Test #5: markdown frontmatter extraction zodSchema5", "testMarkdown": "---
+
+title: HiDeoo
+
+hereAnother:
+
+  reseau:
+
+    cesar:
+
+      - marc
+
+      - aurèle
+
+      - auguste
+
+  imLackingIdea: true
+
+  itsForATest: false
+
+tags: 
+
+  - william
+
+  - the
+
+  - conquerer
+
+another: true
+
+exampleCategory:
+
+  - - joe
+
+    - alfred
+
+    - alvin
+
+  - - thirteen
+
+    - hundred
+
+    - books
+
+  - - going
+
+    - overseas
+
+    - together
+
+example2Category: 
+
+  - false
+
+  - true
+
+  - false
+
+example3Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+example4Category: 
+
+  - 7684464125145
+
+  - 26454943684684
+
+  - 1516546884648
+
+image: \"./images/paysages/puydedome.png\"
+
+somethingElseNested:
+
+  firstname: 
+
+    - Jean-Baptiste
+
+    - Marie
+
+    - Éric
+
+  lastname: Lasselle
+
+  color: yellow
+
+  two: false
+
+  three: 
+
+    - 56
+
+    - 789
+
+    - 159
+
+  four: 
+
+    - 15
+
+    - 46
+
+    - 739
+
+  example1Categories: 
+
+    - design
+
+    - terraform
+
+    - plugin
+
+  example2Categories: 
+
+    first:
+
+      - joe
+
+      - alfred
+
+      - alvin
+
+    second:
+
+      - thirteen
+
+      - hundred
+
+      - books
+
+    third:
+
+      - going
+
+      - overseas
+
+      - together
+
+department: 
+
+  divisionName: CCOE
+
+  secrecyTags: 
+    - LEVEL3
+ 
+    - NOCOPY
+
+---
+
+# Hello Pesto ZodSchemaReifier!
+", "zodMatterShouldThrow": false, "zodSchema": [ZodObject], "zodSchemaAsText": "z
+  .object({
+    title: z.string(),
+    hereAnother: z.object({
+      reseau: z.object({
+        cesar: z.array(z.string()),
+      }),
+      imLackingIdea: z.boolean().optional(),
+      itsForATest: z.boolean(),
+    }),
+    tags: z.array(z.string()),
+    another: z.boolean().nullish(),
+    exampleCategory: z.array(z.array(z.string().nullable())).optional(),
+    example2Category: z.nullable(z.array(z.boolean())).optional(),
+    example3Category: z.optional(z.number()).array(),
+    example4Category: z.array(z.number()).optional(),
+    image: z.string().optional(),
+    somethingElseNested: z.object({
+      firstname: z.string().array(),
+      lastname: z.string(),
+      color: z.string(),
+      two: z.boolean().optional(),
+      three: z.number().array().optional(),
+      four: z.array(z.number()).optional(),
+    }),
+    department: z.object({
+      divisionName: z.string(),
+      secrecyTags: z.array(z.string()).optional(),
+    }),
+  })"}] successfully pass the zod parse test [%p]
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1754:51
+
+  ● Tests of the {@ZodSchemaReifier} reify() method against the zod-matter parse method › Test the reify() returns a zod schema which successfully extracts the frontmatter from the test markdown › [{"expectedFrontmatter": [Array], "name": "Test #6: markdown frontmatter extraction zodSchema6", "testMarkdown": undefined, "zodMatterShouldThrow": true, "zodSchema": [ZodTuple], "zodSchemaAsText": "z.tuple([
+      z.object({first: z.array(z.string())}),
+      z.object({second: z.array(z.string())}),
+      z.object({third: z.array(z.string())}),
+    ])"}] should throw an error because zod matter parse does not accept zod tuples as input schema
+
+    TypeError: Converting circular structure to JSON
+        --> starting at object with constructor 'SourceFile'
+        --- property '__sourceFile' closes the circle
+        at JSON.stringify (<anonymous>)
+
+    [0m [90m 341 |[39m     )[33m;[39m
+     [90m 342 |[39m     console[33m.[39mlog(
+    [31m[1m>[22m[39m[90m 343 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - JSON.stringify({processedNode: processedNode}) is [${JSON.stringify({processedNode: processedNode}, null, 2)}]`[39m
+     [90m     |[39m                                                                                                          [31m[1m^[22m[39m
+     [90m 344 |[39m     )[33m;[39m
+     [90m 345 |[39m     console[33m.[39mlog(
+     [90m 346 |[39m       [32m`[@ZodSchemaReifier].[reify()] - START - processedNode is [${processedNode}]`[39m[0m
+
+      at ZodSchemaReifier.reify (src/reify/ZodSchemaReifier.ts:343:106)
+      at tests/reify/ZodSchemaReifier.test.ts:1796:51
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       33 failed, 1 passed, 34 total
+Snapshots:   0 total
+Time:        43.051 s, estimated 50 s
+Ran all test suites.
+ ELIFECYCLE  Test failed. See above for more details.
