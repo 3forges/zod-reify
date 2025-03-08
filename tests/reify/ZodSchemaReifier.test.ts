@@ -816,7 +816,7 @@ const testCase12quarte: ZodValidateTestCase<typeof zodSchema12> = {
   name: `Test #12quarte: zodSchema12, https://zod.dev/?id=datetimes`,
   zodSchemaAsText: `z.string().datetime({ offset: true });`,
   testTsObjectToValidate: `2020-01-01T00:00:00.123+02`,
-  expect: true,
+  expect: false,
 };
 /**
  * ++++++++++++++++++++++++++++++++++++

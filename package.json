@@ -45,8 +45,10 @@
     "gen:unit:tests:report:astro:prod": "bash -c \"pnpm run 'gen:unit:tests:report:json:prod'\" && bash -c \"pnpm run 'gen:unit:tests:report:zod:prod'\"",
     "test:logs": "touch ./betterExperiment.logs && rm ./betterExperiment.logs && bash -c 'pnpm run test >>./betterExperiment.logs 2>&1'",
     "test:e2e": "echo 'Run e2e Tests'",
+    "test:coverage:zod": "bash -c \"pnpm test -- -i ./tests/reify/ZodSchemaReifier.test.ts -c ./jest.config.ts\"",
+    "test:coverage:zod:logs": "touch ./coverage.tests.logs && rm ./coverage.tests.logs && bash -c 'pnpm run test:coverage:zod >>./coverage.tests.logs 2>&1'",
     "build": "bash  -c 'pnpm exec tsc'",
-    "clean": "rm -Rf rawData && rm -Rf transformedData && rm -fr dist/"
+    "clean": "rm -fr dist/"
   },
   "keywords": [
     "pesto",
