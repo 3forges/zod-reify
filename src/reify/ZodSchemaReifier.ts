@@ -212,8 +212,9 @@ export class ZodSchemaReifier implements Reifier<any> {
       this.project = new Project({
         useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
         // tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
-        // skipFileDependencyResolution: true,
+        skipFileDependencyResolution: true,
         skipAddingFilesFromTsConfig: true,
+        skipLoadingLibFiles: true
       });
     } else {
       this.project = new Project({
