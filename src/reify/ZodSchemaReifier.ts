@@ -21,6 +21,7 @@ import {
   Structure,
   CallSignatureDeclarationStructure,
   PropertyAccessExpression,
+  FileSystemHost,
   // CallExpression,
   // ts,
   // type ObjectLiteralElementLike,
@@ -215,7 +216,13 @@ export class ZodSchemaReifier implements Reifier<any> {
         skipFileDependencyResolution: true,
         skipAddingFilesFromTsConfig: true,
         // skipLoadingLibFiles: true
+        // resolutionHost: 
       });
+      const tsMorphProjectFs: FileSystemHost = this.project.getFileSystem()
+      tsMorphProjectFs.mkdirSync(`node_modules`)
+      tsMorphProjectFs.writeFileSync(`node_modules/.pnpm/zod@3.24.2/node_modules/zod/index`, `export * from "./lib";export as namespace Zod;`)// (`node_modules`)
+      // this.project.addDirectoryAtPath(`node_modules`, { recursive: true });
+
     } else {
       this.project = new Project({
         useInMemoryFileSystem: false,
@@ -226,7 +233,7 @@ export class ZodSchemaReifier implements Reifier<any> {
     }
 
     this.sourceFile = this.project.createSourceFile(this.filename, ``);
-    this.project.addDirectoryAtPath(`node_modules`, { recursive: true })
+    // this.project.addDirectoryAtPath(`node_modules`, { recursive: true })
     // this.project.add
     console.info(
       `[@ZodSchemaReifier].[constructor] zod schema provided to constructor:`,
