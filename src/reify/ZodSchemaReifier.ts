@@ -62,7 +62,7 @@ export class ZodSchemaReifier implements Reifier<any> {
    */
   private filename: string;
   /**
-   * The source file obeject used by the TS compiler API
+   * The source file object used by the TS compiler API
    */
   private sourceFile: tsMorphSourceFile;
   /**
@@ -204,11 +204,12 @@ export class ZodSchemaReifier implements Reifier<any> {
    * @param zodSchemaAsString the text of the zod schema, without any variable declaration, just the zod schema alone. see above example.
    * @param p_tsConfigRootdir the path to the folder used to set the <pre>rootDir</pre> TypeScript compiler configuration property value. (typically found in any <pre>tsconfig.json</pre> file)
    */
-  constructor(protected zodSchemaAsString: string, p_tsConfigRootdir?: string) {
+  constructor(protected zodSchemaAsString: string, p_tsConfigRootdir?: string, useInMemoryFileSystem?: boolean) {
     this.tsConfigRootdir = p_tsConfigRootdir || `./src`;
     this.unique_id = uuidv4();
     this.filename = `${this.tsConfigRootdir}/zodSchemaParser.sourcefile.${this.unique_id}.ts`;
     this.project = new Project({
+      useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
       tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
       // skipFileDependencyResolution: true,
       skipAddingFilesFromTsConfig: true,
