@@ -214,7 +214,7 @@ export class ZodSchemaReifier implements Reifier<any> {
         // tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
         skipFileDependencyResolution: true,
         skipAddingFilesFromTsConfig: true,
-        skipLoadingLibFiles: true
+        // skipLoadingLibFiles: true
       });
     } else {
       this.project = new Project({
