@@ -208,12 +208,22 @@ export class ZodSchemaReifier implements Reifier<any> {
     this.tsConfigRootdir = p_tsConfigRootdir || `./src`;
     this.unique_id = uuidv4();
     this.filename = `${this.tsConfigRootdir}/zodSchemaParser.sourcefile.${this.unique_id}.ts`;
-    this.project = new Project({
-      useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
-      tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
-      // skipFileDependencyResolution: true,
-      skipAddingFilesFromTsConfig: true,
-    });
+    if (useInMemoryFileSystem) {
+      this.project = new Project({
+        useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
+        // tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
+        // skipFileDependencyResolution: true,
+        skipAddingFilesFromTsConfig: true,
+      });
+    } else {
+      this.project = new Project({
+        useInMemoryFileSystem: false,
+        tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
+        // skipFileDependencyResolution: true,
+        skipAddingFilesFromTsConfig: true,
+      });
+    }
+
     this.sourceFile = this.project.createSourceFile(this.filename, ``);
     console.info(
       `[@ZodSchemaReifier].[constructor] zod schema provided to constructor:`,
