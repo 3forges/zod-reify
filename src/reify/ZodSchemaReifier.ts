@@ -27,6 +27,7 @@ import {
   // type ObjectLiteralElementLike,
   // type ObjectLiteralExpressionPropertyStructures,
 } from "ts-morph";
+import * as fs from 'fs';
 //import * as ts from 'typescript'
 // https://www.npmjs.com/package/uuid
 // import { v4 as uuidv4 } from 'uuid';
@@ -148,6 +149,7 @@ export class ZodSchemaReifier implements Reifier<any> {
    *
    */
   private nameOfTheZodImport: string;
+
   /**
    *
    * Example values of <pre>zodSchemaAsString</pre> :
@@ -219,10 +221,11 @@ export class ZodSchemaReifier implements Reifier<any> {
         // resolutionHost: 
       });
       const tsMorphProjectFs: FileSystemHost = this.project.getFileSystem()
-      tsMorphProjectFs.mkdirSync(`node_modules`)
-      tsMorphProjectFs.writeFileSync(`node_modules/.pnpm/zod@3.24.2/node_modules/zod/index`, `export * from "./lib";export as namespace Zod;`)// (`node_modules`)
+      this.loadZodPackageInMemory();
+      //tsMorphProjectFs.mkdirSync(`node_modules`)
+      // tsMorphProjectFs.writeFileSync(`node_modules/.pnpm/zod@3.24.2/node_modules/zod/index`, `export * from "./lib";export as namespace Zod;`)// (`node_modules`)
       // this.project.addDirectoryAtPath(`node_modules`, { recursive: true });
-
+      
     } else {
       this.project = new Project({
         useInMemoryFileSystem: false,
@@ -301,6 +304,28 @@ export class ZodSchemaReifier implements Reifier<any> {
    */
   private zodExpressionNode!: Node<ts.Node>;
 
+  private loadZodPackageInMemory(): void {
+    const tsMorphProjectFs: FileSystemHost = this.project.getFileSystem()
+    tsMorphProjectFs.mkdirSync(`node_modules`)
+    const zodPackageBasePath = `node_modules/.pnpm/zod@3.24.2/node_modules`
+    /**
+     * ${zodPackageBasePath}/zod/index
+     */
+    tsMorphProjectFs.writeFileSync(`${zodPackageBasePath}/zod/index`, `${fs.readFileSync(`${zodPackageBasePath}/zod/index`, 'utf-8')}`)
+    /**
+     * ${zodPackageBasePath}/zod/lib/* (all files, not subfolders)
+     */
+    const libFilenames = fs.readdirSync(`${zodPackageBasePath}/zod/lib`); 
+  
+    console.log(" [loadZodPackageInMemory()] - Zod LIB directory filenames:"); 
+    libFilenames.forEach(filename => { 
+      console.log(` [loadZodPackageInMemory()] - file = [${filename}]`);
+      tsMorphProjectFs.writeFileSync(`${zodPackageBasePath}/zod/lib/${filename}`, `${fs.readFileSync(`${zodPackageBasePath}/zod/lib/${filename}`, 'utf-8')}`)
+    }); 
+    tsMorphProjectFs.writeFileSync(`${zodPackageBasePath}/zod/index`, `${fs.readFileSync(`${zodPackageBasePath}/zod/index`, 'utf-8')}`)// (`node_modules`)
+    
+
+  }
   private initZodExpressionNode(): void {
     const zodSchemaVarDeclaration =
       this.sourceFile.getVariableDeclarationOrThrow(
