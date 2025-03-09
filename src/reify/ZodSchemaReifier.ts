@@ -226,6 +226,8 @@ export class ZodSchemaReifier implements Reifier<any> {
     }
 
     this.sourceFile = this.project.createSourceFile(this.filename, ``);
+    this.project.addDirectoryAtPath(`node_modules`, { recursive: true })
+    // this.project.add
     console.info(
       `[@ZodSchemaReifier].[constructor] zod schema provided to constructor:`,
       zodSchemaAsString
