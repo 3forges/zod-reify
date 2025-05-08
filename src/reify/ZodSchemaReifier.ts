@@ -213,7 +213,8 @@ export class ZodSchemaReifier implements Reifier<any> {
     this.filename = `${this.tsConfigRootdir}/zodSchemaParser.sourcefile.${this.unique_id}.ts`;
     if (useInMemoryFileSystem) {
       this.project = new Project({
-        useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
+        // useInMemoryFileSystem: useInMemoryFileSystem?useInMemoryFileSystem:true,
+        useInMemoryFileSystem: true,
         // tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
         skipFileDependencyResolution: true,
         skipAddingFilesFromTsConfig: true,
@@ -228,8 +229,8 @@ export class ZodSchemaReifier implements Reifier<any> {
       
     } else {
       this.project = new Project({
-        useInMemoryFileSystem: false,
-        tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
+        useInMemoryFileSystem: true,
+        // tsConfigFilePath: "tsconfig.json", //"path/to/tsconfig.json",
         // skipFileDependencyResolution: true,
         skipAddingFilesFromTsConfig: true,
       });

@@ -15,7 +15,7 @@ parameters:
     default: "20.12.0" # "lts-bullseye"
   pnpm_version:
     type: string
-    default: "9.11.0"
+    default: "10.5.2"
     # default: "9.10.0"
   npm_publish_auth_secret_user:
     type: string
