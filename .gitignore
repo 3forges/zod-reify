@@ -1,0 +1,9 @@
+dist/
+node_modules/
+data/
+transformedData/
+.github/
+.npmrc/
+src/CLI
+data_pipeline_workdir
+coverage.tests.logs

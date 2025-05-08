@@ -1,0 +1,1339 @@
+{
+	"id": 0,
+	"name": "@pesto-io/zod-reify",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "reify",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A package where you will find The <code>@pesto-io</code> zod reifier: The "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@ZodSchemaReifier",
+						"text": ""
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "ZodSchemaReifier",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@ZodSchemaReifier",
+								"text": ""
+							},
+							{
+								"kind": "text",
+								"text": " class will parse a string assumed to be a zod schema source code, and will instantiate the Zod Schema."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 203,
+									"character": 2,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L203"
+								}
+							],
+							"signatures": [
+								{
+									"id": 4,
+									"name": "new ZodSchemaReifier",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Example values of <pre>zodSchemaAsString</pre> :\r\n---\r\n\r\nExample 1:\r\n----------\r\n\r\n<code>\r\nz.object({\r\n  title: z.string(),\r\n  subtitle: z.string(),\r\n  summary: z.string(),\r\n  category: z.array(z.string()),\r\n  image: z.string(),\r\n  tags: z.array(z.string()),\r\n})\r\n</code>\r\n\r\nExample 2:\r\n----------\r\n\r\n<code>\r\nz.object({\r\n  title: z.string(),\r\n  hereAnother: z.object({\r\n    reseau: z.object({\r\n      cesar: z.array(z.string()),\r\n    }),\r\n    imLackingIdea: z.boolean().optional(),\r\n    itsForATest: z.boolean(),\r\n  }),\r\n  tags: z.array(z.string( )  ),\r\n  another: z.boolean().nullish(),\r\n  exampleCategory: z.array(z.array(z.string().nullable())).optional(),\r\n  example2Category: z.nullable(z.array(z.boolean())).optional(),\r\n  example3Category: z.optional(z.number()).array(),\r\n  example4Category: z.array(z.number()).optional(),\r\n  image: z.string().optional(),\r\n  somethingElseNested: z.object({\r\n    firstname: z.string().array(),\r\n    lastname: z.string(),\r\n    color: z.string(),\r\n    two: z.boolean().optional(),\r\n    three: z.number().array().optional(),\r\n    four: z.array(z.number()).optional(),\r\n  }),\r\n  department: z.object({\r\n    divisionName: z.string(),\r\n    secrecyTags: z.array(z.string()).optional(),\r\n  }),\r\n})\r\n</code>"
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 203,
+											"character": 2,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L203"
+										}
+									],
+									"parameters": [
+										{
+											"id": 5,
+											"name": "zodSchemaAsString",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the text of the zod schema, without any variable declaration, just the zod schema alone. see above example."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 6,
+											"name": "p_tsConfigRootdir",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the path to the folder used to set the <pre>rootDir</pre> TypeScript compiler configuration property value. (typically found in any <pre>tsconfig.json</pre> file)"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 2,
+										"name": "ZodSchemaReifier",
+										"package": "@pesto-io/zod-reify"
+									}
+								}
+							]
+						},
+						{
+							"id": 10,
+							"name": "filename",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The filename of the file in which the source\r\ncode to process will be saved to."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 59,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L59"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 15,
+							"name": "nameOfTheZodImport",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The name of the zod import.\r\n\r\nE.g.:\r\n\r\n<code>\r\n// the name of the zod import is 'z'\r\nimport { z } from \"zod\";\r\n</code>\r\n\r\n<code>\r\n// the name of the zod import is 'myZod'\r\nimport { z as myZod } from \"zod\";\r\n</code>\r\n\r\nThe "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaReifier",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " will always use 'z' as\r\nthe name of the zod import, since it is not\r\nprovided by the user of the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaReifier",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " class.\r\n\r\nWhy? because we don't care what is\r\nthe name of the zod import, we\r\ncare about instiating the Zod Schema."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 145,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L145"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 8,
+							"name": "project",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph API Project instance which\r\nwill used to compile/parse the typescript code which is a zodSchema"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 52,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L52"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "Project"
+								},
+								"name": "Project",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 11,
+							"name": "sourceFile",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The source file obeject used by the TS compiler API"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 63,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L63"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "SourceFile"
+								},
+								"name": "SourceFile",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 9,
+							"name": "tsConfigRootdir",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 54,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L54"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 13,
+							"name": "typeChecker",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph / TypeScript Compiler API type checker"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 102,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L102"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "TypeChecker"
+								},
+								"name": "TypeChecker",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 7,
+							"name": "unique_id",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The unique ID of\r\nthis "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaReifier",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " instance.\r\n\r\nThis uuid is used to generate a unique\r\nname for the sourceFile"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 47,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L47"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 17,
+							"name": "zodExpressionNode",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Represents the zod instance in the source file:\r\n\r\nEg. if in the source file, we have:\r\n\r\n<code>\r\nimport z form 'zod';\r\n\r\nconst weDontCare = z.array(z.string()).optional();\r\n</code>\r\n\r\nthen, <pre>this.zodExpressionNode</pre> represents\r\nthe object returned by <pre>z.array(z.string()).optional()</pre>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 269,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L269"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "Node"
+								},
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": {
+											"sourceFileName": "node_modules/.pnpm/@ts-morph+common@0.24.0/node_modules/@ts-morph/common/lib/typescript.d.ts",
+											"qualifiedName": "ts.Node"
+										},
+										"name": "Node",
+										"package": "@ts-morph/common",
+										"qualifiedName": "ts.Node"
+									}
+								],
+								"name": "Node",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 14,
+							"name": "zodImport",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Represents the full statement importing zod:\r\n\r\n<code>\r\n// the zodImport is the full below line.\r\nimport { z } from \"zod\";\r\n</code>\r\n\r\nThe "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaReifier",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " will always use\r\n'import { z } from \"zod\";' as the zod import,\r\nsince it is not provided by the user of the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@ZodSchemaReifier",
+										"text": ""
+									},
+									{
+										"kind": "text",
+										"text": " class.\r\n\r\nWhy? because we don't care what is\r\nthe zod import, as long as the zod is imported, we\r\ncare about instiating the Zod Schema."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 120,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L120"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "ImportDeclarationStructure"
+								},
+								"name": "ImportDeclarationStructure",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 16,
+							"name": "zodSchemaAsString",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isProtected": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "the text of the zod schema, without any variable declaration, just the zod schema alone. see above example."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 203,
+									"character": 24,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L203"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 12,
+							"name": "zodSchemaVarDeclaration",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The ts-morph / TypeScript Compiler API\r\nVariable Declaration of the Zod Schema, in the\r\nbuilt ts-morph Project\r\n\r\nRepresents a variable Declaration Statement\r\nwhich is assigned as value, a zodSchema.\r\n\r\nE.g.:\r\n\r\n<code>\r\nimport { z } from \"zod\";\r\n\r\n////\r\n// Below that's the variable declaration represented:\r\n////\r\nconst weDontCare = z.object({\r\n  // ...\r\n})\r\n</code>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 97,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L97"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+									"qualifiedName": "OptionalKind"
+								},
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": {
+											"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+											"qualifiedName": "VariableDeclarationStructure"
+										},
+										"name": "VariableDeclarationStructure",
+										"package": "ts-morph"
+									}
+								],
+								"name": "OptionalKind",
+								"package": "ts-morph"
+							}
+						},
+						{
+							"id": 18,
+							"name": "initZodExpressionNode",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 271,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L271"
+								}
+							],
+							"signatures": [
+								{
+									"id": 19,
+									"name": "initZodExpressionNode",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 271,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L271"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 20,
+							"name": "reify",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 304,
+									"character": 9,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L304"
+								}
+							],
+							"signatures": [
+								{
+									"id": 21,
+									"name": "reify",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method will be a full reccurence:"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the reified typescript object, returned by the zod expression"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 304,
+											"character": 9,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L304"
+										}
+									],
+									"parameters": [
+										{
+											"id": 22,
+											"name": "aZodExpressionNode",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "ts-morph / TypeScript Compiler API"
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": {
+													"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+													"qualifiedName": "Node"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"sourceFileName": "node_modules/.pnpm/@ts-morph+common@0.24.0/node_modules/@ts-morph/common/lib/typescript.d.ts",
+															"qualifiedName": "ts.Node"
+														},
+														"name": "Node",
+														"package": "@ts-morph/common",
+														"qualifiedName": "ts.Node"
+													}
+												],
+												"name": "Node",
+												"package": "ts-morph"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 23,
+							"name": "reifyArrayLiteralExpression",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 472,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L472"
+								}
+							],
+							"signatures": [
+								{
+									"id": 24,
+									"name": "reifyArrayLiteralExpression",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 472,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L472"
+										}
+									],
+									"parameters": [
+										{
+											"id": 25,
+											"name": "processedNode",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"target": {
+													"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+													"qualifiedName": "ArrayLiteralExpression"
+												},
+												"name": "ArrayLiteralExpression",
+												"package": "ts-morph"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 34,
+							"name": "reifyNoArgsZodFunctionCall",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 854,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L854"
+								}
+							],
+							"signatures": [
+								{
+									"id": 35,
+									"name": "reifyNoArgsZodFunctionCall",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method reifies the call of a zod method called without arguments\r\n\r\n<pre>caller.calledFunctionName()</pre>"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the object returned by the function call"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 854,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L854"
+										}
+									],
+									"parameters": [
+										{
+											"id": 36,
+											"name": "caller",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 37,
+											"name": "calledFunctionName",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the zod function name, a"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 26,
+							"name": "reifyObjectLiteralExpression",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 548,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L548"
+								}
+							],
+							"signatures": [
+								{
+									"id": 27,
+									"name": "reifyObjectLiteralExpression",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Ok i could determine it is this function which has a bug, especially when a property is itself an object literal"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": []
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 548,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L548"
+										}
+									],
+									"parameters": [
+										{
+											"id": 28,
+											"name": "processedNode",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"target": {
+													"sourceFileName": "node_modules/.pnpm/ts-morph@23.0.0/node_modules/ts-morph/lib/ts-morph.d.ts",
+													"qualifiedName": "ObjectLiteralExpression"
+												},
+												"name": "ObjectLiteralExpression",
+												"package": "ts-morph"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 29,
+							"name": "reifyZodFunctionCallWithOneArg",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 631,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L631"
+								}
+							],
+							"signatures": [
+								{
+									"id": 30,
+									"name": "reifyZodFunctionCallWithOneArg",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 631,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L631"
+										}
+									],
+									"parameters": [
+										{
+											"id": 31,
+											"name": "caller",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 32,
+											"name": "calledFunctionName",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 33,
+											"name": "passedArgument",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 38,
+							"name": "validate",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "reify/ZodSchemaReifier.ts",
+									"line": 1078,
+									"character": 10,
+									"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L1078"
+								}
+							],
+							"signatures": [
+								{
+									"id": 39,
+									"name": "validate",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "This method validates that the\r\nsource code in the source file built\r\nbased on the constructor-provided\r\nstring <pre>zodSchemaAsString</pre>,\r\nassumed to be a zod schema, sucessfully\r\ncompiles with the TypeScript Compiler.\r\n-\r\nhttps://ts-morph.com/setup/diagnostics"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@throws",
+												"content": [
+													{
+														"kind": "text",
+														"text": "an Error if the source code does not compile as TypeScript source code"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "reify/ZodSchemaReifier.ts",
+											"line": 1078,
+											"character": 10,
+											"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L1078"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								3
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								10,
+								15,
+								8,
+								11,
+								9,
+								13,
+								7,
+								17,
+								14,
+								16,
+								12
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								18,
+								20,
+								23,
+								34,
+								26,
+								29,
+								38
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "reify/ZodSchemaReifier.ts",
+							"line": 38,
+							"character": 13,
+							"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/ZodSchemaReifier.ts#L38"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "reify/index.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/3forges/pesto-zod/blob/eaa001b/src/reify/index.ts#L1"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Namespaces",
+			"children": [
+				1
+			]
+		}
+	],
+	"packageName": "@pesto-io/zod-reify",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "![Pesto](./documentation/images/pesto-icons/32x32.png)\r\n--\r\n\r\n![npm bundle size](https://img.shields.io/bundlephobia/min/%403forges%2Fzod-reify?style=for-the-badge&logoColor=%23dc34eb&label=bundle%20size&labelColor=%2334eb3d&color=%23dc34eb)\r\n\r\n![CircleCI (branch)](https://img.shields.io/circleci/build/github/3forges/zod-reify/feature%252Finit-src%252Fn%252Fci?style=for-the-badge&labelColor=%2334ebd3&color=%23eb34eb)\r\n\r\n# Zod Reify\r\n\r\nThe "
+		},
+		{
+			"kind": "code",
+			"text": "`zod-reify`"
+		},
+		{
+			"kind": "text",
+			"text": " npm package contains "
+		},
+		{
+			"kind": "code",
+			"text": "`zod`"
+		},
+		{
+			"kind": "text",
+			"text": " related utilities that the pesto app uses.\r\n\r\nOne of the most important, is the "
+		},
+		{
+			"kind": "code",
+			"text": "`ZodSchemaReifier`"
+		},
+		{
+			"kind": "text",
+			"text": ", which is able to read some source code provided as a simple string, and to instantiate a zod schema.\r\n\r\n* left TODO before a first release:\r\n\r\nI have now the generalized algorithm: \r\n* [ ] we need to add more test cases to fully cover all zod functions support. \r\n* [ ] We also need to update docs and README. We also need to change the git repository.\r\n* [x] We also need to complete method renaming. \r\n* [ ] We also need to replace any "
+		},
+		{
+			"kind": "code",
+			"text": "`console.log`"
+		},
+		{
+			"kind": "text",
+			"text": " with winston logging silenced by default.\r\n* [ ] setup the cloudflare pages to publish the documentation astro website\r\n\r\nFinally adding some speed automated tests with https://github.com/tinylibs/tinybench\r\n\r\nJest Tests reporting:\r\n* [x] so i will use the Junit reporter: \r\n* [x] and convert it to JSON, to be used by astro, with: https://github.com/Kesin11/ts-junit2json\r\n* [ ] a good layout for the tests report page.\r\n\r\n## How to Use\r\n\r\n* first, install the package:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\nnpm i @pesto-io/zod-reify\r\n# pnpm add @pesto-io/zod-reify\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n* Then, in your code, you can:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```TypeScript\r\nimport { ZodSchemaReifier } from \"@pesto-io/zod-reify\"\r\n\r\n\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n## Contribute\r\n\r\nGit clone the source, and:\r\n\r\n* Install dependencies:\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm i\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n### Generate the docs\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm run gen:api-docs\r\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\r\n\r\n#### The Astro docs (WIP)\r\n\r\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\r\npnpm run build:docs:astro\r\n# pnpm run dev:docs:astro\r\n\r\n```"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/reify/index.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier"
+		},
+		"3": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.__constructor"
+		},
+		"4": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier"
+		},
+		"5": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "zodSchemaAsString"
+		},
+		"6": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "p_tsConfigRootdir"
+		},
+		"7": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.unique_id"
+		},
+		"8": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.project"
+		},
+		"9": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.tsConfigRootdir"
+		},
+		"10": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.filename"
+		},
+		"11": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.sourceFile"
+		},
+		"12": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodSchemaVarDeclaration"
+		},
+		"13": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.typeChecker"
+		},
+		"14": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodImport"
+		},
+		"15": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.nameOfTheZodImport"
+		},
+		"16": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodSchemaAsString"
+		},
+		"17": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.zodExpressionNode"
+		},
+		"18": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.initZodExpressionNode"
+		},
+		"19": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.initZodExpressionNode"
+		},
+		"20": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reify"
+		},
+		"21": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reify"
+		},
+		"22": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "aZodExpressionNode"
+		},
+		"23": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyArrayLiteralExpression"
+		},
+		"24": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyArrayLiteralExpression"
+		},
+		"25": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "processedNode"
+		},
+		"26": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyObjectLiteralExpression"
+		},
+		"27": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyObjectLiteralExpression"
+		},
+		"28": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "processedNode"
+		},
+		"29": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyZodFunctionCallWithOneArg"
+		},
+		"30": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyZodFunctionCallWithOneArg"
+		},
+		"31": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "caller"
+		},
+		"32": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "calledFunctionName"
+		},
+		"33": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "passedArgument"
+		},
+		"34": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyNoArgsZodFunctionCall"
+		},
+		"35": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.reifyNoArgsZodFunctionCall"
+		},
+		"36": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "caller"
+		},
+		"37": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "calledFunctionName"
+		},
+		"38": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.validate"
+		},
+		"39": {
+			"sourceFileName": "src/reify/ZodSchemaReifier.ts",
+			"qualifiedName": "ZodSchemaReifier.validate"
+		}
+	}
+}
